@@ -1,6 +1,7 @@
 import RobotPost from "@/components/RobotPost";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 
 export default function Robots({ posts }) {
   return (
@@ -27,9 +28,9 @@ export default function Robots({ posts }) {
           ))}
         </div>
         <h1 className="title">GrabCAD</h1>
-        <a className="subtitle" href="https://grabcad.com/team.3132-1/models">
-          https://grabcad.com/team.3132-1/models
-        </a>
+        <Link href="https://grabcad.com/team.3132-1/models">
+          <a className="subtitle">https://grabcad.com/team.3132-1/models</a>
+        </Link>
       </section>
     </>
   );

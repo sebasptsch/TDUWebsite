@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SocialButtons from "../socialButtons";
 
 export default function Footer() {
@@ -14,9 +15,9 @@ export default function Footer() {
             <h1 className="subtitle">Social Media</h1>
             <SocialButtons />
             <hr className="divider" />
-            <a className="button is-primary" href="/contact">
-              Contact Us!
-            </a>
+            <Link href="/contact">
+              <a className="button is-primary">Contact Us!</a>
+            </Link>
           </div>
         </div>
       </div>

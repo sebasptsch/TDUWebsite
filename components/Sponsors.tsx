@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function SponsorsComponent() {
   const sponsors = [
@@ -66,9 +67,11 @@ export default function SponsorsComponent() {
               scale: 0.95,
             }}
           >
-            <a href={sponsor.link}>
-              <img src={sponsor.logo} alt={sponsor.name} className="image" />
-            </a>
+            <Link href={sponsor.link}>
+              <a>
+                <img src={sponsor.logo} alt={sponsor.name} className="image" />
+              </a>
+            </Link>
           </motion.div>
         );
       })}

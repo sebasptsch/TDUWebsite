@@ -3,6 +3,7 @@ import SocialButtons from "@/components/socialButtons";
 import SponsorsComponent from "@/components/Sponsors";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -55,10 +56,14 @@ export default function Home() {
           </p>
           <p className="buttons is-centered">
             <button className="button">
-              <a href="https://www.firstinspires.org/">FIRST International</a>
+              <Link href="https://www.firstinspires.org/">
+                <a>FIRST International</a>
+              </Link>
             </button>
             <button className="button">
-              <a href="https://firstaustralia.org/">FIRST Australia</a>
+              <Link href="https://firstaustralia.org/">
+                <a>FIRST Australia</a>
+              </Link>
             </button>
           </p>
         </div>

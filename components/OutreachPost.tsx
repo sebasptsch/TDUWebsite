@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CardComponent from "./card";
 
 export default function OutreachPost({ frontMatter }) {
@@ -5,13 +6,15 @@ export default function OutreachPost({ frontMatter }) {
 
   return (
     <div className="column is-one-quarter-widescreen is-one-third-desktop is-half-tablet">
-      <a href={`/outreach/${slug}`}>
-        <CardComponent
-          title={title}
-          content={excerpt}
-          image={image ? `/images/data/outreach/${image}` : undefined}
-        />
-      </a>
+      <Link href={`/outreach/${slug}`}>
+        <a>
+          <CardComponent
+            title={title}
+            content={excerpt}
+            image={image ? `/images/data/outreach/${image}` : undefined}
+          />
+        </a>
+      </Link>
     </div>
   );
 }

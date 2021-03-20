@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -11,9 +12,11 @@ export default function Navigation() {
     >
       <div className="container">
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
-            <img src="/images/logo.svg" width="28" height="28" alt="logo" />
-          </a>
+          <Link href="/">
+            <a className="navbar-item">
+              <img src="/images/logo.svg" width="28" height="28" alt="logo" />
+            </a>
+          </Link>
 
           <a
             onClick={(e) => {
@@ -38,29 +41,31 @@ export default function Navigation() {
           className={`navbar-menu ${isActive ? "is-active" : ""}`}
         >
           <div className="navbar-start">
-            <a className="navbar-item" href="/">
-              Home
-            </a>
-            <a className="navbar-item" href="/team">
-              The Team
-            </a>
-            <a className="navbar-item" href="/blog">
-              Blog
-            </a>
-            <a className="navbar-item" href="/outreach">
-              Outreach
-            </a>
-            <a className="navbar-item" href="/robots">
-              Robots
-            </a>
+            <Link href="/">
+              <a className="navbar-item">Home</a>
+            </Link>
+            <Link href="/team">
+              <a className="navbar-item">The Team</a>
+            </Link>
+            <Link href="/blog">
+              <a className="navbar-item">Blog</a>
+            </Link>
+            <Link href="/outreach">
+              <a className="navbar-item">Outreach</a>
+            </Link>
+            <Link href="/robots">
+              <a className="navbar-item">Robots</a>
+            </Link>
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-primary" href="/contact">
-                  <strong>Contact us</strong>
-                </a>
+                <Link href="/contact">
+                  <a className="button is-primary">
+                    <strong>Contact us</strong>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

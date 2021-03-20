@@ -1,6 +1,6 @@
-import CardComponent from "@/components/card";
 import moment from "moment";
 import { BlogJsonLd, NextSeo } from "next-seo";
+import Image from "next/image";
 import React from "react";
 
 export default function BlogPostLayout({ children, frontMatter }) {
@@ -43,7 +43,13 @@ export default function BlogPostLayout({ children, frontMatter }) {
         {image ? (
           <div className="columns is-centered">
             <div className="column is-two-thirds">
-              <CardComponent image={`/images/data/blog/${image}`} />
+              <Image
+                src={`/images/data/blog/${image}`}
+                alt="Card Image"
+                className="image is-square"
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           </div>
         ) : null}

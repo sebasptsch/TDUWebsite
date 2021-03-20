@@ -1,6 +1,6 @@
-import CardComponent from "@/components/card";
 import moment from "moment";
 import { ArticleJsonLd, NextSeo } from "next-seo";
+import Image from "next/image";
 import React from "react";
 
 export default function RobotPostLayout({ children, frontMatter }) {
@@ -45,7 +45,13 @@ export default function RobotPostLayout({ children, frontMatter }) {
         {image ? (
           <div className="columns is-centered">
             <div className="column is-two-thirds">
-              <CardComponent image={`/images/data/robots/${image}`} />
+              <Image
+                src={`/images/data/robots/${image}`}
+                alt="Card Image"
+                className="image is-square"
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           </div>
         ) : null}

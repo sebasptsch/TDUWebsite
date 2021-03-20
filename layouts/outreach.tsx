@@ -1,6 +1,6 @@
-import CardComponent from "@/components/card";
 import moment from "moment";
 import { ArticleJsonLd, NextSeo } from "next-seo";
+import Image from "next/image";
 import React from "react";
 
 export default function OutreachPostLayout({ children, frontMatter }) {
@@ -45,7 +45,13 @@ export default function OutreachPostLayout({ children, frontMatter }) {
         {image ? (
           <div className="columns is-centered">
             <div className="column is-two-thirds">
-              <CardComponent image={`/images/data/outreach/${image}`} />
+              <Image
+                src={`/images/data/outreach/${image}`}
+                alt="Card Image"
+                className="image is-square"
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           </div>
         ) : null}

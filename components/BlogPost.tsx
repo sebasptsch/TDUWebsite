@@ -5,7 +5,7 @@ export default function BlogPost({ frontMatter }) {
   const { image, date, excerpt, title, slug } = frontMatter;
   return (
     <Link href={`/blog/${slug}`}>
-      <a className="box columns">
+      <a className="box columns m-3">
         {image ? (
           <div className="column is-4">
             <Image

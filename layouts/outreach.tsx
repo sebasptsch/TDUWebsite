@@ -44,7 +44,10 @@ export default function OutreachPostLayout({ children, frontMatter }) {
       <div className="column is-three-fifths-tablet">
         {image ? (
           <div className="columns is-centered">
-            <div className="column is-two-thirds">
+            <div
+              className="column is-two-thirds"
+              style={{ height: "20em", width: "100%", position: "relative" }}
+            >
               <Image
                 src={`/images/data/outreach/${image}`}
                 alt="Card Image"

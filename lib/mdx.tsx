@@ -5,6 +5,7 @@ import _ from "lodash";
 import renderToString from "next-mdx-remote/render-to-string";
 import path from "path";
 import readingTime from "reading-time";
+const autoLink = require("rehype-autolink-headings");
 
 const root = process.cwd();
 
@@ -21,11 +22,16 @@ export async function getFileBySlug(type, slug) {
   const mdxSource = await renderToString(content, {
     components: MDXComponents,
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [require("remark-gfm"), require("./bulma-format")],
       rehypePlugins: [
         require("mdx-prism"),
         require("rehype-slug"),
-        require("rehype-autolink-headings"),
+        [
+          autoLink,
+          {
+            behavior: "wrap",
+          },
+        ],
       ],
     },
   });

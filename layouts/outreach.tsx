@@ -41,32 +41,25 @@ export default function OutreachPostLayout({ children, frontMatter }) {
         publisherName="Team 3132"
         publisherLogo="https://thethunderdownunder.org/images/applogo.png"
       />
-      <div className="column is-three-fifths-tablet">
+      <div className="container is-max-desktop">
         {image ? (
-          <div className="columns is-centered">
-            <div
-              className="column is-two-thirds"
-              style={{ height: "20em", width: "100%", position: "relative" }}
-            >
-              <Image
-                src={`/images/data/outreach/${image}`}
-                alt="Card Image"
-                className="image is-square"
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
+          <div style={{ height: "20em", width: "100%", position: "relative" }}>
+            <Image
+              src={`/images/data/outreach/${image}`}
+              alt="Card Image"
+              className="image is-square"
+              layout="fill"
+              objectFit="contain"
+            />
           </div>
         ) : null}
         <section className="hero hero-body">
-          <div className="container has-text-centered">
-            <h1 className="title">{title}</h1>
-            <h2 className="subtitle">
-              {date
-                ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}`
-                : null}
-            </h2>
-          </div>
+          <h1 className="title">{title}</h1>
+          <h2 className="subtitle">
+            {date
+              ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}`
+              : null}
+          </h2>
         </section>
         {children}
       </div>

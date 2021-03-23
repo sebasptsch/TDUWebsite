@@ -6,7 +6,7 @@ import React from "react";
 export default function BlogPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
   return (
-    <div className="columns is-centered">
+    <div className="container is-max-desktop">
       <NextSeo
         title={title}
         description={excerpt}
@@ -39,35 +39,24 @@ export default function BlogPostLayout({ children, frontMatter }) {
         dateModified={date}
         authorName={"Team 3132"}
       />
-      <div className="column is-three-fifths-tablet">
-        {image ? (
-          <div className="columns is-centered">
-            <div
-              className="column is-two-thirds"
-              style={{ height: "20em", width: "100%", position: "relative" }}
-            >
-              <Image
-                src={`/images/data/blog/${image}`}
-                alt="Card Image"
-                className="image is-square"
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          </div>
-        ) : null}
-        <section className="hero hero-body">
-          <div className="container has-text-centered">
-            <h1 className="title">{title}</h1>
-            <h2 className="subtitle">
-              {date
-                ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}`
-                : null}
-            </h2>
-          </div>
-        </section>
-        {children}
-      </div>
+      {image ? (
+        <div style={{ height: "20em", width: "100%", position: "relative" }}>
+          <Image
+            src={`/images/data/blog/${image}`}
+            alt="Card Image"
+            className="image is-square"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+      ) : null}
+      <section className="hero hero-body">
+        <h1 className="title">{title}</h1>
+        <h2 className="subtitle">
+          {date ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}` : null}
+        </h2>
+      </section>
+      {children}
     </div>
   );
 }

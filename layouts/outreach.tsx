@@ -61,7 +61,7 @@ export default function OutreachPostLayout({ children, frontMatter }) {
               : null}
           </h2>
         </section>
-        {children}
+        <div className="content">{children}</div>
       </div>
     </div>
   );

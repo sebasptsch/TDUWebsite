@@ -56,7 +56,7 @@ export default function BlogPostLayout({ children, frontMatter }) {
           {date ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}` : null}
         </h2>
       </section>
-      {children}
+      <div className="content">{children}</div>
     </div>
   );
 }

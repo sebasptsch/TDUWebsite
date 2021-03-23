@@ -12,7 +12,7 @@ export default function TeamLayout({ children }) {
       <hr className="divider" />
       <section className="section">
         <div className="columns is-centered">
-          <div className="column is-three-fifths">{children}</div>
+          <div className="column is-three-fifths content">{children}</div>
         </div>
       </section>
     </>

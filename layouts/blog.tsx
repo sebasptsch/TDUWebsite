@@ -1,10 +1,12 @@
 import moment from "moment";
 import { BlogJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 
 export default function BlogPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
+  const router = useRouter();
   return (
     <div className="container is-max-desktop">
       <NextSeo
@@ -12,6 +14,7 @@ export default function BlogPostLayout({ children, frontMatter }) {
         description={excerpt}
         openGraph={{
           title,
+          url: `https://thethunderdownunder.org${router.asPath}`,
           description: excerpt,
           type: "article",
           article: {

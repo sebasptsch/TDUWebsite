@@ -1,16 +1,18 @@
 import moment from "moment";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
-
 export default function OutreachPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
+  const router = useRouter();
   return (
     <div className="columns is-centered">
       <NextSeo
         title={title}
         description={excerpt}
         openGraph={{
+          url: `https://thethunderdownunder.org${router.asPath}`,
           title,
           description: excerpt,
           type: "article",

@@ -5,12 +5,15 @@ export default function AwardComponent() {
   const { data, error } = useSWR("/api/tba/awards", fetcher);
   return (
     <>
-      <p className="title">Awards</p>
+      <p className="title">Awards ({data?.length})</p>
       <div className="has-text-centered pt-6 pb-6 columns is-vcentered is-multiline">
         {data ? (
           data.map((award) => (
             <div className="column is-one-quarter">
-              <a className="box" href={""}>
+              <a
+                className="box"
+                href={`https://thebluealliance.com/event/${award.event_key}#awards`}
+              >
                 <p className="subtitle">
                   {award.name} {award.year}
                 </p>

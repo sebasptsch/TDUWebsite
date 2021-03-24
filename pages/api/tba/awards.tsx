@@ -14,7 +14,10 @@ interface Award {
   year: number;
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function TBAAwards(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const response = await axios.get(
     `https://www.thebluealliance.com/api/v3/team/frc3132/awards`,
     {
@@ -55,4 +58,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(401);
   }
   res.end();
-};
+}

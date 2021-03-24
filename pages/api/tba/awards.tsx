@@ -42,10 +42,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         recipient_list: recipient_list
           .filter((awardee) => awardee.team_key === "frc3132")
           .filter((awardee) => awardee.awardee !== null)
-          .map((awardee) => ({
-            name: awardee?.awardee,
-          })),
+          .map((awardee) => awardee.awardee),
         event_key,
+        award_type,
         year,
       };
     });

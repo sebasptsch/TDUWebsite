@@ -16,6 +16,7 @@ export default function UpcomingComponent() {
                 {event.active ? (
                   <div className="tag is-primary">Ongoing</div>
                 ) : null}
+                <br />
                 <b>Starts:</b> {new Date(event.start).toLocaleDateString()}
                 <br />
                 <b>Ends:</b> {new Date(event.end).toLocaleDateString()}

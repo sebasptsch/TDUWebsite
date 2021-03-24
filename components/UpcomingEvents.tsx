@@ -13,11 +13,12 @@ export default function UpcomingComponent() {
             data.map((event) => (
               <a className="box" href={event.url}>
                 <p className="subtitle">{event.name}</p>
-                <div className="">
-                  <b>Starts:</b> {new Date(event.start).toLocaleDateString()}
-                  <br />
-                  <b>Ends:</b> {new Date(event.end).toLocaleDateString()}
-                </div>
+                {event.active ? (
+                  <div className="tag is-primary">Ongoing</div>
+                ) : null}
+                <b>Starts:</b> {new Date(event.start).toLocaleDateString()}
+                <br />
+                <b>Ends:</b> {new Date(event.end).toLocaleDateString()}
               </a>
             ))}
         </p>

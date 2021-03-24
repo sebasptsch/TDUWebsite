@@ -27,6 +27,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         start: event.start_date,
         url: `https://www.thebluealliance.com/event/${event.key}`,
         name: event.name,
+        active: new Date(event.start_date).getTime() >= Date.now(),
       }));
 
     res.status(response.status).json(events);

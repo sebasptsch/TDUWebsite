@@ -1,3 +1,5 @@
+import AwardComponent from "@/components/AwardsComponent";
+
 export default function TeamLayout({ children }) {
   return (
     <>
@@ -14,6 +16,10 @@ export default function TeamLayout({ children }) {
         <div className="columns is-centered">
           <div className="column is-three-fifths content">{children}</div>
         </div>
+      </section>
+      <hr className="divider" />
+      <section className="section">
+        <AwardComponent />
       </section>
     </>
   );

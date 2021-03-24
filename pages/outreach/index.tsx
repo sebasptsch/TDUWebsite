@@ -23,7 +23,7 @@ export default function Outreach({ posts }) {
         </div>
       </section>
       <hr className="divider" />
-      <section className="section">
+      <section>
         <div className="columns is-multiline">
           {posts.map((post) => (
             <OutreachPost frontMatter={post} key={post.slug} />

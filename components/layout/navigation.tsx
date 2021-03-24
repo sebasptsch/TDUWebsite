@@ -1,8 +1,13 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
+  const router = useRouter();
   const [isActive, setisActive] = useState(false);
+  useEffect(() => {
+    setisActive(false);
+  }, [router]);
 
   return (
     <nav

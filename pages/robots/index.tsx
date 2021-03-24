@@ -21,7 +21,7 @@ export default function Robots({ posts }) {
         </div>
       </section>
       <hr className="divider" />
-      <section className="section">
+      <section>
         <div className="columns is-multiline">
           {posts.map((post) => (
             <RobotPost frontMatter={post} key={post.slug} />

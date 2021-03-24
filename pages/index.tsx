@@ -22,6 +22,7 @@ export default function Home() {
       <div>
         <UpcomingComponent />
       </div>
+      <hr className="divider" />
       <div className="columns">
         <div className="column is-6">
           <p className="title">About Us</p>

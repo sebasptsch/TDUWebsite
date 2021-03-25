@@ -5,9 +5,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Navigation />
-      <div className="container">
-        <div className="section">{children}</div>
-      </div>
+      <div className="container mx-4">{children}</div>
       <Footer />
     </div>
   );

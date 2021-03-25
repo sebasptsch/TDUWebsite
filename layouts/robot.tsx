@@ -44,24 +44,28 @@ export default function RobotPostLayout({ children, frontMatter }) {
         publisherName="Team 3132"
         publisherLogo="https://thethunderdownunder.org/images/applogo.png"
       />
-      {image ? (
-        <div style={{ height: "20em", width: "100%", position: "relative" }}>
-          <Image
-            src={`/images/data/robots/${image}`}
-            alt="Card Image"
-            className="image is-square"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-      ) : null}
-      <section className="hero hero-body">
-        <h1 className="title">{title}</h1>
-        <h2 className="subtitle">
-          {date ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}` : null}
-        </h2>
-      </section>
-      <div className="content">{children}</div>
+      <article>
+        {image ? (
+          <div style={{ height: "20em", width: "100%", position: "relative" }}>
+            <Image
+              src={`/images/data/robots/${image}`}
+              alt="Card Image"
+              className="image is-square"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        ) : null}
+        <section className="hero hero-body">
+          <h1 className="title">{title}</h1>
+          <h2 className="subtitle">
+            {date
+              ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}`
+              : null}
+          </h2>
+        </section>
+        <div className="content">{children}</div>
+      </article>
     </div>
   );
 }

@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         year: event.year,
         end: event.end_date,
         start: event.start_date,
-        url: `https://www.thebluealliance.com/event/${event.key}`,
+        key: event.key,
         name: event.name,
         active: Date.now() >= new Date(event.start_date).getTime(),
       }));

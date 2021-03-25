@@ -1,8 +1,8 @@
 import { fetcher } from "@/lib/fetcher";
 import useSWR from "swr";
 
-export default function AwardComponent() {
-  const { data, error } = useSWR("/api/tba/awards", fetcher);
+export default function AwardComponent({ year }: { year?: number }) {
+  const { data, error } = useSWR(`/api/tba/awards/${year || ""}`, fetcher);
   return (
     <>
       <p className="title">Awards ({data?.length})</p>

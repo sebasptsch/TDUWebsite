@@ -47,25 +47,25 @@ export default function Navigation() {
         >
           <div className="navbar-start">
             <Link href="/">
-              <a className="navbar-item">Home</a>
+              <a className="navbar-item has-text-centered">Home</a>
             </Link>
             <Link href="/team">
-              <a className="navbar-item">The Team</a>
+              <a className="navbar-item has-text-centered">The Team</a>
             </Link>
             <Link href="/blog">
-              <a className="navbar-item">Blog</a>
+              <a className="navbar-item has-text-centered">Blog</a>
             </Link>
             <Link href="/outreach">
-              <a className="navbar-item">Outreach</a>
+              <a className="navbar-item has-text-centered">Outreach</a>
             </Link>
             <Link href="/robots">
-              <a className="navbar-item">Robots</a>
+              <a className="navbar-item has-text-centered">Robots</a>
             </Link>
           </div>
 
           <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
+            <div className="navbar-item has-text-centered ">
+              <div className="buttons is-centered">
                 <Link href="/contact">
                   <a className="button is-primary">
                     <strong>Contact us</strong>

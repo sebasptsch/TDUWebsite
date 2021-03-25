@@ -5,7 +5,9 @@ export default function AwardComponent({ year }: { year?: number }) {
   const { data, error } = useSWR(`/api/tba/awards/${year || ""}`, fetcher);
   return (
     <>
-      <p className="title">Awards ({data?.length})</p>
+      <p className="title" id="awards">
+        Awards ({data?.length})
+      </p>
       <div className="has-text-centered pt-6 pb-6 columns is-vcentered is-multiline">
         {data ? (
           data.map((award) => (

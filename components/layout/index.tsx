@@ -6,7 +6,7 @@ export default function Layout({ children }) {
     <>
       <Navigation />
       <section className="section">
-        <div className="container pt-6">{children}</div>
+        <div className="container">{children}</div>
       </section>
       <Footer />
     </>

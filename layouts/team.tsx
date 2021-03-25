@@ -13,15 +13,11 @@ export default function TeamLayout({ children }) {
           </div>
         </section>
         <hr className="divider" />
-        <section className="section">
-          <div className="columns is-centered">
-            <div className="column is-three-fifths content">{children}</div>
-          </div>
-        </section>
+        <div className="columns is-centered">
+          <div className="column is-three-fifths content">{children}</div>
+        </div>
         <hr className="divider" />
-        <section className="section">
-          <AwardComponent />
-        </section>
+        <AwardComponent />
       </article>
     </>
   );

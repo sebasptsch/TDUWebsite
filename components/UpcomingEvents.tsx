@@ -7,11 +7,15 @@ export default function UpcomingComponent() {
     <div className="has-text-centered pt-6 pb-6 columns is-vcentered is-gapless">
       <div className="column" />
       <div className="column is-half">
-        <p className="content">
-          <p className="title">Upcoming Events</p>
+        <div className="content">
+          <div className="title">Upcoming Events</div>
           {data ? (
             data.map((event) => (
-              <a className="box" href={event.url}>
+              <a
+                className="box"
+                href={`https://www.thebluealliance.com/event/${event.key}`}
+                key={event.key}
+              >
                 <p className="subtitle">{event.name}</p>
                 {event.active ? (
                   <>
@@ -27,7 +31,7 @@ export default function UpcomingComponent() {
           ) : (
             <p className="has-text-centered">Loading</p>
           )}
-        </p>
+        </div>
       </div>
       <div className="column" />
     </div>

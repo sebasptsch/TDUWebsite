@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -33,6 +33,7 @@
     "rehype-slug": "^4.0.1",
     "remark-gfm": "^1.0.0",
     "sass": "^1.32.8",
+    "swr": "^0.5.4",
     "unist-util-visit-parents": "^3.1.1"
   },
   "devDependencies": {

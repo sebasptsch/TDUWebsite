@@ -1,12 +1,17 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
+  const router = useRouter();
   const [isActive, setisActive] = useState(false);
+  useEffect(() => {
+    setisActive(false);
+  }, [router]);
 
   return (
     <nav
-      className="navbar is-fixed-top is-light"
+      className="navbar is-light"
       role="navigation"
       aria-label="main navigation"
     >
@@ -42,25 +47,25 @@ export default function Navigation() {
         >
           <div className="navbar-start">
             <Link href="/">
-              <a className="navbar-item">Home</a>
+              <a className="navbar-item has-text-centered">Home</a>
             </Link>
             <Link href="/team">
-              <a className="navbar-item">The Team</a>
+              <a className="navbar-item has-text-centered">The Team</a>
             </Link>
             <Link href="/blog">
-              <a className="navbar-item">Blog</a>
+              <a className="navbar-item has-text-centered">Blog</a>
             </Link>
             <Link href="/outreach">
-              <a className="navbar-item">Outreach</a>
+              <a className="navbar-item has-text-centered">Outreach</a>
             </Link>
             <Link href="/robots">
-              <a className="navbar-item">Robots</a>
+              <a className="navbar-item has-text-centered">Robots</a>
             </Link>
           </div>
 
           <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
+            <div className="navbar-item has-text-centered ">
+              <div className="buttons is-centered">
                 <Link href="/contact">
                   <a className="button is-primary">
                     <strong>Contact us</strong>

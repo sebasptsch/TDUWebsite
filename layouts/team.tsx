@@ -1,20 +1,24 @@
+import AwardComponent from "@/components/AwardsComponent";
+
 export default function TeamLayout({ children }) {
   return (
     <>
-      <section className="hero">
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <h1 className="title">The Team</h1>
-            <h2 className="subtitle">A brief description of the team.</h2>
+      <article>
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container has-text-centered">
+              <h1 className="title">The Team</h1>
+              <h2 className="subtitle">A brief description of the team.</h2>
+            </div>
           </div>
-        </div>
-      </section>
-      <hr className="divider" />
-      <section className="section">
+        </section>
+        <hr className="divider" />
         <div className="columns is-centered">
           <div className="column is-three-fifths content">{children}</div>
         </div>
-      </section>
+        <hr className="divider" />
+        <AwardComponent />
+      </article>
     </>
   );
 }

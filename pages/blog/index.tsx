@@ -23,11 +23,9 @@ export default function Blog({ posts }) {
         </div>
       </section>
       <hr className="divider" />
-      <section className="section">
-        {posts.map((post) => (
-          <BlogPost frontMatter={post} key={post.slug} />
-        ))}
-      </section>
+      {posts.map((post) => (
+        <BlogPost frontMatter={post} key={post.slug} />
+      ))}
     </>
   );
 }

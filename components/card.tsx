@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import _ from "lodash";
 import Image from "next/image";
 import React from "react";
 
@@ -29,12 +28,7 @@ export default function CardComponent({
       {title ? (
         <header className="card-header">
           <div className="card-header-title">
-            <p>{title}</p>
-            {category ? (
-              <div className="has-text-right" style={{ width: "100%" }}>
-                <span className="tag">{_.capitalize(category)}</span>
-              </div>
-            ) : null}
+            <p className="subtitle">{title}</p>
           </div>
         </header>
       ) : null}
@@ -57,7 +51,7 @@ export default function CardComponent({
         </div>
       ) : null}
       {content ? (
-        <div className="card-content">
+        <div className="card-content" style={{ overflow: "hidden" }}>
           <p className="content">{content}</p>
         </div>
       ) : null}

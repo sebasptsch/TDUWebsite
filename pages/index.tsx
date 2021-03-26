@@ -1,6 +1,7 @@
 import AnimatedLogo from "@/components/AnimatedLogo";
 import SocialButtons from "@/components/socialButtons";
 import SponsorsComponent from "@/components/Sponsors";
+import UpcomingComponent from "@/components/UpcomingEvents";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,7 +19,10 @@ export default function Home() {
       <div className="py-6">
         <SocialButtons />
       </div>
-
+      <div>
+        <UpcomingComponent />
+      </div>
+      <hr className="divider" />
       <div className="columns">
         <div className="column is-6">
           <p className="title">About Us</p>

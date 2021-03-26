@@ -21,17 +21,15 @@ export default function Robots({ posts }) {
         </div>
       </section>
       <hr className="divider" />
-      <section className="section">
-        <div className="columns is-multiline">
-          {posts.map((post) => (
-            <RobotPost frontMatter={post} key={post.slug} />
-          ))}
-        </div>
-        <h1 className="title">GrabCAD</h1>
-        <Link href="https://grabcad.com/team.3132-1/models">
-          <a className="subtitle">GrabCAD Models</a>
-        </Link>
-      </section>
+      <div className="columns is-multiline">
+        {posts.map((post) => (
+          <RobotPost frontMatter={post} key={post.slug} />
+        ))}
+      </div>
+      <h1 className="title">GrabCAD</h1>
+      <Link href="https://grabcad.com/team.3132-1/models">
+        <a className="subtitle">GrabCAD Models</a>
+      </Link>
     </>
   );
 }

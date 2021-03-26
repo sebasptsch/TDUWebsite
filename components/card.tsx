@@ -28,7 +28,9 @@ export default function CardComponent({
       {title ? (
         <header className="card-header">
           <div className="card-header-title">
-            <p className="subtitle">{title}</p>
+            <p className="subtitle has-text-centered" style={{ width: "100%" }}>
+              {title}
+            </p>
           </div>
         </header>
       ) : null}

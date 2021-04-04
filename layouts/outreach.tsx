@@ -1,13 +1,20 @@
+import { motion } from "framer-motion";
 import moment from "moment";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+
 export default function OutreachPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
   const router = useRouter();
   return (
-    <div className="columns is-centered">
+    <motion.div
+      className="columns is-centered"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NextSeo
         title={title}
         description={excerpt}
@@ -69,6 +76,6 @@ export default function OutreachPostLayout({ children, frontMatter }) {
           <div className="content">{children}</div>
         </article>
       </div>
-    </div>
+    </motion.div>
   );
 }

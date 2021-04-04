@@ -1,11 +1,17 @@
 import BlogPost from "@/components/BlogPost";
+import { container } from "@/lib/animations";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
+import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function Blog({ posts }) {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NextSeo
         title="Blog"
         description="A place to see what's happening around the team and in our
@@ -23,10 +29,12 @@ export default function Blog({ posts }) {
         </div>
       </section>
       <hr className="divider" />
-      {posts.map((post) => (
-        <BlogPost frontMatter={post} key={post.slug} />
-      ))}
-    </>
+      <motion.div variants={container} initial="hidden" animate="show">
+        {posts.map((post) => (
+          <BlogPost frontMatter={post} key={post.slug} />
+        ))}
+      </motion.div>
+    </motion.div>
   );
 }
 

@@ -1,8 +1,14 @@
+import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 
 export default function FourOhFour() {
   return (
-    <section className="hero">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="hero"
+    >
       <NextSeo title="404" />
       <div className="hero-body">
         <div className="container">
@@ -15,6 +21,6 @@ export default function FourOhFour() {
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

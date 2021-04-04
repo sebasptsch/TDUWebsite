@@ -1,11 +1,17 @@
 import RobotPost from "@/components/RobotPost";
+import { container } from "@/lib/animations";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
+import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 
 export default function Robots({ posts }) {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NextSeo
         title="Robots"
         description="A list of our robots year to year."
@@ -21,16 +27,21 @@ export default function Robots({ posts }) {
         </div>
       </section>
       <hr className="divider" />
-      <div className="columns is-multiline">
+      <motion.div
+        className="columns is-multiline"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
         {posts.map((post) => (
           <RobotPost frontMatter={post} key={post.slug} />
         ))}
-      </div>
+      </motion.div>
       <h1 className="title">GrabCAD</h1>
       <Link href="https://grabcad.com/team.3132-1/models">
         <a className="subtitle">GrabCAD Models</a>
       </Link>
-    </>
+    </motion.div>
   );
 }
 

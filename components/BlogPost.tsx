@@ -1,11 +1,14 @@
+import { item } from "@/lib/animations";
+import { motion } from "framer-motion";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+
 export default function BlogPost({ frontMatter }) {
   const { image, date, excerpt, title, slug } = frontMatter;
   return (
     <Link href={`/blog/${slug}`}>
-      <a className="box columns mt-2 mb-2">
+      <motion.a className="box columns mt-2 mb-2" variants={item}>
         {image ? (
           <div className="column is-4">
             <Image
@@ -23,7 +26,7 @@ export default function BlogPost({ frontMatter }) {
           </p>
           <p className="content">{excerpt}</p>
         </div>
-      </a>
+      </motion.a>
     </Link>
   );
 }

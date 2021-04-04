@@ -1,3 +1,5 @@
+import { item } from "@/lib/animations";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import CardComponent from "./card";
 
@@ -5,13 +7,16 @@ export default function RobotPost({ frontMatter }) {
   const { title, image, excerpt, slug } = frontMatter;
   return (
     <Link href={`/robots/${slug}`}>
-      <a className="column is-one-quarter-widescreen is-one-third-desktop is-half-tablet">
+      <motion.a
+        className="column is-one-quarter-widescreen is-one-third-desktop is-half-tablet"
+        variants={item}
+      >
         <CardComponent
           title={title}
           image={image ? `/images/data/robots/${image}` : undefined}
           content={excerpt}
         />
-      </a>
+      </motion.a>
     </Link>
   );
 }

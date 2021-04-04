@@ -1,4 +1,6 @@
+import { container, item } from "@/lib/animations";
 import { fetcher } from "@/lib/fetcher";
+import { motion } from "framer-motion";
 import useSWR from "swr";
 
 export default function AwardComponent({ year }: { year?: number }) {
@@ -8,12 +10,18 @@ export default function AwardComponent({ year }: { year?: number }) {
       <p className="title" id="awards">
         Awards ({data?.length})
       </p>
-      <div className="has-text-centered pt-6 pb-6 columns is-vcentered is-multiline">
+      <motion.div
+        className="has-text-centered pt-6 pb-6 columns is-vcentered is-multiline"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
         {data ? (
           data.map((award) => (
-            <div
+            <motion.div
               className="column is-one-quarter"
               key={award.event_key + award.name}
+              variants={item}
             >
               <a
                 className="box"
@@ -28,12 +36,12 @@ export default function AwardComponent({ year }: { year?: number }) {
                   </p>
                 ))}
               </a>
-            </div>
+            </motion.div>
           ))
         ) : (
           <p className="has-text-centered">Loading</p>
         )}
-      </div>
+      </motion.div>
     </>
   );
 }

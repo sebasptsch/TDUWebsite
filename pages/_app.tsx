@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <DefaultSeo {...SEO} />
-      <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
+      <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
       </AnimatePresence>
     </Layout>

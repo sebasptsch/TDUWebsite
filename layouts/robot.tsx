@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import moment from "moment";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
@@ -8,7 +9,12 @@ export default function RobotPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
   const router = useRouter();
   return (
-    <div className="container is-max-desktop">
+    <motion.div
+      className="container is-max-desktop"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NextSeo
         title={title}
         description={excerpt}
@@ -66,6 +72,6 @@ export default function RobotPostLayout({ children, frontMatter }) {
         </section>
         <div className="content">{children}</div>
       </article>
-    </div>
+    </motion.div>
   );
 }

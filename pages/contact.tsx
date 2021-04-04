@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import { motion } from "framer-motion";
 import { FAQPageJsonLd, NextSeo } from "next-seo";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
@@ -13,7 +14,12 @@ export default function Contact() {
         nonce: undefined, // optional, default undefined
       }}
     >
-      <div className="columns is-centered is-3">
+      <motion.div
+        className="columns is-centered is-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <NextSeo title="Contact" />
         <FAQPageJsonLd
           mainEntity={[
@@ -62,7 +68,7 @@ export default function Contact() {
             (May-October). Just send an expression of interest via email!
           </p>
         </div>
-      </div>
+      </motion.div>
     </GoogleReCaptchaProvider>
   );
 }

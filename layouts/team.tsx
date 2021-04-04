@@ -1,9 +1,14 @@
 import AwardComponent from "@/components/AwardsComponent";
+import { motion } from "framer-motion";
 
 export default function TeamLayout({ children }) {
   return (
     <>
-      <article>
+      <motion.article
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <section className="hero">
           <div className="hero-body">
             <div className="container has-text-centered">
@@ -18,7 +23,7 @@ export default function TeamLayout({ children }) {
         </div>
         <hr className="divider" />
         <AwardComponent />
-      </article>
+      </motion.article>
     </>
   );
 }

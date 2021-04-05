@@ -78,7 +78,7 @@ export default function Navigation() {
             animate="show"
           >
             {items.map((navitem) => (
-              <NavItem url={navitem.url} variants={item}>
+              <NavItem url={navitem.url} variants={item} key={navitem.url}>
                 {navitem.label}
               </NavItem>
             ))}

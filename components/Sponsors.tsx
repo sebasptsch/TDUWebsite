@@ -1,3 +1,4 @@
+import { container, item } from "@/lib/animations";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -50,7 +51,12 @@ export default function SponsorsComponent() {
     },
   ];
   return (
-    <div className="columns is-multiline is-centered is-vcentered is-mobile px-6">
+    <motion.div
+      className="columns is-multiline is-centered is-vcentered is-mobile px-6"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       <div className="column is-12">
         {" "}
         <h1 className="title has-text-centered">Our Sponsors</h1>
@@ -58,7 +64,7 @@ export default function SponsorsComponent() {
       {sponsors.map((sponsor) => {
         return (
           <motion.div
-            className="column is-one-fifth-desktop is-one-third-tablet is-half-mobile"
+            className="column is-one-fifth"
             key={sponsor.name}
             whileHover={{
               x: 5,
@@ -66,6 +72,7 @@ export default function SponsorsComponent() {
             whileTap={{
               scale: 0.95,
             }}
+            variants={item}
           >
             <Link href={sponsor.link}>
               <a>
@@ -75,6 +82,6 @@ export default function SponsorsComponent() {
           </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 }

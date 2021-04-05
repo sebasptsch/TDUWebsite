@@ -8,10 +8,7 @@ export default function OutreachPost({ frontMatter }) {
 
   return (
     <Link href={`/outreach/${slug}`}>
-      <motion.a
-        className="column is-one-quarter-widescreen is-one-third-desktop is-half-tablet"
-        variants={item}
-      >
+      <motion.a className="column is-one-quarter" variants={item}>
         <CardComponent
           title={title}
           content={excerpt}

@@ -1,6 +1,9 @@
+import { container, item } from "@/lib/animations";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import NavItem from "./NavItem";
 
 export default function Navigation() {
   const router = useRouter();
@@ -8,6 +11,29 @@ export default function Navigation() {
   useEffect(() => {
     setisActive(false);
   }, [router]);
+
+  const items: Array<any> = [
+    {
+      url: "/",
+      label: "Home",
+    },
+    {
+      url: "/team",
+      label: "The Team",
+    },
+    {
+      url: "/blog",
+      label: "Blog",
+    },
+    {
+      url: "/outreach",
+      label: "Outreach",
+    },
+    {
+      url: "/robots",
+      label: "Robots",
+    },
+  ];
 
   return (
     <nav
@@ -45,23 +71,18 @@ export default function Navigation() {
           id="nav-menu"
           className={`navbar-menu ${isActive ? "is-active" : ""}`}
         >
-          <div className="navbar-start">
-            <Link href="/">
-              <a className="navbar-item has-text-centered">Home</a>
-            </Link>
-            <Link href="/team">
-              <a className="navbar-item has-text-centered">The Team</a>
-            </Link>
-            <Link href="/blog">
-              <a className="navbar-item has-text-centered">Blog</a>
-            </Link>
-            <Link href="/outreach">
-              <a className="navbar-item has-text-centered">Outreach</a>
-            </Link>
-            <Link href="/robots">
-              <a className="navbar-item has-text-centered">Robots</a>
-            </Link>
-          </div>
+          <motion.div
+            className="navbar-start"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            {items.map((navitem) => (
+              <NavItem url={navitem.url} variants={item}>
+                {navitem.label}
+              </NavItem>
+            ))}
+          </motion.div>
 
           <div className="navbar-end">
             <div className="navbar-item has-text-centered ">

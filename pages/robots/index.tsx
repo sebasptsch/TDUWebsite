@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 
-export default function Robots({ posts }) {
+export default function Robots({ posts }: { posts: any[] }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,14 +27,21 @@ export default function Robots({ posts }) {
         </div>
       </section>
       <hr className="divider" />
+      <div className="columns multiline">
+        <div className="column" />
+        <RobotPost frontMatter={posts[0]} key={posts[0].slug} className="column is-half" />
+        <div className="column" />
+      </div>
+      <hr className="divider" />
       <motion.div
         className="columns is-multiline"
         variants={container}
         initial="hidden"
         animate="show"
       >
-        {posts.map((post) => (
-          <RobotPost frontMatter={post} key={post.slug} />
+
+        {posts.slice(1).map((post) => (
+          <RobotPost frontMatter={post} key={post.slug} className="column is-one-quarter" />
         ))}
       </motion.div>
       <h1 className="title">GrabCAD</h1>

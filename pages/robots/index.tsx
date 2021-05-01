@@ -34,7 +34,13 @@ export default function Robots({ posts, displayimagesize }: { posts: any[], disp
           <p className="title">{posts[0].title}</p>
           <p className="content">
             {posts[0].excerpt}
+            <br />
+
+
           </p>
+          <div className="buttons is-centered">
+            <Link href={`/robots/${posts[0].slug}`}><a className="button">Read More</a></Link>
+          </div>
         </div>
         {posts[0]?.image ? <div className="column"
         >

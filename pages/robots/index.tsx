@@ -3,9 +3,11 @@ import { container } from "@/lib/animations";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
+import Image from 'next/image';
 import Link from "next/link";
+const sizeOf = require('image-size')
 
-export default function Robots({ posts }: { posts: any[] }) {
+export default function Robots({ posts, displayimagesize }: { posts: any[], displayimagesize: any }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,10 +29,23 @@ export default function Robots({ posts }: { posts: any[] }) {
         </div>
       </section>
       <hr className="divider" />
-      <div className="columns multiline">
-        <div className="column" />
-        <RobotPost frontMatter={posts[0]} key={posts[0].slug} className="column is-half" />
-        <div className="column" />
+      <div className="columns">
+        <div className="column is-6">
+          <p className="title">{posts[0].title}</p>
+          <p className="content">
+            {posts[0].excerpt}
+          </p>
+        </div>
+        {posts[0]?.image ? <div className="column"
+        >
+          <Image
+            src={`/images/data/robots/${posts[0]?.image}`}
+            className="image is-square"
+            layout="responsive"
+            width={displayimagesize.width}
+            height={displayimagesize.height}
+          />
+        </div> : undefined}
       </div>
       <hr className="divider" />
       <motion.div
@@ -54,5 +69,6 @@ export default function Robots({ posts }: { posts: any[] }) {
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter("robots");
-  return { props: { posts } };
+  const displayimagesize = sizeOf(`./public/images/data/robots/${posts[0]?.image}`)
+  return { props: { posts, displayimagesize } };
 }

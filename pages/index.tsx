@@ -1,4 +1,5 @@
 import AnimatedLogo from "@/components/AnimatedLogo";
+import Playlist from "@/components/Playlist";
 import SocialButtons from "@/components/socialButtons";
 import SponsorsComponent from "@/components/Sponsors";
 import UpcomingComponent from "@/components/UpcomingEvents";
@@ -51,6 +52,8 @@ export default function Home() {
       </div>
       <hr className="divider" />
       <SponsorsComponent />
+      <hr className="divider" />
+      <Playlist id="PLm8WT2AGvaJzX7wPs44aJW8XlZwxanLHk" />
       <hr className="divider" />
       <div className="columns">
         <div className="column is-7">

@@ -30,28 +30,46 @@ export default async function TBAAwards(
     "Cache-Control",
     "public, s-maxage=1200, stale-while-revalidate=600"
   );
+
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
   if (response.status === 200) {
     const awards: Array<Award> = response.data;
-    const awardsList = awards.reverse().map((award) => {
-      const {
-        name,
-        recipient_list,
-        award_type,
-        event_key,
-        year,
-      }: Award = award;
-      return {
-        name,
-        recipient_list: recipient_list
-          .filter((awardee) => awardee.team_key === "frc3132")
-          .filter((awardee) => awardee.awardee !== null)
-          .map((awardee) => awardee.awardee),
-        event_key,
-        award_type,
-        year,
-      };
-    });
-    res.status(response.status).json(awardsList);
+
+    const years: Array<number> = awards.map((award) => award.year);
+    const uniqueYears: Array<number> = years.filter(onlyUnique);
+
+    const awardsByYear: { [year: number]: Array<Award> } = uniqueYears.reduce(
+      (acc, year) => {
+        acc[year] = awards
+          .filter((award) => award.year === year)
+          .map((award) => {
+            const { name, recipient_list, award_type, event_key }: Award =
+              award;
+
+            return {
+              name,
+              recipient_list: recipient_list
+                .filter((awardee) => awardee.team_key === "frc3132")
+                .filter((awardee) => awardee.awardee !== null)
+                .map((awardee) => awardee.awardee),
+              event_key,
+              award_type,
+              blue:
+                award_type === 0 ||
+                award_type === 69 ||
+                award_type === 1 ||
+                award_type === 3 ||
+                award_type === 74,
+            };
+          });
+        return acc;
+      },
+      {}
+    );
+    res.status(response.status).json(awardsByYear);
   } else if (response.status === 304) {
     res.status(304);
   } else if (response.status === 401) {

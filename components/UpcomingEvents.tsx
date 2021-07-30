@@ -5,7 +5,6 @@ import useSWR from "swr";
 
 export default function UpcomingComponent() {
   const { data, error } = useSWR("/api/tba/events", fetcher);
-  console.log(data);
   return (
     <motion.div
       className="has-text-centered pt-6 pb-6 columns is-vcentered is-gapless"

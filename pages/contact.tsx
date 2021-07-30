@@ -57,7 +57,7 @@ export default function Contact() {
           <p className="subtitle is-5">Who can join the team?</p>
 
           <p>
-            Team 3132 welcomes students in Year 8 or above (ages 13-18).
+            Team 3132 welcomes students in Year 7 or above (ages 12-18).
             University students, professionals and parents can become involved
             through mentoring the team.
           </p>

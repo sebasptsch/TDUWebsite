@@ -1,14 +1,18 @@
-import MDXComponents from "@/components/MDXComponents";
 import RobotPostLayout from "@/layouts/robot";
 import { getFileBySlug, getFiles } from "@/lib/mdx";
-import hydrate from "next-mdx-remote/hydrate";
-import React from "react";
+import components from "components/MDXComponents";
+import { getMDXComponent } from "mdx-bundler/client";
+import React, { useMemo } from "react";
 
-export default function Post({ mdxSource, frontMatter }) {
-  const content = hydrate(mdxSource, {
-    components: MDXComponents,
-  });
-  return <RobotPostLayout frontMatter={frontMatter}>{content}</RobotPostLayout>;
+export default function Post({ code, frontMatter }) {
+  const Component = useMemo(() => getMDXComponent(code), [code]);
+
+  return (
+    <RobotPostLayout frontMatter={frontMatter}>
+      {" "}
+      <Component components={components} />
+    </RobotPostLayout>
+  );
 }
 
 export async function getStaticProps({ params }) {

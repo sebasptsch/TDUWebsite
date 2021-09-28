@@ -1,9 +1,5 @@
-/**
- * Return an iframe embed Youtube Video with bulma styling
- * @param id
- * @returns
- */
-export default function YoutubeVideo({ id }) {
+export default function YoutubeVideo(props) {
+  const { id } = props;
   return (
     <figure className="image is-16by9">
       <iframe

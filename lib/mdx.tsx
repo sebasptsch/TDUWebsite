@@ -1,8 +1,7 @@
-import MDXComponents from "@/components/MDXComponents";
 import fs from "fs";
 import matter from "gray-matter";
 import _ from "lodash";
-import renderToString from "next-mdx-remote/render-to-string";
+import { bundleMDX } from "mdx-bundler";
 import path from "path";
 import readingTime from "reading-time";
 const autoLink = require("rehype-autolink-headings");
@@ -18,34 +17,38 @@ export async function getFileBySlug(type, slug?) {
     ? fs.readFileSync(path.join(root, "data", type, `${slug}.mdx`), "utf8")
     : fs.readFileSync(path.join(root, "data", `${type}.mdx`), "utf8");
 
-  const { data, content } = matter(source);
-  const mdxSource = await renderToString(content, {
-    components: MDXComponents,
-    mdxOptions: {
-      remarkPlugins: [require("remark-gfm")],
-      rehypePlugins: [
-        require("mdx-prism"),
+  const { code, frontmatter } = await bundleMDX(source, {
+    xdmOptions(options) {
+      options.remarkPlugins = [
+        ...(options?.remarkPlugins ?? []),
+        require("remark-gfm"),
+      ];
+      options.rehypePlugins = [
+        ...(options?.rehypePlugins ?? []),
         require("rehype-slug"),
+        require("mdx-prism"),
         [
-          autoLink,
+          require("rehype-autolink-headings"),
           {
             behavior: "wrap",
           },
         ],
-      ],
+      ] as any;
+      return options;
     },
   });
-  const excerpt = _.truncate(content, {
+
+  const excerpt = _.truncate(source, {
     length: 150,
   });
   return {
-    mdxSource,
+    code,
     frontMatter: {
-      wordCount: content.split(/\s+/gu).length,
-      readingTime: readingTime(content),
+      wordCount: source.split(/\s+/gu).length,
+      readingTime: readingTime(source),
       slug: slug || null,
       excerpt,
-      ...data,
+      ...frontmatter,
     },
   };
 }

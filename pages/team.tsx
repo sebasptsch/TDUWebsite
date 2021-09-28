@@ -1,17 +1,19 @@
 import MDXComponents from "@/components/MDXComponents";
 import TeamLayout from "@/layouts/team";
 import { getFileBySlug } from "@/lib/mdx";
-import hydrate from "next-mdx-remote/hydrate";
+import { getMDXComponent } from "mdx-bundler/client";
 import { NextSeo } from "next-seo";
+import { useMemo } from "react";
 
-export default function Team({ mdxSource, frontMatter }) {
-  const content = hydrate(mdxSource, {
-    components: MDXComponents,
-  });
+export default function Team({ code, frontMatter }) {
+  const Component = useMemo(() => getMDXComponent(code), [code]);
+
   return (
     <>
       <NextSeo title="The Team" />
-      <TeamLayout>{content}</TeamLayout>
+      <TeamLayout>
+        <Component components={MDXComponents} />
+      </TeamLayout>
     </>
   );
 }

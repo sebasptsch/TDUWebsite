@@ -7,24 +7,22 @@
     "inspect": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "precommit": "lint-staged"
+    "postinstall": "keystone-next postinstall"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@keystone-next/document-renderer": "^4.0.1",
+    "@keystone-next/fields-document": "^11.0.0",
+    "@keystone-next/keystone": "^26.1.1",
     "axios": "^0.21.2",
     "bulma": "^0.9.2",
-    "crypto": "^1.0.1",
     "esbuild": "^0.13.2",
     "framer-motion": "^4.0.0",
     "googleapis": "^73.0.0",
-    "gray-matter": "^4.0.2",
-    "image-size": "^1.0.0",
     "lodash": "^4.17.21",
-    "mdx-bundler": "^6.0.1",
-    "mdx-prism": "^0.3.4",
     "moment": "^2.29.1",
     "next": "^11.1.1",
     "next-seo": "^4.22.0",
@@ -34,35 +32,14 @@
     "react-google-recaptcha-v3": "^1.8.0",
     "react-hook-form": "^6.15.5",
     "react-tweet-embed": "^1.2.2",
-    "reading-time": "^1.3.0",
-    "rehype": "^11.0.0",
-    "rehype-autolink-headings": "^5.0.1",
-    "rehype-slug": "^4.0.1",
-    "remark-gfm": "^1.0.0",
     "sass": "^1.32.8",
     "swr": "^0.5.4",
-    "unist-util-visit-parents": "^3.1.1"
+    "yarn": "^1.22.15"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.35",
     "@types/react": "^17.0.2",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
     "typescript": "^4.2.3"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --single-quote --tab-width 4 --write",
-      "git add"
-    ],
-    "*.ts": [
-      "prettier --single-quote --tab-width 4 --write",
-      "git add"
-    ],
-    "*.tsx": [
-      "prettier --single-quote --tab-width 4 --write",
-      "git add"
-    ]
   }
 }

@@ -1,9 +1,8 @@
+import { query } from '.keystone/api';
 import OutreachPost from "@/components/OutreachPost";
 import { container } from "@/lib/animations";
-import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import React from "react";
 
 export default function Outreach({ posts }) {
   return (
@@ -36,7 +35,7 @@ export default function Outreach({ posts }) {
         animate="show"
       >
         {posts.map((post) => (
-          <OutreachPost frontMatter={post} key={post.slug} />
+          <OutreachPost frontMatter={post} key={post.id} />
         ))}
       </motion.div>
     </motion.div>
@@ -44,6 +43,6 @@ export default function Outreach({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter("outreach");
+  const posts = await query.Program.findMany({ query: 'id title slug excerpt image {src width height}', orderBy: { title: "desc" } });
   return { props: { posts } };
 }

@@ -3,7 +3,6 @@ import moment from "moment";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
 
 export default function RobotPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
@@ -28,10 +27,12 @@ export default function RobotPostLayout({ children, frontMatter }) {
           },
           images: image
             ? [
-                {
-                  url: `https://thethunderdownunder.org/images/data/robots/${image}`,
-                },
-              ]
+              {
+                url: `https://thethunderdownunder.org${image.src}`,
+                height: image.height,
+                width: image.width
+              },
+            ]
             : undefined,
         }}
       />
@@ -40,7 +41,7 @@ export default function RobotPostLayout({ children, frontMatter }) {
         url={`https://thethunderdownunder.org/robots/${slug}`}
         images={
           image
-            ? [`https://thethunderdownunder.org/images/data/robots/${image}`]
+            ? [`https://thethunderdownunder.org${image.src}`]
             : undefined
         }
         datePublished={date}
@@ -54,11 +55,13 @@ export default function RobotPostLayout({ children, frontMatter }) {
         {image ? (
           <div style={{ height: "20em", width: "100%", position: "relative" }}>
             <Image
-              src={`/images/data/robots/${image}`}
+              src={image.src}
+              // height={image.height}
+              // width={image.width}
               alt="Card Image"
               className="image is-square"
-              layout="fill"
               objectFit="contain"
+              layout="fill"
             />
           </div>
         ) : null}

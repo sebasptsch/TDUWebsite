@@ -12,7 +12,7 @@ export default function OutreachPost({ frontMatter }) {
         <CardComponent
           title={title}
           content={excerpt}
-          image={image ? `/images/data/outreach/${image}` : undefined}
+          image={image ? image : undefined}
         />
       </motion.a>
     </Link>

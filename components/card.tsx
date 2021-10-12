@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
 
 export default function CardComponent({
   title,
@@ -44,7 +43,9 @@ export default function CardComponent({
           }}
         >
           <Image
-            src={image}
+            src={image.src}
+            // width={image.width}
+            // height={image.height}
             alt="Card Image"
             className="image is-square"
             layout="fill"

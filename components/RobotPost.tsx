@@ -10,7 +10,7 @@ export default function RobotPost({ frontMatter, ...args }) {
       <motion.a variants={item} {...args}>
         <CardComponent
           title={title}
-          image={image ? `/images/data/robots/${image}` : undefined}
+          image={image ? image : undefined}
           content={excerpt}
         />
       </motion.a>

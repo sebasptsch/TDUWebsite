@@ -3,7 +3,6 @@ import moment from "moment";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
 
 export default function OutreachPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
@@ -28,10 +27,12 @@ export default function OutreachPostLayout({ children, frontMatter }) {
           },
           images: image
             ? [
-                {
-                  url: `https://thethunderdownunder.org/images/data/outreach/${image}`,
-                },
-              ]
+              {
+                url: `https://thethunderdownunder.org${image.src}`,
+                height: image.height,
+                width: image.width
+              },
+            ]
             : undefined,
         }}
       />
@@ -40,7 +41,7 @@ export default function OutreachPostLayout({ children, frontMatter }) {
         url={`https://thethunderdownunder.org/outreach/${slug}`}
         images={
           image
-            ? [`https://thethunderdownunder.org/images/data/outreach/${image}`]
+            ? [`https://thethunderdownunder.org${image.src}`]
             : undefined
         }
         datePublished={date}
@@ -57,10 +58,12 @@ export default function OutreachPostLayout({ children, frontMatter }) {
               style={{ height: "20em", width: "100%", position: "relative" }}
             >
               <Image
-                src={`/images/data/outreach/${image}`}
+                src={image.src}
+                // width={image.width}
+                // height={image.height}
                 alt="Card Image"
-                className="image is-square"
                 layout="fill"
+                className="image is-square"
                 objectFit="contain"
               />
             </div>

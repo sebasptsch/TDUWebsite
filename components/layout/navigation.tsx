@@ -22,10 +22,6 @@ export default function Navigation() {
       label: "The Team",
     },
     {
-      url: "/blog",
-      label: "Blog",
-    },
-    {
       url: "/outreach",
       label: "Outreach",
     },

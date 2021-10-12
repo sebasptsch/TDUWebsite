@@ -1,34 +1,40 @@
+import { query } from '.keystone/api';
 import RobotPostLayout from "@/layouts/robot";
-import { getFileBySlug, getFiles } from "@/lib/mdx";
-import components from "components/MDXComponents";
-import { getMDXComponent } from "mdx-bundler/client";
-import React, { useMemo } from "react";
+import { componentBlockRenderers } from '@/lib/renderers';
+import { DocumentRenderer } from '@keystone-next/document-renderer';
+import { GetStaticPropsContext } from "next";
 
-export default function Post({ code, frontMatter }) {
-  const Component = useMemo(() => getMDXComponent(code), [code]);
+export default function Post({ post }) {
 
   return (
-    <RobotPostLayout frontMatter={frontMatter}>
-      {" "}
-      <Component components={components} />
+    <RobotPostLayout frontMatter={post}>
+      <DocumentRenderer document={post.content.document} componentBlocks={componentBlockRenderers} />
     </RobotPostLayout>
   );
 }
 
-export async function getStaticProps({ params }) {
-  const post = await getFileBySlug("robots", params.slug);
-  return { props: post };
+export async function getStaticProps({
+  params,
+}: GetStaticPropsContext) {
+  const post = await query.Robot.findOne({
+    where: { slug: params!.slug as string },
+    query: 'id title content { document } image { width height src }',
+  });
+  return { props: { post } };
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles("robots");
+  const posts = await query.Robot.findMany({
+    query: `slug`,
+  });
+
+  const paths = posts
+    .map(post => post.slug)
+    .filter((slug): slug is string => !!slug)
+    .map(slug => `/robots/${slug}`);
 
   return {
-    paths: posts.map((p) => ({
-      params: {
-        slug: p.replace(/\.mdx/, ""),
-      },
-    })),
+    paths,
     fallback: false,
   };
 }

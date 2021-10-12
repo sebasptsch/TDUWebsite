@@ -25,10 +25,10 @@ export default function Playlist(props) {
             title={post.title}
             content={post.description}
             image={
-              post.thumbnails.maxres?.url ||
-              post.thumbnails.high?.url ||
-              post.thumbnails.standard?.url ||
-              post.thumbnails.default?.url
+              post.thumbnails.maxres ||
+              post.thumbnails.high ||
+              post.thumbnails.standard ||
+              post.thumbnails.default
             }
           />
         </motion.a>

@@ -2696,7 +2696,7 @@ mdx-bundler@^6.0.1:
     uuid "^8.3.2"
     xdm "^2.0.0"
 
-mdx-prism@^0.3.3:
+mdx-prism@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/mdx-prism/-/mdx-prism-0.3.4.tgz#ab99b9e6e5f50e29b5dcb871354c5039b90b27fe"
   integrity sha512-Ijy/BB0NINK5Vn6WgOATgX75q6JEdWcGZuXtpePoGiILbjEWFiOkacTdGDpu+VGTrxu0nszlX2Spkf0bhC5O6A==

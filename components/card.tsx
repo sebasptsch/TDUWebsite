@@ -43,9 +43,9 @@ export default function CardComponent({
           }}
         >
           <Image
-            src={image.src}
-            // width={image.width}
-            // height={image.height}
+            src={image.src || image.url}
+            width={image?.width}
+            height={image?.height}
             alt="Card Image"
             className="image is-square"
             layout="fill"

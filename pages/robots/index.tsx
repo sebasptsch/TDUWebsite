@@ -4,7 +4,6 @@ import Main from '@/layouts/main';
 import { container } from "@/lib/animations";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import Link from "next/link";
 import { getPlaiceholder } from 'plaiceholder';
 
 export default function Robots({ posts, displayimagesize }: { posts: any[], displayimagesize: any }) {
@@ -35,10 +34,6 @@ export default function Robots({ posts, displayimagesize }: { posts: any[], disp
           <RobotPost frontMatter={post} key={post.id} className="column is-one-quarter" />
         ))}
       </motion.div>
-      <h1 className="title">GrabCAD</h1>
-      <Link href="https://grabcad.com/team.3132-1/models">
-        <a className="subtitle">GrabCAD Models</a>
-      </Link>
     </Main>
   );
 }

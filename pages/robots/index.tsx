@@ -1,5 +1,6 @@
 import { query } from '.keystone/api';
 import RobotPost from "@/components/RobotPost";
+import Main from '@/layouts/main';
 import { container } from "@/lib/animations";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
@@ -8,11 +9,7 @@ import { getPlaiceholder } from 'plaiceholder';
 
 export default function Robots({ posts, displayimagesize }: { posts: any[], displayimagesize: any }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <Main>
       <NextSeo
         title="Robots"
         description="A list of our robots year to year."
@@ -42,7 +39,7 @@ export default function Robots({ posts, displayimagesize }: { posts: any[], disp
       <Link href="https://grabcad.com/team.3132-1/models">
         <a className="subtitle">GrabCAD Models</a>
       </Link>
-    </motion.div>
+    </Main>
   );
 }
 

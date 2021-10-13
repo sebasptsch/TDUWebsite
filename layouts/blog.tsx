@@ -1,20 +1,14 @@
-import { motion } from "framer-motion";
 import moment from "moment";
 import { BlogJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import Main from "./main";
 
 export default function BlogPostLayout({ children, frontMatter }) {
   const { image, title, date, excerpt, slug } = frontMatter;
   const router = useRouter();
   return (
-    <motion.div
-      className="container is-max-desktop"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <Main>
       <NextSeo
         title={title}
         description={excerpt}
@@ -28,10 +22,10 @@ export default function BlogPostLayout({ children, frontMatter }) {
           },
           images: image
             ? [
-                {
-                  url: `https://thethunderdownunder.org/images/data/blog/${image}`,
-                },
-              ]
+              {
+                url: `https://thethunderdownunder.org/images/data/blog/${image}`,
+              },
+            ]
             : undefined,
         }}
       />
@@ -70,6 +64,6 @@ export default function BlogPostLayout({ children, frontMatter }) {
         </section>
         <div className="content">{children}</div>
       </article>
-    </motion.div>
+    </Main>
   );
 }

@@ -3,7 +3,7 @@ import Playlist from "@/components/Playlist";
 import SocialButtons from "@/components/socialButtons";
 import SponsorsComponent from "@/components/Sponsors";
 import UpcomingComponent from "@/components/UpcomingEvents";
-import { motion } from "framer-motion";
+import Main from "@/layouts/main";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,11 +11,7 @@ import { getPlaiceholder } from "plaiceholder";
 
 export default function Home({ imageProps }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <Main>
       <NextSeo title="Home" />
       <div className="columns is-gapless is-centered">
         <div className="column is-three-quarters">
@@ -90,7 +86,7 @@ export default function Home({ imageProps }) {
           />
         </div>
       </div>
-    </motion.div>
+    </Main>
   );
 }
 

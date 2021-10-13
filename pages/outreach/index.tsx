@@ -1,5 +1,6 @@
 import { query } from '.keystone/api';
 import OutreachPost from "@/components/OutreachPost";
+import Main from '@/layouts/main';
 import { container } from "@/lib/animations";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
@@ -7,11 +8,7 @@ import { getPlaiceholder } from 'plaiceholder';
 
 export default function Outreach({ posts }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <Main>
       <NextSeo
         title="Outreach"
         description="A list of all of the awesome things we have done to help the
@@ -39,7 +36,7 @@ export default function Outreach({ posts }) {
           <OutreachPost frontMatter={post} key={post.id} />
         ))}
       </motion.div>
-    </motion.div>
+    </Main>
   );
 }
 

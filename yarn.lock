@@ -868,6 +868,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@plaiceholder/next@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@plaiceholder/next/-/next-2.1.0.tgz#0bf2dff97b3f2208be3d88a3162013794ccc0745"
+  integrity sha512-7iTw4Oxh0eLkAZnAl5zNkwnXjzhn3WSuuPIsGe9EszLa01eLv/vFwnG7etnX5hKNWhQ48x9vM/smltrfF3DTQw==
+
 "@popperjs/core@^2.10.2":
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.10.2.tgz#0798c03351f0dea1a5a4cabddf26a55a7cbee590"

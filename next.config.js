@@ -1,6 +1,9 @@
 const { withKeystone } = require("@keystone-next/keystone/next");
-module.exports = withKeystone({
-  images: {
-    domains: ["i.ytimg.com"],
-  },
-});
+const { withPlaiceholder } = require("@plaiceholder/next");
+module.exports = withKeystone(
+  withPlaiceholder({
+    images: {
+      domains: ["i.ytimg.com"],
+    },
+  })
+);

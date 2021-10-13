@@ -3,6 +3,7 @@ import OutreachPost from "@/components/OutreachPost";
 import { container } from "@/lib/animations";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
+import { getPlaiceholder } from 'plaiceholder';
 
 export default function Outreach({ posts }) {
   return (
@@ -44,5 +45,18 @@ export default function Outreach({ posts }) {
 
 export async function getStaticProps() {
   const posts = await query.Program.findMany({ query: 'id title slug excerpt image {src width height}', orderBy: { title: "desc" } });
-  return { props: { posts } };
+  const postsWithThumbnail = async () => {
+    return Promise.all(posts.map(async post => {
+      if (post.image) {
+        const { img, base64 } = await getPlaiceholder(post.image.src)
+        return {
+          ...post,
+          image: { ...img, blurDataURL: base64 }
+        }
+      } else {
+        return post
+      }
+    }))
+  }
+  return { props: { posts: await postsWithThumbnail() } };
 }

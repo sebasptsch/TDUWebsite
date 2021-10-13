@@ -55,9 +55,7 @@ export default function RobotPostLayout({ children, frontMatter }) {
         {image ? (
           <div style={{ height: "20em", width: "100%", position: "relative" }}>
             <Image
-              src={image.src}
-              // height={image.height}
-              // width={image.width}
+              {...image}
               alt="Card Image"
               className="image is-square"
               objectFit="contain"

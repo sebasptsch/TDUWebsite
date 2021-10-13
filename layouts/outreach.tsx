@@ -58,9 +58,7 @@ export default function OutreachPostLayout({ children, frontMatter }) {
               style={{ height: "20em", width: "100%", position: "relative" }}
             >
               <Image
-                src={image.src}
-                // width={image.width}
-                // height={image.height}
+                {...image}
                 alt="Card Image"
                 layout="fill"
                 className="image is-square"

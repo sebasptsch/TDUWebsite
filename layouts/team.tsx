@@ -2,7 +2,7 @@ import AwardComponent from "@/components/AwardsComponent";
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
-export default function TeamLayout() {
+export default function TeamLayout({ imageProps }) {
   return (
     <>
       <motion.article
@@ -21,12 +21,10 @@ export default function TeamLayout() {
         <hr className="divider" />
         <div className="columns is-centered">
           <div className="column is-three-fifths content"><Image
+            {...imageProps}
             className="image"
             alt="Team Photo"
-            src={"/images/team2019.jpg"}
             layout="responsive"
-            width="5184"
-            height="3456"
           />
             <hr className="divider" />
             <p>FIRST Team 3132, otherwise known as the Thunder Down Under, is the first Australian

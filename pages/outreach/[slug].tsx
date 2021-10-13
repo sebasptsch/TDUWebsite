@@ -3,6 +3,7 @@ import OutreachPostLayout from "@/layouts/outreach";
 import { componentBlockRenderers } from '@/lib/renderers';
 import { DocumentRenderer } from "@keystone-next/document-renderer";
 import { GetStaticPropsContext } from "next";
+import { getPlaiceholder } from 'plaiceholder';
 
 export default function Post({ post }) {
 
@@ -20,7 +21,18 @@ export async function getStaticProps({
     where: { slug: params!.slug as string },
     query: 'id title content { document } image { width height src }',
   });
-  return { props: { post } };
+  const postWithImage = async () => {
+    if (post.image) {
+      const { img, base64 } = await getPlaiceholder(post.image.src)
+      return {
+        ...post,
+        image: { ...img, blurDataURL: base64 }
+      }
+    } else {
+      return post
+    }
+  }
+  return { props: { post: await postWithImage() } };
 }
 
 export async function getStaticPaths() {

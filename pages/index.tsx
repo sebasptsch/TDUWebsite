@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
+import { getPlaiceholder } from "plaiceholder";
 
-export default function Home() {
+export default function Home({ imageProps }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,11 +43,10 @@ export default function Home() {
         </div>
         <div className="column">
           <Image
-            src="/images/team2019.jpg"
+            {...imageProps}
             alt="Team Photo"
             layout="responsive"
-            width="5184"
-            height="3456"
+
           />
         </div>
       </div>
@@ -93,3 +93,8 @@ export default function Home() {
     </motion.div>
   );
 }
+
+export const getStaticProps = async () => {
+  const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
+  return { props: { imageProps: { ...img, blurDataURL: base64, }, }, };
+};

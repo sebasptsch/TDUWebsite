@@ -57,6 +57,7 @@ export default function RobotPostLayout({ children, frontMatter }) {
             <Image
               {...image}
               alt="Card Image"
+              placeholder="blur"
               className="image is-square"
               objectFit="contain"
               layout="fill"

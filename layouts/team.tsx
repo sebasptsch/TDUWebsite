@@ -22,6 +22,7 @@ export default function TeamLayout({ imageProps }) {
         <div className="columns is-centered">
           <div className="column is-three-fifths content"><Image
             {...imageProps}
+            placeholder="blur"
             className="image"
             alt="Team Photo"
             layout="responsive"

@@ -46,7 +46,7 @@ export default function Home({ imageProps }) {
             {...imageProps}
             alt="Team Photo"
             layout="responsive"
-
+            placeholder="blur"
           />
         </div>
       </div>

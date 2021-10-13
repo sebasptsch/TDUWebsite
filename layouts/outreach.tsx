@@ -59,6 +59,7 @@ export default function OutreachPostLayout({ children, frontMatter }) {
             >
               <Image
                 {...image}
+                placeholder="blur"
                 alt="Card Image"
                 layout="fill"
                 className="image is-square"

@@ -3,7 +3,7 @@
 {
   "name": "Node.js",
   "runArgs": ["--init"],
-  "image": "node",
+  "image": "node:lts-buster",
 
   // Set *default* container specific settings.json values on container create.
   "settings": {},

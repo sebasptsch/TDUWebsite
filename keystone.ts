@@ -9,7 +9,7 @@ import { Node } from "slate";
 import { truncate } from "lodash";
 import { componentBlocks } from "./lib/componentBlocks";
 
-const serialize = (nodes) => {
+const serialize = (nodes: Array<Node>) => {
   return nodes.map((n) => Node.string(n)).join("\n");
 };
 

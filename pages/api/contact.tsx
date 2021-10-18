@@ -8,12 +8,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     "https://www.google.com/recaptcha/api/siteverify?secret=" +
     process.env.CAPTCHA_SECRET +
     "&response=" +
-    req.body.captchaToken;
+    req.body.captchaToken
 
   let captchaResponse = await axios({
     url: googleUrl,
   });
-
   if (captchaResponse.data.success === false) {
     res.status(500).json({ success: false, message: "captcha failed" });
   } else {
@@ -42,7 +41,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             },
           ],
           footer: {
-            text: `Recieved ${new Date().toDateString()}`,
+            text: `Received ${new Date().toDateString()}`,
           },
         },
       ],

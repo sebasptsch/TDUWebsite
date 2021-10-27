@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://thethunderdownunder.org
+
+# Sitemaps
+Sitemap: https://thethunderdownunder.org/sitemap.xml

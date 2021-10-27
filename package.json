@@ -7,7 +7,8 @@
     "inspect": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "postinstall": "keystone-next postinstall"
+    "postinstall": "keystone-next postinstall",
+    "postbuild": "next-sitemap --config sitemapGen.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -43,6 +44,7 @@
     "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.35",
     "@types/react": "^17.0.2",
+    "next-sitemap": "^1.6.192",
     "typescript": "^4.2.3"
   }
 }

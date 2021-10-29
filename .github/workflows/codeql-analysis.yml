@@ -10,6 +10,7 @@
 # supported CodeQL languages.
 #
 name: "CodeQL"
+runs-on: self-hosted
 
 on:
   push:

@@ -1,17 +1,8 @@
 # Install dependencies only when needed
 FROM node:alpine AS base
 ENV NODE_ENV production
-RUN apk add --no-cache libc6-compat openssl
+RUN ls
 
-WORKDIR /app
-COPY . .
-RUN yarn install
-RUN yarn build
-
-# Production image, copy all the files and run next
-FROM node:alpine AS prod
-WORKDIR /app
-COPY --from=builder /app ./
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 

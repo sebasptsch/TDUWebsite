@@ -52,7 +52,3 @@ volumes:
   - name: cache
     host:
       path: /tmp/cache
-
-trigger:
-  event:
-    - pull_request

@@ -1,7 +1,9 @@
 # Install dependencies only when needed
 FROM node:lts-bullseye-slim AS base
 ENV NODE_ENV production
-RUN find / | grep yarn.lock
+WORKDIR /app
+COPY . .
+RUN find /app | grep yarn.lock
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1

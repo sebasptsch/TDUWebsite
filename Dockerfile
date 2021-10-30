@@ -4,10 +4,8 @@ ENV NODE_ENV production
 RUN apk add --no-cache libc6-compat openssl
 
 WORKDIR /app
-COPY ./package.json ./
-COPY ./yarn.lock ./
-RUN yarn
-COPY . ./
+COPY . .
+RUN yarn install
 RUN yarn build
 
 # Production image, copy all the files and run next

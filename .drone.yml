@@ -8,6 +8,7 @@ steps:
     image: node:alpine
     commands:
       - apk add --no-cache libc6-compat openssl
+      - ldconfig -p | grep libssl.so
       - yarn install --frozen-lockfile
       - yarn build
 

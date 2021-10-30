@@ -1,5 +1,5 @@
 # Install dependencies only when needed
-FROM node:alpine AS base
+FROM node:lts-bullseye-slim AS base
 ENV NODE_ENV production
 RUN ls
 

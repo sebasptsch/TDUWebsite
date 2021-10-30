@@ -5,9 +5,9 @@ type: docker
 steps:
   - name: install deps
     pull: if-not-exists
-    image: node:alpine
+    image: node:lts-bullseye-slim
     commands:
-      - apk add openssl
+      # - apk add openssl
       - yarn install --frozen-lockfile
       - yarn build
 

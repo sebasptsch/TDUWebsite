@@ -1,17 +1,8 @@
 # Install dependencies only when needed
 FROM node:lts AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-WORKDIR /app
-COPY package.json yarn.lock ./
 RUN yarn global add keystone-next
 RUN yarn install
-
-# Rebuild the source code only when needed
-FROM node:lts AS builder
-WORKDIR /app
-COPY . .
-COPY --from=deps /app/node_modules ./node_modules
-RUN yarn build && yarn install --production --ignore-scripts --prefer-offline
 
 # Production image, copy all the files and run next
 FROM node:lts AS runner
@@ -24,11 +15,11 @@ RUN adduser -S nextjs -u 1001
 
 # You only need to copy next.config.js if you are NOT using the default configuration
 # COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs /app/.keystone ./.keystone
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+COPY --from=builder ./public ./public
+COPY --from=builder --chown=nextjs:nodejs ./.next ./.next
+COPY --from=builder --chown=nextjs:nodejs ./.keystone ./.keystone
+COPY --from=builder ./node_modules ./node_modules
+COPY --from=builder ./package.json ./package.json
 
 USER nextjs
 

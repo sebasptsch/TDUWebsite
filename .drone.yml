@@ -3,15 +3,24 @@ name: default
 type: docker
 
 steps:
-  - name: publish
-    image: plugins/docker
-    settings:
-      dockerfile: Dockerfile
-      username:
-        from_secret: ghcr_username
-      password:
-        from_secret: ghcr_password
-      repo: ghcr.io/sebasptsch/TDUWebsite
-      registry: ghcr.io
-      tags:
-        - latest
+  - name: build
+    pull: if-not-exists
+    image: node:alpine
+    commands:
+      - apk add --no-cache libc6-compat
+      - yarn install --frozen-lockfile
+      - yarn build
+
+  # - name: publish
+  #   image: plugins/docker
+  #   pull: if-not-exists
+  #   settings:
+  #     dockerfile: Dockerfile
+  #     username:
+  #       from_secret: ghcr_username
+  #     password:
+  #       from_secret: ghcr_password
+  #     repo: ghcr.io/sebasptsch/TDUWebsite
+  #     registry: ghcr.io
+  #     tags:
+  #       - latest

@@ -15,6 +15,7 @@ steps:
     pull: if-not-exists
     settings:
       dockerfile: Dockerfile
+      cache_from: "ghcr.io/sebasptsch/tduwebsite:latest"
       username:
         from_secret: ghcr_username
       password:

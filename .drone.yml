@@ -3,11 +3,20 @@ name: default
 type: docker
 
 steps:
+  - name: restore-cache
+    image: drillster/drone-volume-cache
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      restore: true
+      mount:
+        - ./node_modules
+        - ./.next/cache
   - name: install deps
     pull: if-not-exists
     image: node:lts-bullseye-slim
     commands:
-      # - apk add openssl
       - yarn install --frozen-lockfile
       - yarn build
 
@@ -15,7 +24,6 @@ steps:
     image: plugins/docker
     pull: if-not-exists
     settings:
-      cache_from: "ghcr.io/sebasptsch/tduwebsite:latest"
       username:
         from_secret: ghcr_username
       password:
@@ -23,16 +31,18 @@ steps:
       repo: ghcr.io/sebasptsch/tduwebsite
       registry: ghcr.io
       auto_tag: true
-  # - name: build & publish
-  #   image: plugins/docker
-  #   pull: if-not-exists
-  #   settings:
-  #     dockerfile: Dockerfile
-  #     cache_from: "ghcr.io/sebasptsch/tduwebsite:latest"
-  #     username:
-  #       from_secret: ghcr_username
-  #     password:
-  #       from_secret: ghcr_password
-  #     repo: ghcr.io/sebasptsch/tduwebsite
-  #     registry: ghcr.io
-  #     auto_tag: true
+  - name: rebuild-cache
+    image: drillster/drone-volume-cache
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      rebuild: true
+      mount:
+        - ./node_modules
+        - ./.next/cache
+
+volumes:
+  - name: cache
+    host:
+      path: /tmp/cache

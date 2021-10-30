@@ -10,16 +10,16 @@ steps:
       - yarn install --frozen-lockfile
       - yarn build
 
-  # - name: publish
-  #   image: plugins/docker
-  #   pull: if-not-exists
-  #   settings:
-  #     dockerfile: Dockerfile
-  #     username:
-  #       from_secret: ghcr_username
-  #     password:
-  #       from_secret: ghcr_password
-  #     repo: ghcr.io/sebasptsch/TDUWebsite
-  #     registry: ghcr.io
-  #     tags:
-  #       - latest
+  - name: publish
+    image: plugins/docker
+    pull: if-not-exists
+    settings:
+      dockerfile: Dockerfile
+      username:
+        from_secret: ghcr_username
+      password:
+        from_secret: ghcr_password
+      repo: ghcr.io/sebasptsch/TDUWebsite
+      registry: ghcr.io
+      tags:
+        - latest

@@ -1,5 +1,5 @@
 # Install dependencies only when needed
-FROM node:lts-bullseye-slim AS base
+FROM node:lts-bullseye-slim
 WORKDIR /app
 COPY . .
 

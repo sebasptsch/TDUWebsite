@@ -50,9 +50,3 @@ volumes:
   - name: cache
     host:
       path: /tmp/cache
-
-trigger:
-  branch:
-    - main 
-  event: 
-    - push 

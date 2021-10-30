@@ -1,5 +1,5 @@
 # Install dependencies only when needed
-FROM node:alpine
+FROM node:lts-bullseye-slim 
 WORKDIR /app
 COPY ./public ./public
 COPY  ./.next ./.next
@@ -12,4 +12,5 @@ ENV NEXT_TELEMETRY_DISABLED=1
 EXPOSE 3000
 
 
-CMD ["yarn", "start"]
+CMD ["yarn start"]
+ 

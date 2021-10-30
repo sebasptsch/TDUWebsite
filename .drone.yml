@@ -52,7 +52,5 @@ volumes:
       path: /tmp/cache
 
 trigger:
-  branch:
-    - main
   event:
     - push

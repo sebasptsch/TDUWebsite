@@ -6,7 +6,7 @@ steps:
   - name: build
     image: node:alpine
     commands:
-      - yarn install --production --ignore-scripts --prefer-offline
+      - yarn
       - yarn build
   - name: publish
     image: plugins/docker

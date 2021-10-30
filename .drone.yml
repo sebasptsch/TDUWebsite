@@ -1,0 +1,22 @@
+kind: pipeline
+name: default
+type: docker
+
+steps:
+  - name: build
+    image: node:alpine
+    commands:
+      - yarn install --production --ignore-scripts --prefer-offline
+      - yarn build
+  - name: publish
+    image: plugins/docker
+    settings:
+      dockerfile: Dockerfile
+      username:
+        from_secret: ghcr_username
+      password:
+        from_secret: ghcr_password
+      repo: ghcr.io/sebasptsch/TDUWebsite
+      registry: ghcr.io
+      tags:
+        - latest

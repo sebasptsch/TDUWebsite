@@ -3,14 +3,14 @@ name: default
 type: docker
 
 steps:
-  - name: build
-    pull: if-not-exists
-    image: node:lts
-    commands:
-      - yarn install --frozen-lockfile
-      - yarn build
+  # - name: build
+  #   pull: if-not-exists
+  #   image: node:lts
+  #   commands:
+  #     - yarn install --frozen-lockfile
+  #     - yarn build
 
-  - name: publish
+  - name: build & publish
     image: plugins/docker
     pull: if-not-exists
     settings:

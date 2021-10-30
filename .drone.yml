@@ -5,7 +5,7 @@ type: docker
 steps:
   - name: build
     pull: if-not-exists
-    image: node
+    image: node:lts
     commands:
       - yarn install --frozen-lockfile
       - yarn build

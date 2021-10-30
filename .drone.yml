@@ -19,7 +19,8 @@ steps:
         from_secret: ghcr_username
       password:
         from_secret: ghcr_password
-      repo: ghcr.io/sebasptsch/TDUWebsite
+      repo: ghcr.io/sebasptsch/tduwebsite
       registry: ghcr.io
+      auto_tag: true
       tags:
         - latest

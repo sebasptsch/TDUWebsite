@@ -1,5 +1,5 @@
 # Install dependencies only when needed
-FROM node:lts-buster-slim AS base
+FROM node:alpine AS base
 ENV NODE_ENV production
 RUN ls
 

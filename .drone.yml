@@ -5,10 +5,9 @@ type: docker
 steps:
   - name: build
     pull: if-not-exists
-    image: node:alpine
+    image: node
     commands:
-      - apk add --no-cache libc6-compat openssl
-      - ldconfig -p | grep libssl.so
+      - apk add --no-cache libc6-compat
       - yarn install --frozen-lockfile
       - yarn build
 

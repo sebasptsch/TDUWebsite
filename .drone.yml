@@ -7,7 +7,7 @@ steps:
     pull: if-not-exists
     image: node:alpine
     commands:
-      - apk add --no-cache libc6-compat
+      - apk add --no-cache libc6-compat openssl
       - yarn install --frozen-lockfile
       - yarn build
 

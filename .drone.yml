@@ -7,7 +7,6 @@ steps:
     pull: if-not-exists
     image: node
     commands:
-      - apk add --no-cache libc6-compat
       - yarn install --frozen-lockfile
       - yarn build
 

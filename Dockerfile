@@ -1,5 +1,5 @@
 # Install dependencies only when needed
-FROM node:lts-bullseye-slim
+FROM node:alpine
 WORKDIR /app
 COPY --from=builder ./public ./public
 COPY --from=builder --chown=nextjs:nodejs ./.next ./.next

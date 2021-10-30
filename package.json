@@ -21,6 +21,7 @@
     "@plaiceholder/next": "^2.1.0",
     "axios": "^0.21.2",
     "bulma": "^0.9.2",
+    "bulma-fluent": "^0.4.3",
     "esbuild": "^0.13.2",
     "framer-motion": "^4.0.0",
     "googleapis": "^73.0.0",

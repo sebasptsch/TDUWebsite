@@ -3,13 +3,6 @@ name: default
 type: docker
 
 steps:
-  - name: build
-    pull: if-not-exists
-    image: node:lts-bullseye-slim
-    commands:
-      - yarn install --frozen-lockfile
-      - yarn build
-
   - name: build & publish
     image: plugins/docker
     pull: if-not-exists
@@ -22,16 +15,3 @@ steps:
       repo: ghcr.io/sebasptsch/tduwebsite
       registry: ghcr.io
       auto_tag: true
-  # - name: build & publish
-  #   image: plugins/docker
-  #   pull: if-not-exists
-  #   settings:
-  #     dockerfile: Dockerfile
-  #     cache_from: "ghcr.io/sebasptsch/tduwebsite:latest"
-  #     username:
-  #       from_secret: ghcr_username
-  #     password:
-  #       from_secret: ghcr_password
-  #     repo: ghcr.io/sebasptsch/tduwebsite
-  #     registry: ghcr.io
-  #     auto_tag: true

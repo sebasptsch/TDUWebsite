@@ -3,7 +3,7 @@ name: default
 type: docker
 
 steps:
-  - name: restore-cache
+  - name: Restore Cache
     image: drillster/drone-volume-cache
     volumes:
       - name: cache
@@ -13,14 +13,17 @@ steps:
       mount:
         - ./node_modules
         - ./.next/cache
-  - name: install deps
+  - name: Install Dependancies
     pull: if-not-exists
     image: node:lts-bullseye-slim
     commands:
       - yarn install --frozen-lockfile
+  - name: Build
+    pull: if-not-exists
+    image: node:lts-bullseye-slim
+    commands:
       - yarn build
-
-  - name: build & publish
+  - name: Publish
     image: plugins/docker
     pull: if-not-exists
     settings:
@@ -32,7 +35,7 @@ steps:
       repo: ghcr.io/sebasptsch/tduwebsite
       registry: ghcr.io
       auto_tag: true
-  - name: rebuild-cache
+  - name: Rebuild Cache
     image: drillster/drone-volume-cache
     volumes:
       - name: cache

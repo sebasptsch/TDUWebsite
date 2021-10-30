@@ -1,5 +1,5 @@
 kind: pipeline
-name: default
+name: Build and Deploy
 type: docker
 
 steps:
@@ -25,6 +25,9 @@ steps:
       - yarn build
   - name: Publish
     image: plugins/docker
+    when:
+      branch:
+        - main
     pull: if-not-exists
     settings:
       username:
@@ -49,7 +52,3 @@ volumes:
   - name: cache
     host:
       path: /tmp/cache
-
-trigger:
-  event:
-    - custom

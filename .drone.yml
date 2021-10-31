@@ -17,7 +17,7 @@ steps:
     pull: if-not-exists
     image: node:lts-alpine
     environment:
-      PRISMA_CLI_QUERY_ENGINE_TYPE: binary # TODO: remove after prisma client get updated https://github.com/prisma/prisma/issues/9624
+      PRISMA_CLI_QUERY_ENGINE_TYPE: binary
       PRISMA_CLIENT_ENGINE_TYPE: binary
     commands:
       - apk add --no-cache libc6-compat

@@ -13,15 +13,12 @@ steps:
       mount:
         - ./node_modules
         - ./.next/cache
-  - name: Install Dependancies
-    pull: if-not-exists
-    image: node:lts-bullseye-slim
-    commands:
-      - yarn install --frozen-lockfile
   - name: Build
     pull: if-not-exists
-    image: node:lts-bullseye-slim
+    image: node:lts-alpine
     commands:
+      - apk add --no-cache libc6-compat
+      - yarn install --frozen-lockfile
       - yarn build
   - name: Publish
     image: plugins/docker

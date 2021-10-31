@@ -1,5 +1,4 @@
-# Install dependencies only when needed
-FROM node:alpine
+FROM node:lts-alpine
 WORKDIR /app
 RUN apk add libc6-compat
 COPY ./public ./public
@@ -13,4 +12,3 @@ ENV NEXT_TELEMETRY_DISABLED=1
 EXPOSE 3000
 
 CMD ["yarn", "start"]
- 

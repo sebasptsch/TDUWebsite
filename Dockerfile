@@ -1,5 +1,6 @@
 # Install dependencies only when needed
 FROM node:alpine
+RUN apk add --no-cache libc6-compat bash
 WORKDIR /app
 COPY ./public ./public
 COPY  ./.next ./.next

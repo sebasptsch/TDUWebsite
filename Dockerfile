@@ -10,6 +10,6 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
 EXPOSE 3000
-
+SHELL ["/bin/bash", "-c"]
 CMD ["/bin/bash -c", "yarn start"]
  

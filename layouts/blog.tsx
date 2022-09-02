@@ -14,7 +14,7 @@ export default function BlogPostLayout({ children, frontMatter }) {
         description={excerpt}
         openGraph={{
           title,
-          url: `https://thethunderdownunder.org${router.asPath}`,
+          url: `https://www.team3132.com${router.asPath}`,
           description: excerpt,
           type: "article",
           article: {
@@ -23,7 +23,7 @@ export default function BlogPostLayout({ children, frontMatter }) {
           images: image
             ? [
               {
-                url: `https://thethunderdownunder.org/images/data/blog/${image}`,
+                url: `https://www.team3132.com/images/data/blog/${image}`,
               },
             ]
             : undefined,
@@ -31,10 +31,10 @@ export default function BlogPostLayout({ children, frontMatter }) {
       />
       <BlogJsonLd
         title={title}
-        url={`https://thethunderdownunder.org/blog/${slug}`}
+        url={`https://www.team3132.com/blog/${slug}`}
         images={
           image
-            ? [`https://thethunderdownunder.org/images/data/blog/${image}`]
+            ? [`https://www.team3132.com/images/data/blog/${image}`]
             : undefined
         }
         datePublished={date}

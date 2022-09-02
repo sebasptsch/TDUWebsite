@@ -6,7 +6,7 @@ import { AppProps } from "next/dist/shared/lib/router/router";
 import SEO from "../next-seo.config";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  const url = `https://thethunderdownunder.org${router.route}`
+  const url = `https://www.team3132.com${router.route}`
   return (
     <Layout>
       <DefaultSeo {...SEO} />

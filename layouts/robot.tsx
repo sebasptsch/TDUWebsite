@@ -13,7 +13,7 @@ export default function RobotPostLayout({ children, frontMatter }) {
         title={title}
         description={excerpt}
         openGraph={{
-          url: `https://thethunderdownunder.org${router.asPath}`,
+          url: `https://www.team3132.com${router.asPath}`,
           title,
           description: excerpt,
           type: "article",
@@ -23,7 +23,7 @@ export default function RobotPostLayout({ children, frontMatter }) {
           images: image
             ? [
               {
-                url: `https://thethunderdownunder.org${image.src}`,
+                url: `https://www.team3132.com${image.src}`,
                 height: image.height,
                 width: image.width
               },
@@ -33,10 +33,10 @@ export default function RobotPostLayout({ children, frontMatter }) {
       />
       <ArticleJsonLd
         title={title}
-        url={`https://thethunderdownunder.org/robots/${slug}`}
+        url={`https://www.team3132.com/robots/${slug}`}
         images={
           image
-            ? [`https://thethunderdownunder.org${image.src}`]
+            ? [`https://www.team3132.com${image.src}`]
             : undefined
         }
         datePublished={date}
@@ -44,7 +44,7 @@ export default function RobotPostLayout({ children, frontMatter }) {
         dateModified={date}
         authorName={"Team 3132"}
         publisherName="Team 3132"
-        publisherLogo="https://thethunderdownunder.org/images/applogo.png"
+        publisherLogo="https://www.team3132.com/images/applogo.png"
       />
       <article>
         {image ? (

@@ -19,7 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     //captcha passes, continue to wp api...
     const date = new Date().toISOString;
     let response = await axios.post(process.env.WEBHOOK_URL, {
-      avatar_url: "https://thethunderdownunder.org/images/applogo.png",
+      avatar_url: "https://www.team3132.com/images/applogo.png",
       username: "TDU Website",
       embeds: [
         {

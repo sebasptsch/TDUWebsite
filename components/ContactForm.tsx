@@ -9,13 +9,19 @@ export default function ContactForm() {
     register,
     handleSubmit,
     watch,
+    reset,
     errors,
     formState,
   } = useForm();
   const onSubmit = (data) => {
     return axios
       .post("/api/contact", data)
-      .then((res) => console.log("sucess"))
+      .then((res) => 
+      
+      {
+        reset()
+      }
+      )
       .catch((error) => console.log(error));
   };
 

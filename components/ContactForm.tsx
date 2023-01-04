@@ -86,7 +86,7 @@ export default function ContactForm() {
             disabled={!formState.isDirty || formState.isSubmitting}
             className={`button is-link ${
               formState.isSubmitting ? "is-loading" : ""
-            } ${formState.isSubmitSuccessful ? "is-success" : null}`}
+            }`}
           >
             Submit
           </button>

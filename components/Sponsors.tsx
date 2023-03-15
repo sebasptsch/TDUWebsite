@@ -5,20 +5,26 @@ import Link from "next/link";
 export default function SponsorsComponent() {
   const sponsors = [
     {
+      name: "Macquarie University",
+      link: "https://www.mq.edu.au/",
+      logo: "/images/sponsor_logos/sponsors_svg/MQ.svg",
+    },
+    {
       name: "Google",
       link: "https://www.google.com.au/",
       logo: "/images/sponsor_logos/sponsors_svg/Google.svg",
+    },
+    {
+      name: "IET",
+      link: "https://www.theiet.org/",
+      logo: "/images/sponsor_logos/sponsors_svg/IET.svg",
     },
     // {
     //   name: "Amazon",
     //   link: "https://www.amazon.com.au/",
     //   logo: "/images/sponsor_logos/sponsors_svg/Amazon.svg",
     // },
-    {
-      name: "IET",
-      link: "https://www.theiet.org/",
-      logo: "/images/sponsor_logos/sponsors_svg/IET.svg",
-    },
+
     // {
     //   name: "Andymark",
     //   link: "https://www.andymark.com/",
@@ -44,11 +50,7 @@ export default function SponsorsComponent() {
     //   link: "https://education.lego.com/en-au",
     //   logo: "/images/sponsor_logos/sponsors_svg/LegoEdu.svg",
     // },
-    {
-      name: "Macquarie University",
-      link: "https://www.mq.edu.au/",
-      logo: "/images/sponsor_logos/sponsors_svg/MQ.svg",
-    },
+  
     // {
     //   name: "Rockwell Automation",
     //   link: "https://www.rockwellautomation.com/",

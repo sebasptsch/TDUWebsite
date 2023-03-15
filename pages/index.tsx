@@ -22,6 +22,9 @@ export default function Home({ imageProps }) {
       <div className="py-6">
         <SocialButtons />
       </div>
+      <hr className="divider" />
+      <SponsorsComponent />
+      <hr className="divider"/>
       <div>
         <UpcomingComponent />
       </div>
@@ -46,8 +49,7 @@ export default function Home({ imageProps }) {
           />
         </div>
       </div>
-      <hr className="divider" />
-      <SponsorsComponent />
+   
       <hr className="divider" />
       <Playlist id="PLm8WT2AGvaJzX7wPs44aJW8XlZwxanLHk" />
       <hr className="divider" />

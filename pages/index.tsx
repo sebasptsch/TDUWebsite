@@ -19,10 +19,10 @@ export default function Home({ imageProps }) {
         </div>
       </div>
 
-      <div className="py-6">
+      {/* <div className="py-6">
         <SocialButtons />
-      </div>
-      <hr className="divider" />
+      </div> */}
+      <hr className="divider" /> 
       <SponsorsComponent />
       <hr className="divider"/>
       <div>

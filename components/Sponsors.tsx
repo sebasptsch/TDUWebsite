@@ -65,13 +65,12 @@ export default function SponsorsComponent() {
       animate="show"
     >
       <div className="column is-12">
-        {" "}
         <h1 className="title has-text-centered">Our Sponsors</h1>
       </div>
       {sponsors.map((sponsor) => {
         return (
           <motion.div
-            className="column is-one-third"
+            className="column is-one-third-desktop is-full-mobile"
             key={sponsor.name}
             whileHover={{
               x: 5,

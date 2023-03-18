@@ -13,18 +13,23 @@ export default function Home({ imageProps }: any) {
   return (
     <Main>
       <NextSeo title="Home" />
-      <div className="columns is-gapless is-centered">
-        <div className="column is-three-quarters">
-          <AnimatedLogo />
+      <div className="hero">
+        <div className="hero-body">
+          <div className="title">
+            <AnimatedLogo />
+          </div>
         </div>
+        {/* <div className="column is-three-quarters">
+         
+        </div> */}
       </div>
 
       {/* <div className="py-6">
         <SocialButtons />
       </div> */}
-      <hr className="divider" /> 
+      {/* <hr className="divider" /> */}
       <SponsorsComponent />
-      <hr className="divider"/>
+      <hr className="divider" />
       <div>
         <UpcomingComponent />
       </div>
@@ -49,7 +54,7 @@ export default function Home({ imageProps }: any) {
           />
         </div>
       </div>
-   
+
       {/* <hr className="divider" />
       <Playlist id="PLm8WT2AGvaJzX7wPs44aJW8XlZwxanLHk" /> */}
       <hr className="divider" />
@@ -86,7 +91,7 @@ export default function Home({ imageProps }: any) {
             // height="29.634148mm"
             // width="34.277977mm"
             style={{
-              height: "100%"
+              height: "100%",
             }}
           />
         </div>
@@ -97,5 +102,5 @@ export default function Home({ imageProps }: any) {
 
 export const getStaticProps = async () => {
   const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
-  return { props: { imageProps: { ...img, blurDataURL: base64, }, }, };
+  return { props: { imageProps: { ...img, blurDataURL: base64 } } };
 };

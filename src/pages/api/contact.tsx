@@ -20,6 +20,15 @@ export default async function ContactApi(
   if (!captchaResponse.success) {
     res.status(500).json({ success: false, message: "captcha failed" });
   } else {
+
+    const md5hashedEmail = crypto.subtle.digest("MD5", new TextEncoder().encode(req.body.email)).then((hash) => {
+      return Array.from(new Uint8Array(hash))
+        .map((b) => b.toString(16).padStart(2, "0"))
+        .join("");
+    });
+
+    const gravatarUrl = `https://www.gravatar.com/avatar/${md5hashedEmail}?d=404`;
+
     //captcha passes, continue to wp api...
     const date = Date.now();
 
@@ -55,6 +64,9 @@ export default async function ContactApi(
       body: JSON.stringify(body),
       headers: { "Content-Type": "application/json" },
     });
+
+   
+
 
     console.error(response, body);
 

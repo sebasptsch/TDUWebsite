@@ -41,8 +41,7 @@ export default async function ContactApi(
           name: "Message",
           value: req.body.message,
         }
-      )
-      .setFooter({ text: `Received ${new Date().toDateString()}` }).setAuthor({
+      ).setAuthor({
         name: req.body.name,
         iconURL: gravatarUrl,
       });

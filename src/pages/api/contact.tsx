@@ -53,6 +53,7 @@ export default async function ContactApi(
     const response = await fetch(webhookUrl, {
       method: "POST",
       body: JSON.stringify(body),
+      headers: { "Content-Type": "application/json" },
     });
 
     console.error(response, body);

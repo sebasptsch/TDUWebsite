@@ -15,8 +15,8 @@ export default async function ContactApi(
   if (!webhookUrl) return res.status(200);
 
   const captchaResponse = await fetch(googleUrl).then((res) => res.json());
-    console.log(captchaResponse);
-  if (!captchaResponse.data.success) {
+    // console.log(captchaResponse);
+  if (!captchaResponse.success) {
     res.status(500).json({ success: false, message: "captcha failed" });
   } else {
     //captcha passes, continue to wp api...

@@ -55,7 +55,7 @@ export default async function ContactApi(
       body: JSON.stringify(body),
     });
 
-    console.error(response);
+    console.error(response, body);
 
     // let response = await axios.post(process.env.WEBHOOK_URL, );
 

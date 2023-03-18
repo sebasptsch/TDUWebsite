@@ -26,17 +26,13 @@ export default async function ContactApi(
 
     const gravatarUrl = `https://www.gravatar.com/avatar/${md5hashedEmail}?d=404`;
     //captcha passes, continue to wp api...
-    
+
     const date = Date.now();
 
     const embed = new EmbedBuilder()
       .setTimestamp(date)
       .setColor(3066993)
       .setFields(
-        {
-          name: "Name",
-          value: req.body.name,
-        },
         {
           name: "Email",
           value: req.body.email,

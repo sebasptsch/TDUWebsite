@@ -1,7 +1,7 @@
 import Footer from "./footer";
 import Navigation from "./navigation";
 
-export default function Layout({ children }) {
+export default function Layout({ children }: any) {
   return (
     <>
       <Navigation />

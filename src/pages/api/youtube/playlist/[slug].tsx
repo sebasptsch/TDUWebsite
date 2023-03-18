@@ -41,6 +41,7 @@ export default async function PlaylistRes(
 
   res.status(200).json(
     response.data.items?.map((item) => {
+      if (!item.snippet) return null;
       const {
         publishedAt,
         channelId,
@@ -57,7 +58,7 @@ export default async function PlaylistRes(
         description,
         thumbnails,
         channelTitle,
-        id: resourceId.videoId,
+        id: resourceId?.videoId,
       };
     })
   );

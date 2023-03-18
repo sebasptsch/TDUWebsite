@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
 
-export default function Home({ imageProps }) {
+export default function Home({ imageProps }: any) {
   return (
     <Main>
       <NextSeo title="Home" />

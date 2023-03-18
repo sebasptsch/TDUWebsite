@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Main({ children }) {
+export default function Main({ children }: any) {
     return <motion.main
         className="container is-max-desktop"
         initial={{ opacity: 0 }}

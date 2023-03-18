@@ -18,7 +18,7 @@ export default function UpcomingComponent() {
           <div className="title">Upcoming Events</div>
           <motion.div variants={container} initial="hidden" animate="show">
             {data
-              ? data.map((event) => (
+              ? data.map((event: any) => (
                   <motion.a
                     className="box"
                     href={`https://www.thebluealliance.com/event/${event.key}`}

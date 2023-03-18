@@ -1,5 +1,6 @@
 import { EmbedBuilder } from "@discordjs/builders";
 import type { NextApiRequest, NextApiResponse } from "next";
+import nodeCrypto from "crypto";
 
 export default async function ContactApi(
   req: NextApiRequest,
@@ -21,15 +22,11 @@ export default async function ContactApi(
     res.status(500).json({ success: false, message: "captcha failed" });
   } else {
 
-    const md5hashedEmail = crypto.subtle.digest("MD5", new TextEncoder().encode(req.body.email)).then((hash) => {
-      return Array.from(new Uint8Array(hash))
-        .map((b) => b.toString(16).padStart(2, "0"))
-        .join("");
-    });
+    const md5hashedEmail = nodeCrypto.createHash('md5').update(req.body.email).digest("hex");
 
     const gravatarUrl = `https://www.gravatar.com/avatar/${md5hashedEmail}?d=404`;
-
     //captcha passes, continue to wp api...
+    
     const date = Date.now();
 
     const embed = new EmbedBuilder()
@@ -51,6 +48,7 @@ export default async function ContactApi(
       )
       .setFooter({ text: `Received ${new Date().toDateString()}` }).setAuthor({
         name: req.body.name,
+        iconURL: gravatarUrl,
       });
 
     const body = {

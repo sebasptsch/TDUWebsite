@@ -24,7 +24,7 @@ export default async function ContactApi(
 
     const md5hashedEmail = nodeCrypto.createHash('md5').update(req.body.email).digest("hex");
 
-    const gravatarUrl = `https://www.gravatar.com/avatar/${md5hashedEmail}?d=404`;
+    const gravatarUrl = `https://www.gravatar.com/avatar/${md5hashedEmail}?d=identicon`;
     //captcha passes, continue to wp api...
 
     const date = Date.now();

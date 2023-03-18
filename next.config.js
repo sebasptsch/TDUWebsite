@@ -1,4 +1,5 @@
 const { withPlaiceholder } = require('@plaiceholder/next')
+const path = require("path")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withPlaiceholder({

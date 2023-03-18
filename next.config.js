@@ -1,9 +1,15 @@
-const { withKeystone } = require("@keystone-next/keystone/next");
-const { withPlaiceholder } = require("@plaiceholder/next");
-module.exports = withKeystone(
-  withPlaiceholder({
-    images: {
-      domains: ["i.ytimg.com"],
-    },
-  })
-);
+const { withPlaiceholder } = require('@plaiceholder/next')
+const path = require("path")
+
+/** @type {import('next').NextConfig} */
+const nextConfig = withPlaiceholder({
+  reactStrictMode: true,
+  images: {
+    domains: ['i.ytimg.com'],
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src','styles')],
+  },
+})
+
+module.exports = nextConfig

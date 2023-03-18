@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@discordjs/builders": "^1.5.0",
     "@plaiceholder/next": "^2.5.0",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",

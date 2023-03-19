@@ -10,12 +10,10 @@ export default function NavItem({
   children,
   url,
   ...props
-}: NavItemProp & HTMLMotionProps<"a">) {
+}: NavItemProp) {
   return (
-    <Link href={url} legacyBehavior>
-      <motion.a className="navbar-item has-text-centered" {...props}>
+    <Link href={url} className="navbar-item has-text-centered" {...props}>
         {children}
-      </motion.a>
     </Link>
   );
 }

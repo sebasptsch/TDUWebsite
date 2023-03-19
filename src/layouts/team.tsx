@@ -24,7 +24,6 @@ export default function TeamLayout({ imageProps }: TeamLayoutProps) {
           placeholder="blur"
           className="image"
           alt="Team Photo"
-          // layout="responsive"
         />
           <hr className="divider" />
           <p>FIRST Team 3132, otherwise known as the Thunder Down Under, is the first Australian

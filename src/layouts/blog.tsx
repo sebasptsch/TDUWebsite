@@ -54,8 +54,10 @@ export default function BlogPostLayout({ children, frontMatter }: BlogPostLayout
               src={`/images/data/blog/${image}`}
               alt="Card Image"
               className="image is-square"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{
+                objectFit: "contain"
+              }}
             />
           </div>
         ) : null}

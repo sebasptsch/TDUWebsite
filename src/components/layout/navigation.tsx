@@ -73,10 +73,12 @@ export default function Navigation() {
             initial="hidden"
             animate="show"
           >
-            {items.map((navitem) => (
-              <NavItem url={navitem.url} variants={item} key={navitem.url}>
-                {navitem.label}
-              </NavItem>
+            {items.map(({ url, label }) => (
+              <Link href={url} legacyBehavior key="label">
+                <a className="navbar-item has-text-centered">
+                  {label}
+                </a>
+              </Link>
             ))}
           </motion.div>
 

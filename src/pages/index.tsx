@@ -49,7 +49,6 @@ export default function Home({ imageProps }: any) {
           <Image
             {...imageProps}
             alt="Team Photo"
-            layout="responsive"
             placeholder="blur"
           />
         </div>
@@ -102,5 +101,5 @@ export default function Home({ imageProps }: any) {
 
 export const getStaticProps = async () => {
   const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
-  return { props: { imageProps: { ...img, blurDataURL: base64 } } };
+  return { props: { imageProps: { ...img, blurDataURL: base64, placeholder: "blur" } } };
 };

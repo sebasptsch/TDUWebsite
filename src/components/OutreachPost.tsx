@@ -24,14 +24,12 @@ export default function OutreachPost({ frontMatter, image, url }: BlogPostProps)
   const { title, image: imageSrc, excerpt, slug } = frontMatter;
 
   return (
-    <Link href={url} legacyBehavior>
-      <motion.a className="column is-one-quarter" variants={item}>
+    <Link href={url} className="column is-one-quarter">
         <CardComponent
           title={title}
           content={excerpt}
           image={image}
         />
-      </motion.a>
     </Link>
   );
 }

@@ -25,7 +25,7 @@ export default function BlogPost({ frontMatter, image }: BlogPostProps) {
   const { image: imageUrl, date, excerpt, title, slug } = frontMatter;
   return (
     <Link href={`/blog/${slug}`} legacyBehavior>
-      <motion.a className="box columns mt-2 mb-2" variants={item}>
+      <a className="box columns mt-2 mb-2">
         {image ? (
           <div className="column is-4">
             <Image
@@ -45,7 +45,7 @@ export default function BlogPost({ frontMatter, image }: BlogPostProps) {
           </p>
           <p className="content">{excerpt}</p>
         </div>
-      </motion.a>
+      </a>
     </Link>
   );
 }

@@ -71,6 +71,7 @@ export default function RobotPostLayout({
               fill
               alt="Card Image"
               // className="image is-square"
+              sizes="(max-width: 1024px) 100vw, 1024px"
               style={{
                 objectFit: "contain",
               }}

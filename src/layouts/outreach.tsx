@@ -72,7 +72,7 @@ export default function OutreachPostLayout({ children, frontMatter, image }: Out
               blurDataURL={image.blurDataURL}
               fill
               alt="Card Image"
-              // className="image is-square"
+              sizes="(max-width: 1024px) 100vw, 1024px"
               style={{
                 objectFit: "contain"
               }}

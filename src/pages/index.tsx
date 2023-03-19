@@ -50,6 +50,7 @@ export default function Home({ imageProps }: any) {
             {...imageProps}
             alt="Team Photo"
             placeholder="blur"
+            sizes="(max-width: 1024px) 100vw, (max-width: 1440px) 50vw, 50vw"
           />
         </div>
       </div>

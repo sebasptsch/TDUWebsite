@@ -1,57 +1,32 @@
 import { EmbedBuilder } from "@discordjs/builders";
-import type { NextRequest } from "next/server";
-import hash from 'object-hash'
+import type { NextApiRequest, NextApiResponse } from "next";
+import nodeCrypto from "crypto";
 
-export const config = {
-  runtime: "edge",
-};
-
-export default async function handler(
-  req: NextRequest,
+export default async function ContactApi(
+  req: NextApiRequest,
+  res: NextApiResponse
 ) {
-
-  const body = await req.json();
-
-  const captchaToken = body.captchaToken;
-  const email = body.email;
-  const message = body.message;
-  const name = body.name;
-
-  if (!captchaToken) return new Response("Captcha token not found", { status: 500 });
-  if (!email) return new Response("Email not found", { status: 500 });
-  if (!message) return new Response("Message not found", { status: 500 });
-  if (!name) return new Response("Name not found", { status: 500 });
-
-
   const googleUrl =
     "https://www.google.com/recaptcha/api/siteverify?secret=" +
     process.env.CAPTCHA_SECRET +
     "&response=" +
-    captchaToken;
+    req.body.captchaToken;
 
   const webhookUrl = process.env["WEBHOOK_URL"];
 
-  if (!webhookUrl) return new Response("Webhook URL not found", { status: 500 });
+  if (!webhookUrl) return res.status(200);
 
   const captchaResponse = await fetch(googleUrl).then((res) => res.json());
   // console.log(captchaResponse);
   if (!captchaResponse.success) {
-    return new Response(
-      JSON.stringify({ success: false, message: "captcha failed" }),
-      {
-        headers: {
-          "content-type": "application/json",
-        },
-        status: 500,
-      }
-    )
+    res.status(500).json({ success: false, message: "captcha failed" });
   } else {
 
-    const md5hashedEmail = hash(email, { algorithm: 'md5' })
+    const md5hashedEmail = nodeCrypto.createHash('md5').update(req.body.email).digest("hex");
 
     const gravatarUrl = `https://www.gravatar.com/avatar/${md5hashedEmail}?d=identicon`;
     //captcha passes, continue to wp api...
-    
+
     const date = Date.now();
 
     const embed = new EmbedBuilder()
@@ -60,14 +35,14 @@ export default async function handler(
       .setFields(
         {
           name: "Email",
-          value: email,
+          value: req.body.email,
         },
         {
           name: "Message",
-          value: message,
+          value: req.body.message,
         }
       ).setAuthor({
-        name: name,
+        name: req.body.name,
         iconURL: gravatarUrl,
       });
 
@@ -83,27 +58,13 @@ export default async function handler(
       headers: { "Content-Type": "application/json" },
     });
 
-    if (!response.ok) {
-      return new Response(
-        JSON.stringify({ success: false, message: "webhook failed" }),
-        {
-          headers: {
-            "content-type": "application/json",
-          },
-          status: 500,
-        }
-      )
-    }
-    
+   
 
-    return new Response(
-      JSON.stringify({ success: true, message: "message sent" }),
-      {
-        headers: {
-          "content-type": "application/json",
-        },
-        status: 200,
-      }
-    )
+
+    console.error(response, body);
+
+    // let response = await axios.post(process.env.WEBHOOK_URL, );
+
+    res.status(response.status).json({ status: response.statusText });
   }
 }

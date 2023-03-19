@@ -50,7 +50,7 @@ export default function SponsorsComponent() {
     //   link: "https://education.lego.com/en-au",
     //   logo: "/images/sponsor_logos/sponsors_svg/LegoEdu.svg",
     // },
-  
+
     // {
     //   name: "Rockwell Automation",
     //   link: "https://www.rockwellautomation.com/",
@@ -80,9 +80,10 @@ export default function SponsorsComponent() {
             }}
             variants={item}
           >
-            <Link href={sponsor.link} legacyBehavior>
-                {/* // eslint-disable-next-line @next/next/no-img-element */}
-                <img src={sponsor.logo} alt={sponsor.name} className="image" />
+            <Link href={sponsor.link}>
+              <figure className="image">
+                <img src={sponsor.logo} alt={sponsor.name} />
+              </figure>
             </Link>
           </motion.div>
         );

@@ -46,12 +46,14 @@ export default function Home({ imageProps }: any) {
           </p>
         </div>
         <div className="column">
-          <Image
-            {...imageProps}
-            alt="Team Photo"
-            placeholder="blur"
-            sizes="(max-width: 1024px) 100vw, (max-width: 1440px) 50vw, 50vw"
-          />
+          <figure className="image is-3by2">
+            <Image
+              {...imageProps}
+              alt="Team Photo"
+              placeholder="blur"
+              sizes="(max-width: 1024px) 100vw, (max-width: 1440px) 50vw, 50vw"
+            />
+          </figure>
         </div>
       </div>
 
@@ -83,17 +85,9 @@ export default function Home({ imageProps }: any) {
           </p>
         </div>
         <div className="column">
-          <img
-            className="image"
-            src="/images/FIRST_Logo.svg"
-            alt="FIRST logo"
-            // layout="responsive"
-            // height="29.634148mm"
-            // width="34.277977mm"
-            style={{
-              height: "100%",
-            }}
-          />
+          <figure className="image">
+            <img src="/images/FIRST_Logo.svg" alt="FIRST logo" />
+          </figure>
         </div>
       </div>
     </Main>
@@ -102,5 +96,7 @@ export default function Home({ imageProps }: any) {
 
 export const getStaticProps = async () => {
   const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
-  return { props: { imageProps: { ...img, blurDataURL: base64, placeholder: "blur" } } };
+  return {
+    props: { imageProps: { ...img, blurDataURL: base64, placeholder: "blur" } },
+  };
 };

@@ -64,13 +64,15 @@ export default function OutreachPostLayout({ children, frontMatter, image }: Out
       />
       <article>
         {image ? (
-          <div
-            style={{ height: "20em", width: "100%", position: "relative" }}
+          <figure
+            className="image is-16by9"
+            // style={{
+            //   position: "relative",
+            // }}
           >
             <Image
-              src={image.src}
-              blurDataURL={image.blurDataURL}
-              fill
+              {...image}
+              // fill
               alt="Card Image"
               sizes="(max-width: 1024px) 100vw, 1024px"
               style={{
@@ -78,7 +80,7 @@ export default function OutreachPostLayout({ children, frontMatter, image }: Out
               }}
               placeholder="blur"
             />
-          </div>
+          </figure>
         ) : null}
         <section className="hero hero-body">
           <h1 className="title">{title}</h1>

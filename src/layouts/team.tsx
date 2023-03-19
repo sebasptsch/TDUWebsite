@@ -18,15 +18,16 @@ export default function TeamLayout({ imageProps }: TeamLayoutProps) {
         </div>
       </section>
       <hr className="divider" />
+      <figure className="image is-3by2">
+        <Image
+          {...imageProps}
+          placeholder="blur"
+          alt="Team Photo"
+          sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 50vw"
+        />
+      </figure>
       <div className="columns is-centered">
         <div className="column is-three-fifths content">
-          <Image
-            {...imageProps}
-            placeholder="blur"
-            className="image"
-            alt="Team Photo"
-            sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 50vw"
-          />
           <hr className="divider" />
           <p>
             FIRST Team 3132, otherwise known as the Thunder Down Under, is the

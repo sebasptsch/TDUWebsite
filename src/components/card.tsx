@@ -38,11 +38,6 @@ export default function CardComponent({
       {image ? (
         <div
           className="card-image"
-          style={{
-            // width: "100%",
-            // paddingTop: "100%",
-            // position: "relative",
-          }}
         >
           <figure className="image is-3by4">
           <Image

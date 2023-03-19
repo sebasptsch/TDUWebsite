@@ -64,11 +64,9 @@ export default function RobotPostLayout({
       />
       <article>
         {image ? (
-          <div style={{ height: "20em", width: "100%", position: "relative" }}>
+          <figure className="image is-16by9">
             <Image
-              src={image.src}
-              blurDataURL={image.blurDataURL}
-              fill
+              {...image}
               alt="Card Image"
               // className="image is-square"
               sizes="(max-width: 1024px) 100vw, 1024px"
@@ -77,14 +75,12 @@ export default function RobotPostLayout({
               }}
               placeholder="blur"
             />
-          </div>
+          </figure>
         ) : null}
         <section className="hero hero-body">
           <h1 className="title">{title}</h1>
           <h2 className="subtitle">
-            {formattedDate
-              ? `Last Edited ${formattedDate}`
-              : null}
+            {formattedDate ? `Last Edited ${formattedDate}` : null}
           </h2>
         </section>
         <div className="content">{children}</div>

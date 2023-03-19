@@ -54,7 +54,6 @@ export default function RobotsRoot({ posts }: Props) {
           <RobotPost
             frontMatter={post.data}
             key={post.data.title}
-            className="column is-one-quarter"
             image={post.image}
             url={post.url}
           />

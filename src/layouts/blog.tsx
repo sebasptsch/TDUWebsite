@@ -1,4 +1,5 @@
-import moment from "moment";
+import parseDate from "@/utils/parseDate";
+import { DateTime } from "luxon";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -12,6 +13,9 @@ interface BlogPostLayoutProps {
 export default function BlogPostLayout({ children, frontMatter }: BlogPostLayoutProps) {
   const { image, title, date, excerpt, slug } = frontMatter;
   const router = useRouter();
+
+  const formattedDate = parseDate(date)?.toLocaleString(DateTime.DATE_MED);
+
   return (
     <Main>
       <NextSeo
@@ -64,8 +68,8 @@ export default function BlogPostLayout({ children, frontMatter }: BlogPostLayout
         <section className="hero hero-body">
           <h1 className="title">{title}</h1>
           <h2 className="subtitle">
-            {date
-              ? `Last Edited ${moment(date).format("MMMM DD, YYYY")}`
+            {formattedDate
+              ? `Last Edited ${formattedDate}`
               : null}
           </h2>
         </section>

@@ -22,7 +22,7 @@
     "googleapis": "^113.0.0",
     "gray-matter": "^4.0.3",
     "lodash.truncate": "^4.4.2",
-    "moment": "^2.29.4",
+    "luxon": "^3.3.0",
     "next": "13.2.4",
     "next-mdx-remote": "^4.4.1",
     "next-seo": "^5.15.0",
@@ -42,6 +42,7 @@
     "unist-util-visit-parents": "^5.1.3"
   },
   "devDependencies": {
+    "@types/luxon": "^3.2.0",
     "next-sitemap": "^4.0.5"
   }
 }

@@ -1,8 +1,9 @@
 import { item } from "@/lib/animations";
 import { motion } from "framer-motion";
-import moment from "moment";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
+import { DateTime } from "luxon";
+import parseDate from "@/utils/parseDate";
 
 interface BlogPostFrontmatter {
   /** Image Url */
@@ -41,7 +42,7 @@ export default function BlogPost({ frontMatter, image }: BlogPostProps) {
         <div className="column">
           <p className="title is-4">{title}</p>
           <p className="subtitle">
-            {date ? moment(date).format("MMMM DD, YYYY") : null}
+            {parseDate(date)?.toLocaleString(DateTime.DATE_MED) ?? null}
           </p>
           <p className="content">{excerpt}</p>
         </div>

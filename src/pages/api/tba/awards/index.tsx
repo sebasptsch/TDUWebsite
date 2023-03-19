@@ -1,6 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextRequest } from "next/server";
+
+export const config = {
+  runtime: "edge",
+};
 
 interface Award {
   award_type: number;
@@ -13,13 +17,12 @@ interface Award {
   year: number;
 }
 
-export default async function TBAAwards(
-  req: NextApiRequest,
-  res: NextApiResponse
+export default async function hander(
+  req: NextRequest,
 ) {
   const tbaKey = process.env["TBA_KEY"]
 
-  if (!tbaKey) return res.status(200).json({})
+  if (!tbaKey) return new Response("TBA Key not found", { status: 500 });
 
   const response = await fetch(
     `https://www.thebluealliance.com/api/v3/team/frc3132/awards`,
@@ -28,10 +31,6 @@ export default async function TBAAwards(
         "X-TBA-Auth-Key": tbaKey,
       },
     }
-  );
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=1200, stale-while-revalidate=600"
   );
 
   function onlyUnique(value: number, index: number, self: number[]) {
@@ -74,11 +73,28 @@ export default async function TBAAwards(
       },
       {}
     );
-    res.status(response.status).json(awardsByYear);
-  } else if (response.status === 304) {
-    res.status(304);
-  } else if (response.status === 401) {
-    res.status(401);
+    // res.status(response.status).json(awardsByYear);
+    return new Response(
+      JSON.stringify(awardsByYear),
+      {
+        headers: {
+          "content-type": "application/json",
+          "Cache-Control": "public, s-maxage=1200, stale-while-revalidate=600",
+        },
+        status: response.status,
+      }
+
+    )
+  } else {
+    return new Response(
+      JSON.stringify([]),
+      {
+        headers: {
+          "content-type": "application/json",
+          "Cache-Control": "public, s-maxage=1200, stale-while-revalidate=600",
+        },
+        status: response.status,
+      }
+    )
   }
-  res.end();
 }

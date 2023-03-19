@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextRequest } from "next/server";
 
 interface Award {
   award_type: number;
@@ -13,25 +13,28 @@ interface Award {
   year: number;
 }
 
-export default async function TBAAwards(
-  req: NextApiRequest,
-  res: NextApiResponse
+export const config = {
+  runtime: "edge",
+};
+
+export default async function handler(
+  req: NextRequest,
 ) {
   const tbaKey  = process.env["TBA_KEY"]
 
-  if (!tbaKey) return res.status(200).json([])
+  if (!tbaKey) return new Response("TBA Key not found", { status: 500 });
+
+  const urlParams = new URL(req.url).searchParams;
+
+  const year = urlParams.get("year");
 
   const response = await fetch(
-    `https://www.thebluealliance.com/api/v3/team/frc3132/awards/${req.query.year}`,
+    `https://www.thebluealliance.com/api/v3/team/frc3132/awards/${year}`,
     {
       headers: {
         "X-TBA-Auth-Key": tbaKey,
       },
     }
-  );
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=1200, stale-while-revalidate=600"
   );
   if (response.status === 200) {
     const data = await response.json();
@@ -48,11 +51,26 @@ export default async function TBAAwards(
         award_type,
       };
     });
-    res.status(response.status).json(awardsList);
-  } else if (response.status === 304) {
-    res.status(304);
-  } else if (response.status === 401) {
-    res.status(401);
+    return new Response(
+      JSON.stringify(awardsList),
+      {
+        headers: {
+          "content-type": "application/json",
+          "Cache-Control": "public, s-maxage=1200, stale-while-revalidate=600",
+        },
+        status: response.status,
+      }
+    )
+  } else {
+    return new Response(
+      JSON.stringify([]),
+      {
+        headers: {
+          "content-type": "application/json",
+          "Cache-Control": "public, s-maxage=1200, stale-while-revalidate=600",
+        },
+        status: response.status,
+      }
+    )
   }
-  res.end();
 }

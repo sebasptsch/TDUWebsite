@@ -9,13 +9,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <Layout>
       <DefaultSeo {...SEO} />
-      <AnimatePresence
+      {/* <AnimatePresence
         mode="wait"
         initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      > */}
         <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
     </Layout>
   );
 }

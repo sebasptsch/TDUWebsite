@@ -6,15 +6,7 @@ import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 export default function Contact() {
   return (
     <Main>
-      <GoogleReCaptchaProvider
-        reCaptchaKey="6LePQYcaAAAAADCt0y4pP_nCj1VNMOXheQG-mh-f"
-        scriptProps={{
-          async: false, // optional, default to false,
-          defer: false, // optional, default to false
-          appendTo: "head", // optional, default to "head", can be "head" or "body",
-          nonce: undefined, // optional, default undefined
-        }}
-      >
+      
         <div
           className="columns is-centered is-3"
 
@@ -68,7 +60,6 @@ export default function Contact() {
             </p>
           </div>
         </div>
-      </GoogleReCaptchaProvider>
     </Main>
   );
 }

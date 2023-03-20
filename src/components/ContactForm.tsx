@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { GoogleReCaptcha } from "react-google-recaptcha-v3";
+import { GoogleReCaptcha, GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 interface FormFields {
@@ -29,6 +29,15 @@ export default function ContactForm() {
   };
 
   return (
+    <GoogleReCaptchaProvider
+        reCaptchaKey="6LePQYcaAAAAADCt0y4pP_nCj1VNMOXheQG-mh-f"
+        scriptProps={{
+          async: false, // optional, default to false,
+          defer: false, // optional, default to false
+          appendTo: "head", // optional, default to "head", can be "head" or "body",
+          nonce: undefined, // optional, default undefined
+        }}
+      >
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="field">
         <label className="label">Name</label>
@@ -83,5 +92,6 @@ export default function ContactForm() {
         </div>
       </div>
     </form>
+    </GoogleReCaptchaProvider>
   );
 }

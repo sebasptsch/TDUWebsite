@@ -7,7 +7,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import RobotPostLayout, { RequiredImageProps } from "@/layouts/robot";
 import { getPlaiceholder, IGetPlaiceholderOptions } from "plaiceholder";
-import components from "@/components/MDXComponents";
+import MDXComponents from "@/components/MDXComponents";
 
 interface PostProps {
   source: MDXRemoteSerializeResult<
@@ -58,7 +58,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default function RobotPost({ frontMatter, source, image }: PostProps) {
   return (
     <RobotPostLayout frontMatter={frontMatter} image={image}>
-      <MDXRemote {...source} components={components} />
+      <MDXRemote {...source} components={MDXComponents} />
     </RobotPostLayout>
   );
 }

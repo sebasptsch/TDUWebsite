@@ -2,7 +2,11 @@ import { container, item } from "@/lib/animations";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function SponsorsComponent() {
+interface SponsorsComponentProps {
+  showTitle?: boolean;
+}
+
+export default function SponsorsComponent({showTitle = true}: SponsorsComponentProps) {
   const sponsors = [
     {
       name: "Macquarie University",
@@ -59,14 +63,14 @@ export default function SponsorsComponent() {
   ];
   return (
     <motion.div
-      className="columns is-multiline is-centered is-vcentered is-mobile px-6"
+      className="columns is-multiline is-centered is-vcentered is-mobile"
       variants={container}
       initial="hidden"
       animate="show"
     >
-      <div className="column is-12">
+      {showTitle ? <div className="column is-12">
         <h1 className="title has-text-centered">Our Sponsors</h1>
-      </div>
+      </div>: null}
       {sponsors.map((sponsor) => {
         return (
           <motion.div

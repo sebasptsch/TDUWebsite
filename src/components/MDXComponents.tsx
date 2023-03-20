@@ -1,11 +1,13 @@
 import YoutubeVideo from "./YoutubeVideo";
 import GDriveVideo from "./GDriveVideo";
 import Image from "next/image";
+import SponsorsComponent from "./Sponsors";
 type Components = Record<string, any>
-const components = {
+const MDXComponents = {
     YoutubeVideo,
     GDriveVideo,
-    Image
+    Image,
+    Sponsors: SponsorsComponent,
 } satisfies Components
 
-export default components;
+export default MDXComponents;

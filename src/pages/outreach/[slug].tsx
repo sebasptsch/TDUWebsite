@@ -1,4 +1,4 @@
-import components from "@/components/MDXComponents";
+import MDXComponents from "@/components/MDXComponents";
 import OutreachPostLayout, { RequiredImageProps } from "@/layouts/outreach";
 import { outreachFilePaths, OUTREACH_PATH } from "@/utils/mdxUtils";
 import fs from "fs";
@@ -22,7 +22,7 @@ interface PostProps {
 // outreach slug
 export default function OutreachPost({ source, frontMatter, image }: PostProps) {
     return <OutreachPostLayout frontMatter={frontMatter} image={image}>
-        <MDXRemote {...source} components={components}/>
+        <MDXRemote {...source} components={MDXComponents}/>
     </OutreachPostLayout>
 }
 

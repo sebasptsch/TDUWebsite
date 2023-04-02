@@ -36,24 +36,24 @@
   integrity sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==
 
 "@discordjs/builders@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@discordjs/builders/-/builders-1.5.0.tgz#f6dd4684e46707eb600eabdfdacd3b44c9e924cd"
-  integrity sha512-7XxT78mnNBPigHn2y6KAXkicxIBFtZREGWaRZ249EC1l6gBUEP8IyVY5JTciIjJArxkF+tg675aZvsTNTKBpmA==
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@discordjs/builders/-/builders-1.6.1.tgz#5b1447cfa493bc1306671ef18ce3aae13c0af0ba"
+  integrity sha512-CCcLwn/8ANhlAbhlE18fcaN0hfXTen53/JiwZs1t9oE/Cqa9maA8ZRarkCIsXF4J7J/MYnd0J6IsxeKsq+f6mw==
   dependencies:
-    "@discordjs/formatters" "^0.2.0"
+    "@discordjs/formatters" "^0.3.0"
     "@discordjs/util" "^0.2.0"
     "@sapphire/shapeshift" "^3.8.1"
-    discord-api-types "^0.37.35"
+    discord-api-types "^0.37.37"
     fast-deep-equal "^3.1.3"
     ts-mixer "^6.0.3"
     tslib "^2.5.0"
 
-"@discordjs/formatters@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@discordjs/formatters/-/formatters-0.2.0.tgz#a861d9c385dfc6c7294e44c5441beee933820a4f"
-  integrity sha512-vn4oMSXuMZUm8ITqVOtvE7/fMMISj4cI5oLsR09PEQXHKeKDAMLltG/DWeeIs7Idfy6V8Fk3rn1e69h7NfzuNA==
+"@discordjs/formatters@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@discordjs/formatters/-/formatters-0.3.0.tgz#8313d158c5e974597eec43b1f381d870a507d133"
+  integrity sha512-Fc4MomalbP8HMKEMor3qUiboAKDtR7PSBoPjwm7WYghVRwgJlj5WYvUsriLsxeKk8+Qq2oy+HJlGTUkGvX0YnA==
   dependencies:
-    discord-api-types "^0.37.35"
+    discord-api-types "^0.37.37"
 
 "@discordjs/util@^0.2.0":
   version "0.2.0"
@@ -1163,10 +1163,10 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-discord-api-types@^0.37.35:
-  version "0.37.36"
-  resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.37.36.tgz#650a8f66dce2c5e54a8c2275db74a0bb7936430d"
-  integrity sha512-Nlxmp10UpVr/utgZ9uODQvG2Or+5w7LFrvFMswyeKC9l/+UaqGT6H0OVgEFhu9GEO4U6K7NNO5W8Carv7irnCA==
+discord-api-types@^0.37.37:
+  version "0.37.37"
+  resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.37.37.tgz#49bc42a36124c85f06297f1548f130329ed5aeb0"
+  integrity sha512-LDMBKzl/zbvHO/yCzno5hevuA6lFIXJwdKSJZQrB+1ToDpFfN9thK+xxgZNR4aVkI7GHRDja0p4Sl2oYVPnHYg==
 
 doctrine@^2.1.0:
   version "2.1.0"

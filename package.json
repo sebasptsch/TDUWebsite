@@ -13,7 +13,7 @@
     "@discordjs/builders": "^1.5.0",
     "@plaiceholder/next": "^2.5.0",
     "@types/node": "18.15.11",
-    "@types/react": "18.0.31",
+    "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
     "bulma": "^0.9.4",
     "eslint": "8.37.0",

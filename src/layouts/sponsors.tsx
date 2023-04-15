@@ -23,8 +23,8 @@ export default function SponsorLayout(props: SponsorLayoutProps) {
           url: `https://www.team3132.com/sponsors`,
           type: "article",
           article: {
-            publishedTime: date.toISO(),
-            modifiedTime: date.toISO(),
+            publishedTime: date.toISO() ?? undefined,
+            modifiedTime: date.toISO() ?? undefined,
           },
         }}
       />

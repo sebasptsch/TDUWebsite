@@ -6,7 +6,7 @@ interface SponsorsComponentProps {
   showTitle?: boolean;
 }
 
-export default function SponsorsComponent({showTitle = true}: SponsorsComponentProps) {
+export default function SponsorsComponent({ showTitle = true }: SponsorsComponentProps) {
   const sponsors = [
     {
       name: "Macquarie University",
@@ -23,6 +23,11 @@ export default function SponsorsComponent({showTitle = true}: SponsorsComponentP
       link: "https://www.theiet.org/",
       logo: "/images/sponsor_logos/sponsors_svg/IET.svg",
     },
+    {
+      name: "MGI",
+      link: "https://en.mgi-tech.com/",
+      logo: "/images/sponsor_logos/sponsors_svg/MGI.svg",
+    }
     // {
     //   name: "Amazon",
     //   link: "https://www.amazon.com.au/",
@@ -70,11 +75,11 @@ export default function SponsorsComponent({showTitle = true}: SponsorsComponentP
     >
       {showTitle ? <div className="column is-12">
         <h1 className="title has-text-centered">Our Sponsors</h1>
-      </div>: null}
+      </div> : null}
       {sponsors.map((sponsor) => {
         return (
           <motion.div
-            className="column is-one-third-desktop is-full-mobile"
+            className="column is-one-third-desktop is-full-mobile m-4"
             key={sponsor.name}
             whileHover={{
               x: 5,

@@ -12,7 +12,7 @@
   "dependencies": {
     "@discordjs/builders": "^1.5.0",
     "@plaiceholder/next": "^2.5.0",
-    "@types/node": "18.15.12",
+    "@types/node": "18.15.13",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
     "bulma": "^0.9.4",

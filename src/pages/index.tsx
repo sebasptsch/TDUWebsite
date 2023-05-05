@@ -8,8 +8,11 @@ import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
+import { useEffect, useState } from "react";
+import { useAlert } from "react-alert";
 
-export default function Home({ imageProps }: any) {
+export default function Home({ imageProps }: any) { 
+
   return (
     <Main>
       <NextSeo title="Home" />

@@ -26,7 +26,7 @@
     "next": "13.3.4",
     "next-mdx-remote": "^4.4.1",
     "next-seo": "^6.0.0",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "object-hash": "^3.0.0",
     "plaiceholder": "^2.5.0",
     "react": "18.2.0",

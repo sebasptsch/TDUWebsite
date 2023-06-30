@@ -31,7 +31,7 @@ export default async function ContactApi(
 
     const embed = new EmbedBuilder()
       .setTimestamp(date)
-      .setColor(3066993)
+      .setColor(3066993).setURL("mailto:" + req.body.email)
       .setFields(
         {
           name: "Email",

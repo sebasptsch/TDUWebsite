@@ -87,7 +87,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // console.log({ posts });
 
-  return { props: { posts: posts.sort(sortByPriority) } };
+  return { props: { posts: posts.sort(sortByPriority) }, fallback: false };
 };
 
 interface priorityProps {

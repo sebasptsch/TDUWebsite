@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps = async () => {
     })
   );
 
-  return { props: { posts }, fallback: false };
+  return { props: { posts } };
 };
 
 const getImg = async (imgUrl?: string, opts?: IGetPlaiceholderOptions) => {

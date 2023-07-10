@@ -1989,10 +1989,10 @@ googleapis-common@^6.0.0:
     url-template "^2.0.8"
     uuid "^9.0.0"
 
-googleapis@^118.0.0:
-  version "118.0.0"
-  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-118.0.0.tgz#a8b9f84d283544b85927abeb989252cb2f3ec490"
-  integrity sha512-Ny6zJOGn5P/YDT6GQbJU6K0lSzEu4Yuxnsn45ZgBIeSQ1RM0FolEjUToLXquZd89DU9wUfqA5XYHPEctk1TFWg==
+googleapis@^121.0.0:
+  version "121.0.0"
+  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-121.0.0.tgz#05e7b517690fd23f520cf8202442c5d4f655f31e"
+  integrity sha512-tL39TCmAHwee7Irw15pBHUPp39Pz7K2+yOq2YbOgzY8ZDTukL+fuQdNoAINQkyXKFTzORTE+uoi6IuyrlS1njQ==
   dependencies:
     google-auth-library "^8.0.2"
     googleapis-common "^6.0.0"

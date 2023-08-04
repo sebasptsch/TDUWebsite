@@ -37,9 +37,6 @@ export default function RobotPostLayout({
           title,
           description: excerpt,
           type: "article",
-          article: {
-            publishedTime: date,
-          },
           images: image
             ? [
                 {
@@ -79,9 +76,9 @@ export default function RobotPostLayout({
         ) : null}
         <section className="hero hero-body">
           <h1 className="title">{title}</h1>
-          <h2 className="subtitle">
+          {/* <h2 className="subtitle">
             {formattedDate ? `Last Edited ${formattedDate}` : null}
-          </h2>
+          </h2> */}
         </section>
         <div className="content">{children}</div>
       </article>

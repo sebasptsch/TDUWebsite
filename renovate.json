@@ -4,6 +4,6 @@
     "config:base"
   ],
   "automerge": true,
-  "automergeStrategy": "rebase",
+  "automergeStrategy": "squash",
   "pruneBranchAfterAutomerge": true
 }

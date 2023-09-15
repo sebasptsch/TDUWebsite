@@ -42,11 +42,11 @@ const SocialButtons = () => {
         Icon={FaInstagram}
         url="https://www.instagram.com/team3132/"
       />
-      <SocialButton
+      {/* <SocialButton
         text="Twitter"
         Icon={FaTwitter}
         url="https://twitter.com/Team3132"
-      />
+      /> */}
       <SocialButton
         text="Github"
         Icon={FaGithub}

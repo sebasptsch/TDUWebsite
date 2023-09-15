@@ -18,7 +18,7 @@ export default function Home({ imageProps }: any) {
       <NextSeo title="Home" />
       <div className="hero">
         <div className="hero-body">
-          <div className="title">
+          <div className="title" style={{paddingRight: "3em", paddingLeft: "3em"}}>
             <AnimatedLogo />
           </div>
         </div>

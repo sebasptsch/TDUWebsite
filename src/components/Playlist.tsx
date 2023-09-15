@@ -1,12 +1,11 @@
 import { container, item } from "@/lib/animations";
-import { fetcher } from "@/lib/fetcher";
 import { motion } from "framer-motion";
-import useSWR from "swr";
 import CardComponent from "./card";
+import { trpc } from "@/utils/trpc";
 
 export default function Playlist(props: any) {
   const { id } = props;
-  const { data, error } = useSWR(`/api/youtube/playlist/${id}`, fetcher);
+  const { data } = trpc.youtube.playlist.useQuery(id);
 
   return (
     <motion.div

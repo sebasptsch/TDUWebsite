@@ -3,8 +3,8 @@ import { fetcher } from "@/lib/fetcher";
 import { motion } from "framer-motion";
 import useSWR from "swr";
 
-export default function AwardComponent({ year }: { year?: number }) {
-  const { data, error } = useSWR(`/api/tba/awards/${year || ""}`, fetcher);
+export default function AwardComponent() {
+  const { data, error } = useSWR(`/api/tba/awards`, fetcher);
   return (
     <>
       <p className="title" id="awards">

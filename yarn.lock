@@ -4606,6 +4606,11 @@ tar@^6.0.2, tar@^6.1.11, tar@^6.1.2:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
+tba-api-v3client-ts@^3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/tba-api-v3client-ts/-/tba-api-v3client-ts-3.11.0.tgz#b820f28e63e5b2481cfd8e762e3e8878617174b7"
+  integrity sha512-nr5Sq4l9t6ohaihjLTSPIm3TtURY9J43B9QihncvmfmfGCtTtpk0MXBu/6SFhM1NlSFuxeczeefhJE1SuBFOIg==
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
@@ -5065,6 +5070,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@^3.22.2:
+  version "3.22.2"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.22.2.tgz#3add8c682b7077c05ac6f979fea6998b573e157b"
+  integrity sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==
 
 zwitch@^2.0.0:
   version "2.0.4"

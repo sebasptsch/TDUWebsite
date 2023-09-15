@@ -1,15 +1,20 @@
 import YoutubeVideo from "./YoutubeVideo";
 import GDriveVideo from "./GDriveVideo";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import SponsorsComponent from "./Sponsors";
 import ContactForm from "./ContactForm";
-type Components = Record<string, any>
+import { MDXRemoteProps } from "next-mdx-remote";
+
 const MDXComponents = {
     YoutubeVideo,
     GDriveVideo,
-    Image,
+    Image: ImageWrapper,
     Sponsors: SponsorsComponent,
     Contact: ContactForm,
-} satisfies Components
+} satisfies MDXRemoteProps["components"]
+
+function ImageWrapper(props: ImageProps) {
+    return <Image {...props} />
+}
 
 export default MDXComponents;

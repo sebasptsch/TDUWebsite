@@ -4,21 +4,29 @@ import SocialButtons from "@/components/socialButtons";
 import SponsorsComponent from "@/components/Sponsors";
 import UpcomingComponent from "@/components/UpcomingEvents";
 import Main from "@/layouts/main";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
 import { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
+import { createServerSideHelpers } from "@trpc/react-query/server";
+import { appRouter } from "@/server/routers/_app";
+import SuperJSON from "superjson";
 
-export default function Home({ imageProps }: any) { 
-
+export default function Home(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   return (
     <Main>
       <NextSeo title="Home" />
       <div className="hero">
         <div className="hero-body">
-          <div className="title" style={{paddingRight: "3em", paddingLeft: "3em"}}>
+          <div
+            className="title"
+            style={{ paddingRight: "3em", paddingLeft: "3em" }}
+          >
             <AnimatedLogo />
           </div>
         </div>
@@ -51,7 +59,7 @@ export default function Home({ imageProps }: any) {
         <div className="column">
           <figure className="image is-3by2">
             <Image
-              {...imageProps}
+              {...props.imageProps}
               alt="Team Photo"
               placeholder="blur"
               sizes="(max-width: 1024px) 100vw, (max-width: 1440px) 50vw, 50vw"
@@ -97,9 +105,22 @@ export default function Home({ imageProps }: any) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
+
+  const helpers = createServerSideHelpers({
+    router: appRouter,
+    ctx: {},
+    transformer: SuperJSON,
+  });
+
+  await helpers.tba.events.prefetch();
+
   return {
-    props: { imageProps: { ...img, blurDataURL: base64, placeholder: "blur" } },
+    props: {
+      imageProps: { ...img, blurDataURL: base64, placeholder: "blur" },
+      trpcState: helpers.dehydrate(),
+    },
+    revalidate: 60 * 60 * 24,
   };
 };

@@ -6,6 +6,7 @@ import SEO from "../../next-seo.config";
 import "@/styles/styles.scss";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "@/components/AlertTemplate";
+import { trpc } from "@/utils/trpc";
 
 const options = {
   // you can also just use 'bottom center'
@@ -16,7 +17,7 @@ const options = {
   transition: transitions.SCALE,
 };
 
-export default function App({ Component, pageProps, router }: AppProps) {
+function App({ Component, pageProps, router }: AppProps) {
   return (
     <AlertProvider template={AlertTemplate} {...options}>
       <Layout>
@@ -32,3 +33,5 @@ export default function App({ Component, pageProps, router }: AppProps) {
     </AlertProvider>
   );
 }
+
+export default trpc.withTRPC(App);

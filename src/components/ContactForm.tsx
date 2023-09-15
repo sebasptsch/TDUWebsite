@@ -1,6 +1,10 @@
+import useZodForm from "@/hooks/useZodForm";
+import { trpc } from "@/utils/trpc";
 import { useEffect } from "react";
+import { useAlert } from "react-alert";
 import { GoogleReCaptcha, GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
 
 interface FormFields {
   captchaToken: string;
@@ -9,19 +13,30 @@ interface FormFields {
   name: string;
 }
 
+const FormSchema =  z.object({
+  email: z.string().email(),
+  message: z.string(),
+  name: z.string(),
+  captchaToken: z.string(),
+})
+
 export default function ContactForm() {
-  const { setValue, register, handleSubmit, watch, reset, formState: {errors, isSubmitting, isDirty} } =
-    useForm<FormFields>();
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
-    fetch("/api/contact", {
-      body: JSON.stringify(data),
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+  const contactMutation = trpc.contact.useMutation()
+  const alert = useAlert()
+
+  const { setValue, register, handleSubmit,reset, formState: {errors, isSubmitting, isDirty} } =
+    useZodForm({
+      schema: FormSchema,
     })
-      .then((res) => {
-        reset();
-      })
-      .catch((error) => console.log(error));
+
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    try {
+      await contactMutation.mutateAsync(data)
+      alert.success("Message sent!")
+      reset()
+    } catch (error) {
+      alert.error("Error sending message")
+    }
   };
 
   const onVerifyCaptcha = (token: string) => {
@@ -49,7 +64,7 @@ export default function ContactForm() {
           />
         </div>
         {errors.name ? (
-          <p className="help is-danger">{errors.name.type}</p>
+          <p className="help is-danger">{errors.name.message}</p>
         ) : null}
       </div>
       <div className="field">
@@ -63,7 +78,7 @@ export default function ContactForm() {
           />
         </div>
         {errors.email ? (
-          <p className="help is-danger">{errors.email.type}</p>
+          <p className="help is-danger">{errors.email.message}</p>
         ) : null}
       </div>
       <div className="field">
@@ -75,7 +90,7 @@ export default function ContactForm() {
           />
         </div>
         {errors.message ? (
-          <p className="help is-danger">{errors.message.type}</p>
+          <p className="help is-danger">{errors.message.message}</p>
         ) : null}
       </div>
       <GoogleReCaptcha onVerify={onVerifyCaptcha} />

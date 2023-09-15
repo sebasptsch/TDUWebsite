@@ -1,61 +1,57 @@
 import { container, item } from "@/lib/animations";
-import { fetcher } from "@/lib/fetcher";
+import { trpc } from "@/utils/trpc";
 import { motion } from "framer-motion";
-import useSWR from "swr";
 
 export default function AwardComponent() {
-  const { data, error } = useSWR(`/api/tba/awards`, fetcher);
+  const awardsQuery = trpc.tba.awards.useQuery();
   return (
     <>
       <p className="title" id="awards">
         Awards
       </p>
 
-      {data &&
-        Object.keys(data)
-          .reverse()
-          .map((key) => {
-            const awards = data[key];
-            return (
-              <>
-                <h3 className="subtitle is-3 is-full">{key}</h3>
-                <motion.div
-                  className="has-text-centered py-3 columns is-vcentered is-multiline"
-                  variants={container}
-                  initial="hidden"
-                  animate="show"
-                >
-                  {awards.map((award: any) => (
-                    <motion.div
-                      className="column is-one-quarter"
-                      key={award.event_key + award.name}
-                      variants={item}
+      {awardsQuery.data &&
+        awardsQuery.data.map(({ year, awards }) => {
+          return (
+            <>
+              <h3 className="subtitle is-3 is-full">{year}</h3>
+              <motion.div
+                className="has-text-centered py-3 columns is-vcentered is-multiline"
+                variants={container}
+                initial="hidden"
+                animate="show"
+              >
+                {awards.map((award) => (
+                  <motion.div
+                    className="column is-one-quarter"
+                    key={award.event_key + award.name}
+                    variants={item}
+                  >
+                    <a
+                      className={`box ${
+                        award.blue ? "has-background-link has-text-white" : ""
+                      }`}
+                      href={`https://thebluealliance.com/event/${award.event_key}#awards`}
                     >
-                      <a
-                        className={`box ${
-                          award.blue ? "has-background-link has-text-white" : ""
+                      <p
+                        className={`subtitle ${
+                          award.blue ? "has-text-white" : ""
                         }`}
-                        href={`https://thebluealliance.com/event/${award.event_key}#awards`}
                       >
-                        <p
-                          className={`subtitle ${
-                            award.blue ? "has-text-white" : ""
-                          }`}
-                        >
-                          {award.name} {award.year}
+                        {award.name} {award.year}
+                      </p>
+                      {award.recipient_list.filter(recipient => Boolean(recipient.awardee)).map(({awardee}) => (
+                        <p className="tag ml-1 mr-1" key={awardee}>
+                          {awardee}
                         </p>
-                        {award.recipient_list.map((recipient: any) => (
-                          <p className="tag ml-1 mr-1" key={recipient}>
-                            {recipient}
-                          </p>
-                        ))}
-                      </a>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </>
-            );
-          })}
+                      ))}
+                    </a>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </>
+          );
+        })}
       {/* {data ? (
           data.map((award) => (
             

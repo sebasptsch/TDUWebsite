@@ -1,10 +1,9 @@
 import { container, item } from "@/lib/animations";
-import { fetcher } from "@/lib/fetcher";
+import { trpc } from "@/utils/trpc";
 import { motion } from "framer-motion";
-import useSWR from "swr";
 
 export default function UpcomingComponent() {
-  const { data, error } = useSWR("/api/tba/events", fetcher);
+  const { data } = trpc.tba.events.useQuery()
   return (
     <motion.div
       className="has-text-centered pt-6 pb-6 columns is-vcentered is-gapless"
@@ -18,7 +17,7 @@ export default function UpcomingComponent() {
           <div className="title">Upcoming Events</div>
           <motion.div variants={container} initial="hidden" animate="show">
             {data
-              ? data.map((event: any) => (
+              ? data.map((event) => (
                   <motion.a
                     className="box"
                     href={`https://www.thebluealliance.com/event/${event.key}`}
@@ -26,15 +25,15 @@ export default function UpcomingComponent() {
                     variants={item}
                   >
                     <p className="subtitle">{event.name}</p>
-                    {event.active ? (
+                    {event.ongoing ? (
                       <>
                         <div className="tag is-primary">Ongoing</div>
                         <br />
                       </>
                     ) : null}
-                    <b>Starts:</b> {new Date(event.start).toLocaleDateString()}
+                    <b>Starts:</b> {new Date(event.start_date).toLocaleDateString()}
                     <br />
-                    <b>Ends:</b> {new Date(event.end).toLocaleDateString()}
+                    <b>Ends:</b> {new Date(event.end_date).toLocaleDateString()}
                   </motion.a>
                 ))
               : "Loading"}

@@ -16,7 +16,7 @@
     "@types/react": "18.2.2",
     "@types/react-dom": "18.2.3",
     "bulma": "^0.9.4",
-    "eslint": "8.39.0",
+    "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.6.0",
     "googleapis": "^126.0.0",

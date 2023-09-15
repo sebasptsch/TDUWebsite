@@ -13,7 +13,6 @@ export default function TeamLayout({ imageProps }: TeamLayoutProps) {
         <div className="hero-body">
           <div className="container has-text-centered">
             <h1 className="title">The Team</h1>
-            <h2 className="subtitle">A brief description of the team.</h2>
           </div>
         </div>
       </section>
@@ -44,7 +43,6 @@ export default function TeamLayout({ imageProps }: TeamLayoutProps) {
             University.
           </p>
           <p>
-            {" "}
             We are passionate about spreading our message of ‘STEM for Everyone,
             Everywhere’. This means changing the lives of everyone, no matter
             who they are or where they live. From the outback of Australia to

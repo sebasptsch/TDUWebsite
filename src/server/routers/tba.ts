@@ -73,20 +73,28 @@ const tbaRouter = router({
     const yearsWithAwards: Array<{ year: number; awards: BlueAward[] }> = [];
 
     uniqueYears.forEach((year) => {
-      const awardsForYear = joinedAndSortedAwards.filter(
-        (award) => award.year === year
-      ).map((award) => {
-        const {award_type} = award;
+      const awardsForYear = joinedAndSortedAwards
+        .filter((award) => award.year === year)
+        .map((award) => {
+          const { award_type, recipient_list } = award;
 
-        const blue = award_type === 0 ||
-        award_type === 69 ||
-        award_type === 1 ||
-        award_type === 3 ||
-        award_type === 74
+          const blue =
+            award_type === 0 ||
+            award_type === 69 ||
+            award_type === 1 ||
+            award_type === 3 ||
+            award_type === 74;
 
-        return {...award, blue}
-      });
-        
+          const ourRecipients = recipient_list.filter(
+            (recipient) =>
+              recipient.team_key === "frc3132" ||
+              recipient.team_key === "frc5331" ||
+              !recipient.team_key
+          );
+
+          return { ...award, blue, recipient_list: ourRecipients };
+        });
+
       yearsWithAwards.push({ year, awards: awardsForYear });
     });
 

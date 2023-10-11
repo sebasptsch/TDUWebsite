@@ -108,8 +108,8 @@ dependencies:
     specifier: ^0.32.5
     version: 0.32.5
   superjson:
-    specifier: ^1.13.1
-    version: 1.13.1
+    specifier: ^2.0.0
+    version: 2.0.0
   tba-api-v3client-ts:
     specifier: ^3.11.0
     version: 3.11.0
@@ -5168,9 +5168,9 @@ packages:
       client-only: 0.0.1
       react: 18.2.0
 
-  /superjson@1.13.1:
-    resolution: {integrity: sha512-AVH2eknm9DEd3qvxM4Sq+LTCkSXE2ssfh1t11MHMXyYXFQyQ1HLgVvV+guLTsaQnJU3gnaVo34TohHPulY/wLg==}
-    engines: {node: '>=10'}
+  /superjson@2.0.0:
+    resolution: {integrity: sha512-W3n+NJ7TFjaLle8ihIIvsr/bbuKpnxeatsyjmhy7iSkom+/cshaHziCQAWXrHGWJVQSQFDOuES6C3nSEvcbrQg==}
+    engines: {node: '>=16'}
     dependencies:
       copy-anything: 3.0.5
     dev: false

@@ -13,7 +13,7 @@
     "@discordjs/builders": "^1.6.5",
     "@hookform/resolvers": "^3.3.1",
     "@plaiceholder/next": "^2.5.0",
-    "@tanstack/react-query": "^4.35.3",
+    "@tanstack/react-query": "^5.0.0",
     "@trpc/client": "^10.38.3",
     "@trpc/next": "^10.38.3",
     "@trpc/react-query": "^10.38.3",

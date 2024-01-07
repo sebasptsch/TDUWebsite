@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { IconType } from "react-icons";
 
-import { FaCube, FaFacebook, FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaCube, FaFacebook, FaGithub, FaInstagram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa'
 
 interface SocialButtonProps {
   text: string,
@@ -28,25 +28,25 @@ const SocialButtons = () => {
   return (
     <div className="buttons is-centered">
       <SocialButton
-        text="Youtube"
-        Icon={FaYoutube}
-        url="https://www.youtube.com/user/roboroos"
+        text="Instagram"
+        Icon={FaInstagram}
+        url="https://www.instagram.com/team3132/"
       />
-      <SocialButton
+      <SocialButton 
+        text="LinkedIn"
+        Icon={FaLinkedin}
+        url="https://www.linkedin.com/company/frc-3132-thunder-down-under-robotics/"
+      />
+       <SocialButton
         text="Facebook"
         Icon={FaFacebook}
         url="https://www.facebook.com/firstteam3132/"
       />
       <SocialButton
-        text="Instagram"
-        Icon={FaInstagram}
-        url="https://www.instagram.com/team3132/"
+        text="Youtube"
+        Icon={FaYoutube}
+        url="https://www.youtube.com/@roboroos"
       />
-      {/* <SocialButton
-        text="Twitter"
-        Icon={FaTwitter}
-        url="https://twitter.com/Team3132"
-      /> */}
       <SocialButton
         text="Github"
         Icon={FaGithub}

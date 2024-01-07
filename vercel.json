@@ -1,0 +1,28 @@
+{
+    "redirects": [
+      {
+        "source": "/linkedin",
+        "destination": "https://www.linkedin.com/company/frc-3132-thunder-down-under-robotics/"
+      },
+      {
+        "source": "/youtube",
+        "destination": "https://www.youtube.com/@roboroos"
+      },
+      {
+        "source": "/instagram",
+        "destination": "https://www.instagram.com/team3132/"
+      },
+      {
+        "source": "/github",
+        "destination": "https://github.com/Team3132"
+      },
+      {
+        "source": "/grabcad",
+        "destination": "https://grabcad.com/team.3132-1/models"
+      },
+      {
+        "source": "/facebook",
+        "destination": "https://www.facebook.com/firstteam3132/"
+      }
+    ]
+  }

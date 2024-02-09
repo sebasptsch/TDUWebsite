@@ -48,8 +48,8 @@ dependencies:
     specifier: ^11.0.0
     version: 11.0.1(react-dom@18.2.0)(react@18.2.0)
   googleapis:
-    specifier: ^132.0.0
-    version: 132.0.0
+    specifier: ^133.0.0
+    version: 133.0.0
   gray-matter:
     specifier: ^4.0.3
     version: 4.0.3
@@ -2739,8 +2739,8 @@ packages:
       - supports-color
     dev: false
 
-  /googleapis@132.0.0:
-    resolution: {integrity: sha512-3TvliWpfcpxqIOxAKyxUtS13VbwVM62BLfjxFhDjSSRmNLI3jh+4zfj2hcL2UvzU5yfHZJUfb8tXmumx2e+ruQ==}
+  /googleapis@133.0.0:
+    resolution: {integrity: sha512-6xyc49j+x7N4smawJs/q1i7mbSkt6SYUWWd9RbsmmDW7gRv+mhwZ4xT+XkPihZcNyo/diF//543WZq4szdS74w==}
     engines: {node: '>=14.0.0'}
     dependencies:
       google-auth-library: 9.0.0

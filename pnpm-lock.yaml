@@ -132,7 +132,7 @@ devDependencies:
     version: 3.0.6
   '@types/react-alert':
     specifier: ^7.0.2
-    version: 7.0.2
+    version: 7.0.6
   next-sitemap:
     specifier: ^4.2.3
     version: 4.2.3(next@14.1.0)
@@ -923,8 +923,8 @@ packages:
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react-alert@7.0.2:
-    resolution: {integrity: sha512-IImZGkaLhsFfDxzvlMHvbo0tE06B9FqXZrVLBr58gfPINRwITPKWap42RinHEFbF/l1yUJeDoR3NTx7hwuh2ng==}
+  /@types/react-alert@7.0.6:
+    resolution: {integrity: sha512-e6jjMurpoTVa8MXUbb1r/M1Rnn+eNxa1Ayhf77yeHtPbfu30x55Y6KMYVWSLUg/SQOgN3TguhDNQ6Qqu1gnkLw==}
     dependencies:
       '@types/react': 18.2.58
     dev: true

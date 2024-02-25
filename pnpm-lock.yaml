@@ -129,7 +129,7 @@ devDependencies:
     version: 3.3.2
   '@types/object-hash':
     specifier: ^3.0.4
-    version: 3.0.4
+    version: 3.0.6
   '@types/react-alert':
     specifier: ^7.0.2
     version: 7.0.2
@@ -916,8 +916,8 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: false
 
-  /@types/object-hash@3.0.4:
-    resolution: {integrity: sha512-w4fEy2suq1bepUxHoJRCBHJz0vS5DPAYpSbcgNwOahljxwyJsiKmi8qyes2/TJc+4Avd7fsgP+ZgUuXZjPvdug==}
+  /@types/object-hash@3.0.6:
+    resolution: {integrity: sha512-fOBV8C1FIu2ELinoILQ+ApxcUKz4ngq+IWUYrxSGjXzzjUALijilampwkMgEtJ+h2njAW3pi853QpzNVCHB73w==}
     dev: true
 
   /@types/prop-types@15.7.5:

@@ -52,11 +52,11 @@ const SocialButtons = () => {
         Icon={FaGithub}
         url="https://github.com/Team3132"
       />
-      <SocialButton
+      {/* <SocialButton
         text="GrabCAD"
         Icon={FaCube}
         url="https://grabcad.com/team.3132-1/models"
-      />
+      /> */}
     </div>
   );
 };

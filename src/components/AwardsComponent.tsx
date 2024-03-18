@@ -13,7 +13,7 @@ export default function AwardComponent() {
       {awardsQuery.data &&
         awardsQuery.data.map(({ year, awards }) => {
           return (
-            <>
+            <div key="year">
               <h3 className="subtitle is-3 is-full">{year}</h3>
               <motion.div
                 className="has-text-centered py-3 columns is-vcentered is-multiline"
@@ -49,7 +49,7 @@ export default function AwardComponent() {
                   </motion.div>
                 ))}
               </motion.div>
-            </>
+            </div>
           );
         })}
       {/* {data ? (

@@ -15,8 +15,11 @@ export default function Footer() {
             <h1 className="subtitle">Social Media</h1>
             <SocialButtons />
             <hr className="divider" />
-            <Link href="/contact" legacyBehavior>
-              <a className="button is-primary">Contact Us!</a>
+            <Link href="/contact" className="button is-primary">
+              Contact Us!
+            </Link>
+            <Link href="/sponsor" className="button is-link">
+             Support us!
             </Link>
           </div>
         </div>

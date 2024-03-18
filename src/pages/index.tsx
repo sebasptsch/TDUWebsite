@@ -35,10 +35,12 @@ export default function Home(
         </div> */}
       </div>
 
-      {/* <div className="py-6">
-        <SocialButtons />
-      </div> */}
-      {/* <hr className="divider" /> */}
+      <div className="py-6">
+        <Link href="/sponsor" className="button">
+          Sponsor Us
+        </Link>
+      </div>
+      <hr className="divider" />
       <SponsorsComponent />
       <hr className="divider" />
       <div>

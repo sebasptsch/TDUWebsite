@@ -1,6 +1,6 @@
 import MDXComponents from "@/components/MDXComponents";
 import Main from "@/layouts/main";
-import SponsorLayout from "@/layouts/sponsors";
+import SponsorLayout from "@/layouts/sponsor";
 import { SPONSORS_PATH } from "@/utils/mdxUtils";
 import fs from "fs";
 import matter from "gray-matter";

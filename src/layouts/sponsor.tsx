@@ -20,7 +20,7 @@ export default function SponsorLayout(props: SponsorLayoutProps) {
         openGraph={{
           title,
           description,
-          url: `https://www.team3132.com/sponsors`,
+          url: `https://www.team3132.com/sponsor`,
           type: "article",
           article: {
             publishedTime: date.toISO() ?? undefined,

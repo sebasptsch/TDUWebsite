@@ -28,6 +28,7 @@ export const appRouter = router({
         message: z.string(),
         name: z.string(),
         captchaToken: z.string(),
+        support: z.boolean().default(false),
       })
     )
     .mutation(async ({ input }) => {
@@ -59,6 +60,10 @@ export const appRouter = router({
         .setTimestamp(date)
         .setColor(3066993)
         .setFields(
+          {
+            name: "Source",
+            value: input.support ? "Support" : "Contact",
+          },
           {
             name: "Email",
             value: input.email,

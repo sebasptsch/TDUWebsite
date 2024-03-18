@@ -33,6 +33,7 @@
     "next-seo": "^6.1.0",
     "node-sass": "^9.0.0",
     "object-hash": "^3.0.0",
+    "optional": "^0.1.4",
     "plaiceholder": "^2.5.0",
     "react": "18.2.0",
     "react-alert": "^7.0.3",
@@ -42,13 +43,16 @@
     "react-icons": "^5.0.0",
     "sass": "^1.67.0",
     "sass-loader": "^14.0.0",
-    "sharp": "^0.33.0",
+    
     "superjson": "^2.0.0",
     "tba-api-v3client-ts": "^3.11.0",
     "typescript": "5.4.2",
     "unist-util-visit": "^5.0.0",
     "unist-util-visit-parents": "^6.0.1",
     "zod": "^3.22.2"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@types/luxon": "^3.3.2",

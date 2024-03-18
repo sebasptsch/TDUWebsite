@@ -75,9 +75,7 @@ export default function Navigation() {
           >
             {items.map(({ url, label }) => (
               <Link href={url} legacyBehavior key="label">
-                <a className="navbar-item has-text-centered">
-                  {label}
-                </a>
+                <a className="navbar-item has-text-centered">{label}</a>
               </Link>
             ))}
           </motion.div>
@@ -85,6 +83,9 @@ export default function Navigation() {
           <div className="navbar-end">
             <div className="navbar-item has-text-centered ">
               <div className="buttons is-centered">
+                <Link href="/sponsor" className="button is-link">
+                  <strong>Support us!</strong>
+                </Link>
                 <Link href="/contact" legacyBehavior>
                   <a className="button is-primary">
                     <strong>Contact us</strong>

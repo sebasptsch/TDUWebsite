@@ -24,7 +24,7 @@ export default function AwardComponent() {
                 {awards.map((award) => (
                   <motion.div
                     className="column is-one-quarter"
-                    key={award.event_key + award.name}
+                    key={award.year + award.event_key + award.name}
                     variants={item}
                   >
                     <a

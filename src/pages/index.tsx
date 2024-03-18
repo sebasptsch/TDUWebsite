@@ -35,9 +35,9 @@ export default function Home(
         </div> */}
       </div>
 
-      <div className="py-6">
-        <Link href="/sponsor" className="button">
-          Sponsor Us
+      <div className="py-6 is-flex is-align-items-center is-align-content-center is-justify-content-center">
+        <Link href="/sponsor" className="button is-link is-medium is-centered ">
+          Support Us!
         </Link>
       </div>
       <hr className="divider" />

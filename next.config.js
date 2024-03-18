@@ -1,11 +1,20 @@
 const { withPlaiceholder } = require('@plaiceholder/next')
 const path = require("path")
 
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = withPlaiceholder({
   reactStrictMode: true,
   images: {
-    domains: ['i.ytimg.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+        pathname: '/**/*',
+      },
+    ],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src','styles')],

@@ -27,7 +27,12 @@ export default function SponsorsComponent({ showTitle = true }: SponsorsComponen
       name: "MGI",
       link: "https://en.mgi-tech.com/",
       logo: "/images/sponsor_logos/sponsors_svg/MGI.svg",
-    }
+    },
+    {
+      name: "Rockwell Automation",
+      link: "https://www.rockwellautomation.com/",
+      logo: "/images/sponsor_logos/sponsors_svg/Rockwell.svg",
+    },
     // {
     //   name: "Amazon",
     //   link: "https://www.amazon.com.au/",
@@ -58,12 +63,6 @@ export default function SponsorsComponent({ showTitle = true }: SponsorsComponen
     //   name: "Lego Education",
     //   link: "https://education.lego.com/en-au",
     //   logo: "/images/sponsor_logos/sponsors_svg/LegoEdu.svg",
-    // },
-
-    // {
-    //   name: "Rockwell Automation",
-    //   link: "https://www.rockwellautomation.com/",
-    //   logo: "/images/sponsor_logos/sponsors_svg/Rockwell.svg",
     // },
   ];
   return (

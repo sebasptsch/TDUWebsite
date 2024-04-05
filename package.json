@@ -17,7 +17,7 @@
     "@trpc/next": "^10.38.3",
     "@trpc/react-query": "^10.38.3",
     "@trpc/server": "^10.38.3",
-    "@types/node": "20.12.4",
+    "@types/node": "20.12.5",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
     "bulma": "^1.0.0",

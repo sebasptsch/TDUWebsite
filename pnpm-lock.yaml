@@ -103,7 +103,7 @@ dependencies:
     version: 1.74.1
   sass-loader:
     specifier: ^14.0.0
-    version: 14.1.1(node-sass@9.0.0)(sass@1.74.1)
+    version: 14.2.0(node-sass@9.0.0)(sass@1.74.1)
   superjson:
     specifier: ^2.0.0
     version: 2.2.1
@@ -4632,8 +4632,8 @@ packages:
       yargs: 17.7.1
     dev: false
 
-  /sass-loader@14.1.1(node-sass@9.0.0)(sass@1.74.1):
-    resolution: {integrity: sha512-QX8AasDg75monlybel38BZ49JP5Z+uSKfKwF2rO7S74BywaRmGQMUBw9dtkS+ekyM/QnP+NOrRYq8ABMZ9G8jw==}
+  /sass-loader@14.2.0(node-sass@9.0.0)(sass@1.74.1):
+    resolution: {integrity: sha512-jxmjDXD9OYNDb2bp9JvopdE6QjecQY9beTWik/6sEHrsMxyo90Gyc471A4NUz60NLs4WsAh6yVtIvhLwEZcXeg==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x

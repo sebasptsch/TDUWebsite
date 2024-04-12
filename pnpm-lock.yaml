@@ -61,7 +61,7 @@ dependencies:
     version: 3.4.4
   next:
     specifier: 14.2.0
-    version: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.74.1)
+    version: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.75.0)
   next-mdx-remote:
     specifier: ^4.4.1
     version: 4.4.1(react-dom@18.2.0)(react@18.2.0)
@@ -100,10 +100,10 @@ dependencies:
     version: 5.0.1(react@18.2.0)
   sass:
     specifier: ^1.67.0
-    version: 1.74.1
+    version: 1.75.0
   sass-loader:
     specifier: ^14.0.0
-    version: 14.2.0(node-sass@9.0.0)(sass@1.74.1)
+    version: 14.2.0(node-sass@9.0.0)(sass@1.75.0)
   superjson:
     specifier: ^2.0.0
     version: 2.2.1
@@ -678,7 +678,7 @@ packages:
       next: '>= 10.0.0'
       sharp: '>= 0.30.6'
     dependencies:
-      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.74.1)
+      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.75.0)
       sharp: 0.33.3
     dev: false
 
@@ -758,7 +758,7 @@ packages:
       '@trpc/client': 10.45.2(@trpc/server@10.45.2)
       '@trpc/react-query': 10.45.2(@tanstack/react-query@4.36.1)(@trpc/client@10.45.2)(@trpc/server@10.45.2)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/server': 10.45.2
-      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.74.1)
+      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.75.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -1256,7 +1256,7 @@ packages:
   /bulma@1.0.0:
     resolution: {integrity: sha512-7n49v/gdHXaHcU9fVobqGXO2OguiCoMh6CLbeX7jq00XrZ5vOSE4LNS0S/0Q6rlBbckY6kk6W7LwqxS0nu4bug==}
     dependencies:
-      sass: 1.74.1
+      sass: 1.75.0
     dev: false
 
   /busboy@1.6.0:
@@ -3870,7 +3870,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.74.1)
+      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.75.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -3886,10 +3886,10 @@ packages:
       '@next/env': 13.4.19
       fast-glob: 3.3.1
       minimist: 1.2.8
-      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.74.1)
+      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.75.0)
     dev: true
 
-  /next@14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.74.1):
+  /next@14.2.0(react-dom@18.2.0)(react@18.2.0)(sass@1.75.0):
     resolution: {integrity: sha512-2T41HqJdKPqheR27ll7MFZ3gtTYvGew7cUc0PwPSyK9Ao5vvwpf9bYfP4V5YBGLckHF2kEGvrLte5BqLSv0s8g==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -3915,7 +3915,7 @@ packages:
       postcss: 8.4.31
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      sass: 1.74.1
+      sass: 1.75.0
       styled-jsx: 5.1.1(react@18.2.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.2.0
@@ -4639,7 +4639,7 @@ packages:
       yargs: 17.7.1
     dev: false
 
-  /sass-loader@14.2.0(node-sass@9.0.0)(sass@1.74.1):
+  /sass-loader@14.2.0(node-sass@9.0.0)(sass@1.75.0):
     resolution: {integrity: sha512-jxmjDXD9OYNDb2bp9JvopdE6QjecQY9beTWik/6sEHrsMxyo90Gyc471A4NUz60NLs4WsAh6yVtIvhLwEZcXeg==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
@@ -4662,11 +4662,11 @@ packages:
     dependencies:
       neo-async: 2.6.2
       node-sass: 9.0.0
-      sass: 1.74.1
+      sass: 1.75.0
     dev: false
 
-  /sass@1.74.1:
-    resolution: {integrity: sha512-w0Z9p/rWZWelb88ISOLyvqTWGmtmu2QJICqDBGyNnfG4OUnPX9BBjjYIXUpXCMOOg5MQWNpqzt876la1fsTvUA==}
+  /sass@1.75.0:
+    resolution: {integrity: sha512-ShMYi3WkrDWxExyxSZPst4/okE9ts46xZmJDSawJQrnte7M1V9fScVB+uNXOVKRBt0PggHOwoZcn8mYX4trnBw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:

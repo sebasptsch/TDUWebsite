@@ -24,7 +24,7 @@
     "eslint": "9.1.1",
     "eslint-config-next": "14.2.3",
     "framer-motion": "^11.0.0",
-    "googleapis": "^134.0.0",
+    "googleapis": "^135.0.0",
     "gray-matter": "^4.0.3",
     "lodash.truncate": "^4.4.2",
     "luxon": "^3.4.3",

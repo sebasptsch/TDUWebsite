@@ -41,7 +41,7 @@ export default function AwardComponent() {
                         {award.name}
                       </p>
                       {award.recipient_list.filter(recipient => Boolean(recipient.awardee)).map(({awardee}) => (
-                        <p className="tag ml-1 mr-1" key={awardee}>
+                        <p className={`tag ml-1 mr-1`} key={awardee}>
                           {awardee}
                         </p>
                       ))}

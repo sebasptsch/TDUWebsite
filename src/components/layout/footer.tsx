@@ -22,6 +22,13 @@ export default function Footer() {
              Support us!
             </Link>
           </div>
+          <div className="column is-two-fifths">
+            <h1 className="subtitle">Acknowledgement of Country</h1>
+            <p>
+            Acknowledgement of Country
+Macquarie University acknowledges the Traditional Custodians of the land where Macquarie University is situated, the Wallumattagal Clan of the Dharug Nation – whose cultures and customs have nurtured, and continue to nurture, the land since time immemorial.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

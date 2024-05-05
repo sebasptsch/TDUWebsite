@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@discordjs/builders':
         specifier: ^1.6.5
-        version: 1.8.0
+        version: 1.8.1
       '@hookform/resolvers':
         specifier: ^3.3.1
         version: 3.3.4(react-hook-form@7.51.4(react@18.3.1))
@@ -168,8 +168,8 @@ packages:
   '@corex/deepmerge@4.0.43':
     resolution: {integrity: sha512-N8uEMrMPL0cu/bdboEWpQYb/0i2K5Qn8eCsxzOmxSggJbbQte7ljMRoXm917AbntqTGOzdTu+vP3KOOzoC70HQ==}
 
-  '@discordjs/builders@1.8.0':
-    resolution: {integrity: sha512-NHj5LucA0Td8g0RMbMP6wfvra4QRyvKp7bE/PEMACGcfsaZkqCi4zPZ83vvkaiqRKVhyoFgRWx9f6ZWtaeM/ww==}
+  '@discordjs/builders@1.8.1':
+    resolution: {integrity: sha512-GkF+HM01FHy+NSoTaUPR8z44otfQgJ1AIsRxclYGUZDyUbdZEFyD/5QVv2Y1Flx6M+B0bQLzg2M9CJv5lGTqpA==}
     engines: {node: '>=16.11.0'}
 
   '@discordjs/formatters@0.4.0':
@@ -2970,7 +2970,7 @@ snapshots:
 
   '@corex/deepmerge@4.0.43': {}
 
-  '@discordjs/builders@1.8.0':
+  '@discordjs/builders@1.8.1':
     dependencies:
       '@discordjs/formatters': 0.4.0
       '@discordjs/util': 1.1.0

@@ -51,8 +51,8 @@ importers:
         specifier: ^11.0.0
         version: 11.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       googleapis:
-        specifier: ^139.0.0
-        version: 139.0.0(encoding@0.1.13)
+        specifier: ^140.0.0
+        version: 140.0.0(encoding@0.1.13)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -1391,8 +1391,8 @@ packages:
     resolution: {integrity: sha512-/fhDZEJZvOV3X5jmD+fKxMqma5q2Q9nZNSF3kn1F18tpxmA86BcTxAGBQdM0N89Z3bEaIs+HVznSmFJEAmMTjA==}
     engines: {node: '>=14.0.0'}
 
-  googleapis@139.0.0:
-    resolution: {integrity: sha512-sBBCyTJOo8l2DtLZaLWbjIvuLC0HcQt3+JXpEKhYS1JXXhA/wGjBHXxHQ5UwJB0rlBhO53k/OUXug0/gfKCtBw==}
+  googleapis@140.0.0:
+    resolution: {integrity: sha512-r8i++0lnexrvRA0/uogz3N3eJprddjxAcueTO5f09D/U5yxaOm5G+a892QkHsV+o15NP9whlLUiJr9zazb9ePg==}
     engines: {node: '>=14.0.0'}
 
   gopd@1.0.1:
@@ -4430,7 +4430,7 @@ snapshots:
       - encoding
       - supports-color
 
-  googleapis@139.0.0(encoding@0.1.13):
+  googleapis@140.0.0(encoding@0.1.13):
     dependencies:
       google-auth-library: 9.9.0(encoding@0.1.13)
       googleapis-common: 7.2.0(encoding@0.1.13)

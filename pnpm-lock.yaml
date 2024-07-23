@@ -105,8 +105,8 @@ importers:
         specifier: ^1.67.0
         version: 1.77.8
       sass-loader:
-        specifier: ^14.0.0
-        version: 14.2.1(node-sass@9.0.0)(sass@1.77.8)
+        specifier: ^15.0.0
+        version: 15.0.0(node-sass@9.0.0)(sass@1.77.8)
       superjson:
         specifier: ^2.0.0
         version: 2.2.1
@@ -2451,8 +2451,8 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
 
-  sass-loader@14.2.1:
-    resolution: {integrity: sha512-G0VcnMYU18a4N7VoNDegg2OuMjYtxnqzQWARVWCIVSZwJeiL9kg8QMsuIZOplsJgTzZLF6jGxI3AClj8I9nRdQ==}
+  sass-loader@15.0.0:
+    resolution: {integrity: sha512-mbXAL7sI/fgt3skXR6xHxtKkaGyxRrGf7zrU4hLLWxBDJEcAe0QsoNy92qKttCb3zfMniTkU2kD9yakUKtW7vQ==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -3966,7 +3966,7 @@ snapshots:
       eslint: 9.7.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.3(eslint-plugin-import@2.28.1(eslint@9.7.0))(eslint@9.7.0)
-      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.7.0(eslint@9.7.0)(typescript@5.5.4))(eslint-import-resolver-typescript@3.5.3)(eslint@9.7.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.7.0(eslint@9.7.0)(typescript@5.5.4))(eslint-import-resolver-typescript@3.5.3(eslint-plugin-import@2.28.1(eslint@9.7.0))(eslint@9.7.0))(eslint@9.7.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@9.7.0)
       eslint-plugin-react: 7.33.2(eslint@9.7.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@9.7.0)
@@ -3989,7 +3989,7 @@ snapshots:
       debug: 4.3.5
       enhanced-resolve: 5.15.0
       eslint: 9.7.0
-      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.7.0(eslint@9.7.0)(typescript@5.5.4))(eslint-import-resolver-typescript@3.5.3)(eslint@9.7.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.7.0(eslint@9.7.0)(typescript@5.5.4))(eslint-import-resolver-typescript@3.5.3(eslint-plugin-import@2.28.1(eslint@9.7.0))(eslint@9.7.0))(eslint@9.7.0)
       get-tsconfig: 4.4.0
       globby: 13.1.3
       is-core-module: 2.13.0
@@ -4009,7 +4009,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.28.1(@typescript-eslint/parser@6.7.0(eslint@9.7.0)(typescript@5.5.4))(eslint-import-resolver-typescript@3.5.3)(eslint@9.7.0):
+  eslint-plugin-import@2.28.1(@typescript-eslint/parser@6.7.0(eslint@9.7.0)(typescript@5.5.4))(eslint-import-resolver-typescript@3.5.3(eslint-plugin-import@2.28.1(eslint@9.7.0))(eslint@9.7.0))(eslint@9.7.0):
     dependencies:
       array-includes: 3.1.6
       array.prototype.findlastindex: 1.2.3
@@ -5815,7 +5815,7 @@ snapshots:
       scss-tokenizer: 0.4.3
       yargs: 17.7.1
 
-  sass-loader@14.2.1(node-sass@9.0.0)(sass@1.77.8):
+  sass-loader@15.0.0(node-sass@9.0.0)(sass@1.77.8):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:

@@ -33,8 +33,8 @@ importers:
         specifier: 20.16.5
         version: 20.16.5
       '@types/react':
-        specifier: 18.3.6
-        version: 18.3.6
+        specifier: 18.3.7
+        version: 18.3.7
       '@types/react-dom':
         specifier: 18.3.0
         version: 18.3.0
@@ -67,7 +67,7 @@ importers:
         version: 14.2.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.78.0)
       next-mdx-remote:
         specifier: ^5.0.0
-        version: 5.0.0(@types/react@18.3.6)(react@18.3.1)
+        version: 5.0.0(@types/react@18.3.7)(react@18.3.1)
       next-seo:
         specifier: ^6.1.0
         version: 6.6.0(next@14.2.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.78.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -583,8 +583,8 @@ packages:
   '@types/react-dom@18.3.0':
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
 
-  '@types/react@18.3.6':
-    resolution: {integrity: sha512-CnGaRYNu2iZlkGXGrOYtdg5mLK8neySj0woZ4e2wF/eli2E6Sazmq5X+Nrj6OBrrFVQfJWTUFeqAzoRhWQXYvg==}
+  '@types/react@18.3.7':
+    resolution: {integrity: sha512-KUnDCJF5+AiZd8owLIeVHqmW9yM4sqmDVf2JRJiBMFkGvkoZ4/WyV2lL4zVsoinmRS/W3FeEdZLEWFRofnT2FQ==}
 
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -3217,10 +3217,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mdx-js/react@3.0.1(@types/react@18.3.6)(react@18.3.1)':
+  '@mdx-js/react@3.0.1(@types/react@18.3.7)(react@18.3.1)':
     dependencies:
       '@types/mdx': 2.0.3
-      '@types/react': 18.3.6
+      '@types/react': 18.3.7
       react: 18.3.1
 
   '@next/env@13.4.19': {}
@@ -3405,13 +3405,13 @@ snapshots:
 
   '@types/react-alert@7.0.6':
     dependencies:
-      '@types/react': 18.3.6
+      '@types/react': 18.3.7
 
   '@types/react-dom@18.3.0':
     dependencies:
-      '@types/react': 18.3.6
+      '@types/react': 18.3.7
 
-  '@types/react@18.3.6':
+  '@types/react@18.3.7':
     dependencies:
       '@types/prop-types': 15.7.5
       csstype: 3.1.1
@@ -5454,11 +5454,11 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next-mdx-remote@5.0.0(@types/react@18.3.6)(react@18.3.1):
+  next-mdx-remote@5.0.0(@types/react@18.3.7)(react@18.3.1):
     dependencies:
       '@babel/code-frame': 7.24.2
       '@mdx-js/mdx': 3.0.1
-      '@mdx-js/react': 3.0.1(@types/react@18.3.6)(react@18.3.1)
+      '@mdx-js/react': 3.0.1(@types/react@18.3.7)(react@18.3.1)
       react: 18.3.1
       unist-util-remove: 3.1.1
       vfile: 6.0.1

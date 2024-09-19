@@ -49,7 +49,7 @@ importers:
         version: 14.2.12(eslint@9.10.0)(typescript@5.6.2)
       framer-motion:
         specifier: ^11.0.0
-        version: 11.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 11.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       googleapis:
         specifier: ^144.0.0
         version: 144.0.0(encoding@0.1.13)
@@ -1299,8 +1299,8 @@ packages:
     resolution: {integrity: sha512-TMKDUnIte6bfb5nWv7V/caI169OHgvwjb7V4WkeUvbQQdjr5rWKqHFiKWb/fcOwB+CzBT+qbWjvj+DVwRskpIg==}
     engines: {node: '>=14'}
 
-  framer-motion@11.5.3:
-    resolution: {integrity: sha512-SvoshQ/iH2oaZrkmIcAht2Ko76DsZtD2f6SNMIVLe2N1l1RNDkCkyuygF8FkUGN7TXrhhH7UYDNwhRB94wCCfA==}
+  framer-motion@11.5.5:
+    resolution: {integrity: sha512-4srkT940jYA3bdQRglxod0KoqDvcghYri1A6bTjT02IXvq/EAd6A0tgUnJc5Q2ahhf8n959aLD3yO+XmLmE8OQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -4330,7 +4330,7 @@ snapshots:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
 
-  framer-motion@11.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@11.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       tslib: 2.7.0
     optionalDependencies:

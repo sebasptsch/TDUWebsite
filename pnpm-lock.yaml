@@ -36,8 +36,8 @@ importers:
         specifier: 18.3.11
         version: 18.3.11
       '@types/react-dom':
-        specifier: 18.3.0
-        version: 18.3.0
+        specifier: 18.3.1
+        version: 18.3.1
       bulma:
         specifier: ^1.0.0
         version: 1.0.2
@@ -668,8 +668,8 @@ packages:
   '@types/react-alert@7.0.6':
     resolution: {integrity: sha512-e6jjMurpoTVa8MXUbb1r/M1Rnn+eNxa1Ayhf77yeHtPbfu30x55Y6KMYVWSLUg/SQOgN3TguhDNQ6Qqu1gnkLw==}
 
-  '@types/react-dom@18.3.0':
-    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
+  '@types/react-dom@18.3.1':
+    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
 
   '@types/react@18.3.11':
     resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
@@ -3547,7 +3547,7 @@ snapshots:
     dependencies:
       '@types/react': 18.3.11
 
-  '@types/react-dom@18.3.0':
+  '@types/react-dom@18.3.1':
     dependencies:
       '@types/react': 18.3.11
 

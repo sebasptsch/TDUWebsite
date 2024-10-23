@@ -18,7 +18,7 @@
     "@trpc/react-query": "^10.38.3",
     "@trpc/server": "^10.38.3",
     "@types/node": "20.16.15",
-    "@types/react": "18.3.11",
+    "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "bulma": "^1.0.0",
     "eslint": "9.13.0",

@@ -106,7 +106,7 @@ importers:
         version: 1.80.5
       sass-loader:
         specifier: ^16.0.0
-        version: 16.0.2(node-sass@9.0.0)(sass@1.80.5)
+        version: 16.0.3(node-sass@9.0.0)(sass@1.80.5)
       superjson:
         specifier: ^2.0.0
         version: 2.2.1
@@ -2567,8 +2567,8 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
 
-  sass-loader@16.0.2:
-    resolution: {integrity: sha512-Ll6iXZ1EYwYT19SqW4mSBb76vSSi8JgzElmzIerhEGgzB5hRjDQIWsPmuk1UrAXkR16KJHqVY0eH+5/uw9Tmfw==}
+  sass-loader@16.0.3:
+    resolution: {integrity: sha512-gosNorT1RCkuCMyihv6FBRR7BMV06oKRAs+l4UMp1mlcVg9rWN6KMmUj3igjQwmYys4mDP3etEYJgiHRbgHCHA==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -6011,7 +6011,7 @@ snapshots:
       scss-tokenizer: 0.4.3
       yargs: 17.7.1
 
-  sass-loader@16.0.2(node-sass@9.0.0)(sass@1.80.5):
+  sass-loader@16.0.3(node-sass@9.0.0)(sass@1.80.5):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:

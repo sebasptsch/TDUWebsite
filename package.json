@@ -19,7 +19,7 @@
     "@trpc/server": "^10.38.3",
     "@types/node": "22.10.1",
     "@types/react": "19.0.1",
-    "@types/react-dom": "19.0.1",
+    "@types/react-dom": "19.0.2",
     "bulma": "^1.0.0",
     "eslint": "9.16.0",
     "eslint-config-next": "15.0.4",

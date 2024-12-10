@@ -49,7 +49,7 @@ importers:
         version: 15.0.4(eslint@9.16.0)(typescript@5.7.2)
       framer-motion:
         specifier: ^11.0.0
-        version: 11.13.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       googleapis:
         specifier: ^144.0.0
         version: 144.0.0(encoding@0.1.13)
@@ -1395,12 +1395,12 @@ packages:
   for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
 
-  framer-motion@11.13.4:
-    resolution: {integrity: sha512-dcFMc0Q7rDGdU3wowanEzbSb+ZdpeCcMBVO6EDyXkkD8Y0VoFJkoa70sNpyiLpNH4CwvUdfwc2gdv8Bo7f1BCw==}
+  framer-motion@11.13.5:
+    resolution: {integrity: sha512-rArI0zPU9VkpS3Wt0J7dmRxAFUWtzPWoSofNQAP0UO276CmJ+Xlf5xN19GMw3w2QsdrS2sU+0+Q2vtuz4IEZaw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
-      react: ^18.0.0
-      react-dom: ^18.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@emotion/is-prop-valid':
         optional: true
@@ -4474,7 +4474,7 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  framer-motion@11.13.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       motion-dom: 11.13.0
       motion-utils: 11.13.0

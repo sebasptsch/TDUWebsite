@@ -9,8 +9,6 @@ import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
-import { useEffect, useState } from "react";
-import { useAlert } from "react-alert";
 import { createServerSideHelpers } from "@trpc/react-query/server";
 import { appRouter } from "@/server/routers/_app";
 import SuperJSON from "superjson";

@@ -1,7 +1,5 @@
 import useZodForm from "@/hooks/useZodForm";
 import { trpc } from "@/utils/trpc";
-import { useEffect } from "react";
-import { useAlert } from "react-alert";
 import {
   GoogleReCaptcha,
   GoogleReCaptchaProvider,
@@ -29,7 +27,6 @@ interface ContactFormProps {
 
 export default function ContactForm({ support = false }: ContactFormProps) {
   const contactMutation = trpc.contact.useMutation();
-  const alert = useAlert();
 
   const {
     setValue,
@@ -44,10 +41,10 @@ export default function ContactForm({ support = false }: ContactFormProps) {
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     try {
       await contactMutation.mutateAsync({ ...data, support });
-      alert.success("Message sent!");
+      // alert.success("Message sent!");
       reset();
     } catch (error) {
-      alert.error("Error sending message");
+      // alert.error("Error sending message");
     }
   };
 

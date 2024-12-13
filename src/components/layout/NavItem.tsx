@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export type NavItemProp = {
   url: string;
-  children: JSX.Element | JSX.Element[];
+  children: React.JSX.Element | React.JSX.Element[];
 };
 
 export default function NavItem({

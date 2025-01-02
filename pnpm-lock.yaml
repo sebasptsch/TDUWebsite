@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@discordjs/builders':
         specifier: ^1.9.0
-        version: 1.9.0
+        version: 1.10.0
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.9.1(react-hook-form@7.54.2(react@19.0.0))
@@ -163,13 +163,13 @@ packages:
   '@corex/deepmerge@4.0.43':
     resolution: {integrity: sha512-N8uEMrMPL0cu/bdboEWpQYb/0i2K5Qn8eCsxzOmxSggJbbQte7ljMRoXm917AbntqTGOzdTu+vP3KOOzoC70HQ==}
 
-  '@discordjs/builders@1.9.0':
-    resolution: {integrity: sha512-0zx8DePNVvQibh5ly5kCEei5wtPBIUbSoE9n+91Rlladz4tgtFbJ36PZMxxZrTEOQ7AHMZ/b0crT/0fCy6FTKg==}
-    engines: {node: '>=18'}
+  '@discordjs/builders@1.10.0':
+    resolution: {integrity: sha512-ikVZsZP+3shmVJ5S1oM+7SveUCK3L9fTyfA8aJ7uD9cNQlTqF+3Irbk2Y22KXTb3C3RNUahRkSInClJMkHrINg==}
+    engines: {node: '>=16.11.0'}
 
-  '@discordjs/formatters@0.5.0':
-    resolution: {integrity: sha512-98b3i+Y19RFq1Xke4NkVY46x8KjJQjldHUuEbCqMvp1F5Iq9HgnGpu91jOi/Ufazhty32eRsKnnzS8n4c+L93g==}
-    engines: {node: '>=18'}
+  '@discordjs/formatters@0.6.0':
+    resolution: {integrity: sha512-YIruKw4UILt/ivO4uISmrGq2GdMY6EkoTtD0oS0GvkJFRZbTSdPhzYiUILbJ/QslsvC9H9nTgGgnarnIl4jMfw==}
+    engines: {node: '>=16.11.0'}
 
   '@discordjs/util@1.1.1':
     resolution: {integrity: sha512-eddz6UnOBEB1oITPinyrB2Pttej49M9FZQY8NxgEvc3tq6ZICZ19m70RsmzRdDHk80O9NoYN/25AqJl8vPVf/g==}
@@ -764,8 +764,8 @@ packages:
     resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
     engines: {node: '>= 14'}
 
-  agentkeepalive@4.5.0:
-    resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
+  agentkeepalive@4.6.0:
+    resolution: {integrity: sha512-kja8j7PjmncONqaTsB8fQ+wE2mSU2DJ9D4XKoJ5PFWIdRMa6SLSN1ff4mOr4jCbfRSsxR4keIiySJU0N9T5hIQ==}
     engines: {node: '>= 8.0.0'}
 
   aggregate-error@3.1.0:
@@ -1106,8 +1106,8 @@ packages:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
 
-  discord-api-types@0.37.97:
-    resolution: {integrity: sha512-No1BXPcVkyVD4ZVmbNgDKaBoqgeQ+FJpzZ8wqHkfmBnTZig1FcH3iPPersiK1TUIAzgClh2IvOuVUYfcWLQAOA==}
+  discord-api-types@0.37.114:
+    resolution: {integrity: sha512-9b9oOpktWSmE6ooToc46wfw151SHC/+idmnZvtwpEzW85BijUspQxj4W2uOmo+nZVTdEyb3fku58k+4rHKpdSQ==}
 
   doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
@@ -3050,19 +3050,19 @@ snapshots:
 
   '@corex/deepmerge@4.0.43': {}
 
-  '@discordjs/builders@1.9.0':
+  '@discordjs/builders@1.10.0':
     dependencies:
-      '@discordjs/formatters': 0.5.0
+      '@discordjs/formatters': 0.6.0
       '@discordjs/util': 1.1.1
       '@sapphire/shapeshift': 4.0.0
-      discord-api-types: 0.37.97
+      discord-api-types: 0.37.114
       fast-deep-equal: 3.1.3
       ts-mixer: 6.0.4
       tslib: 2.8.1
 
-  '@discordjs/formatters@0.5.0':
+  '@discordjs/formatters@0.6.0':
     dependencies:
-      discord-api-types: 0.37.97
+      discord-api-types: 0.37.114
 
   '@discordjs/util@1.1.1': {}
 
@@ -3631,7 +3631,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  agentkeepalive@4.5.0:
+  agentkeepalive@4.6.0:
     dependencies:
       humanize-ms: 1.2.1
     optional: true
@@ -4029,7 +4029,7 @@ snapshots:
     dependencies:
       path-type: 4.0.0
 
-  discord-api-types@0.37.97: {}
+  discord-api-types@0.37.114: {}
 
   doctrine@2.1.0:
     dependencies:
@@ -4539,7 +4539,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.1.2
+      minimatch: 3.0.8
       once: 1.4.0
       path-is-absolute: 1.0.1
     optional: true
@@ -5086,7 +5086,7 @@ snapshots:
 
   make-fetch-happen@10.2.1:
     dependencies:
-      agentkeepalive: 4.5.0
+      agentkeepalive: 4.6.0
       cacache: 16.1.3
       http-cache-semantics: 4.1.1
       http-proxy-agent: 5.0.0
@@ -5109,7 +5109,7 @@ snapshots:
 
   make-fetch-happen@9.1.0:
     dependencies:
-      agentkeepalive: 4.5.0
+      agentkeepalive: 4.6.0
       cacache: 15.3.0
       http-cache-semantics: 4.1.1
       http-proxy-agent: 4.0.1

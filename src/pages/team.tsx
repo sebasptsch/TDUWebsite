@@ -24,6 +24,7 @@ export const getStaticProps = async () => {
   });
 
   await helpers.tba.awards.prefetch();
+  await helpers.tba.pastEvents.prefetch();
 
   return {
     props: {

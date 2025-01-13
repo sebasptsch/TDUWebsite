@@ -1,6 +1,6 @@
-// Root dir of outreach projects
+// Root dir of Industry Outreach projects
 
-import { outreachFilePaths, OUTREACH_PATH } from "@/utils/mdxUtils";
+import { IndustryOutreachFilePaths, IndustryOutreach_PATH } from "@/utils/mdxUtils";
 import { GetStaticProps } from "next";
 import fs from "fs";
 import path from "path";
@@ -31,14 +31,14 @@ export default function OutreachRoot({ posts }: Props) {
   return (
     <Main>
       <NextSeo
-        title="Outreach"
+        title="Industry Outreach"
         description="A list of all of the awesome things we have done to help the
                   community around the world."
       />
       <section className="hero">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <h1 className="title">Outreach Initiatives</h1>
+            <h1 className="title">Industy Outreach </h1>
             <h2 className="subtitle">
               A list of all of the awesome things we have done to help the
               community around the world.
@@ -68,8 +68,8 @@ export default function OutreachRoot({ posts }: Props) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await Promise.all(
-    outreachFilePaths.map(async (filePath) => {
-      const source = fs.readFileSync(path.join(OUTREACH_PATH, filePath));
+    IndustryOutreachFilePaths.map(async (filePath) => {
+      const source = fs.readFileSync(path.join(IndustryOutreach_PATH, filePath));
       const { content, data } = matter(source);
       const url = filePath.replace(/\.mdx?$/, "");
 
@@ -80,7 +80,7 @@ export const getStaticProps: GetStaticProps = async () => {
         data,
         filePath,
         image,
-        url: `/outreach/${url}`,
+        url: `/Industry/${url}`,
       };
     })
   );

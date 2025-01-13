@@ -29,11 +29,15 @@ export default function Navigation() {
       url: "/robots",
       label: "Robots",
     },
+    {
+      url: "/Industry",
+      label: "Industry Outreach",
+    },
   ];
 
   return (
     <nav
-      className="navbar is-light"
+      className="navbar is-light is-fixed-top"
       role="navigation"
       aria-label="main navigation"
     >

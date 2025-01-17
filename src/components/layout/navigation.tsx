@@ -30,7 +30,7 @@ export default function Navigation() {
       label: "Robots",
     },
     {
-      url: "/Industry",
+      url: "/industry",
       label: "Industry Outreach",
     },
   ];

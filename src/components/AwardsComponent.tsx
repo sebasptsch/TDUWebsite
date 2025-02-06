@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 
 export default function AwardComponent() {
   const awardsQuery = trpc.tba.awards.useQuery();
+  const eventsQuery = trpc.tba.pastEvents.useQuery();
+  console.log(awardsQuery.data);
+  console.log(eventsQuery.data);
   return (
     <>
       <p className="title" id="awards">
@@ -38,7 +41,7 @@ export default function AwardComponent() {
                           award.blue ? "has-text-white" : ""
                         }`}
                       >
-                        {award.name}
+                        {award.name} {eventsQuery.data && eventsQuery.data.find((frcEvent) => frcEvent.key === award.event_key)?.name}
                       </p>
                       {award.recipient_list.filter(recipient => Boolean(recipient.awardee)).map(({awardee}) => (
                         <p className={`tag ml-1 mr-1`} key={awardee}>

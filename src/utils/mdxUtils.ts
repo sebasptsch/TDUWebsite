@@ -16,4 +16,3 @@ export const robotFilePaths = fs
   .readdirSync(ROBOTS_PATH)
   // Only include md(x) files
   .filter((path) => /\.mdx?$/.test(path));
-

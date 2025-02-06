@@ -3,7 +3,7 @@ import { trpc } from "@/utils/trpc";
 import { motion } from "framer-motion";
 
 export default function UpcomingComponent() {
-  const { data } = trpc.tba.events.useQuery()
+  const { data } = trpc.tba.upcomingEvents.useQuery()
   return (
     <motion.div
       className="has-text-centered pt-6 pb-6 columns is-vcentered is-gapless"

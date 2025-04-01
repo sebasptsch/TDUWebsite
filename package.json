@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@discordjs/builders": "^1.9.0",
-    "@hookform/resolvers": "^4.0.0",
+    "@hookform/resolvers": "^5.0.0",
     "@plaiceholder/next": "^2.5.0",
     "@trpc/client": "^11.0.0",
     "@trpc/next": "^11.0.0",

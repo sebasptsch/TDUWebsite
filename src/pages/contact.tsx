@@ -28,6 +28,16 @@ const faqQuestions: Question[] = [
     acceptedAnswerText:
       "You can join Team 3132 for a trial period during the off-season (May-October). Just send an expression of interest via email!",
   },
+  {
+    questionName: "How often do you meet?",
+    acceptedAnswerText:
+      "During the months of January to April, Team 3132 meets multiple days a week to build our robot during “build season”. During May to December, our team enters the “offseason”, in which we meet on Fridays from 6-9pm.",
+  },
+  {
+    questionName: "Where do you meet?",
+    acceptedAnswerText:
+      "Our team meets at the Macquarie University",
+  },
 ]
 
 export default function Contact() {

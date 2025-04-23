@@ -49,7 +49,7 @@ importers:
         version: 15.3.1(eslint@9.25.1)(typescript@5.8.3)
       framer-motion:
         specifier: ^12.0.0
-        version: 12.7.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 12.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       googleapis:
         specifier: ^148.0.0
         version: 148.0.0(encoding@0.1.13)
@@ -1386,8 +1386,8 @@ packages:
   for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
 
-  framer-motion@12.7.5:
-    resolution: {integrity: sha512-iD+vBOLn8E8bwBAFUQ1DYXjivm+cGGPgQUQ4Doleq7YP/zHdozUVwAMBJwOOfCTbtM8uOooMi77noD261Kxiyw==}
+  framer-motion@12.8.0:
+    resolution: {integrity: sha512-EarL75miCDcKLEAQLJ+6Zfwdj+KQsVlbHGGlygZ/TigKBj7NLPkyDKk4WLFUScjAs2xNpfMRLBM6VsCJq9Roxg==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -2138,8 +2138,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  motion-dom@12.7.5:
-    resolution: {integrity: sha512-0YjhPfv9n5O8DqCrSp8ny+JrsHqYu957oqlNKkrUrAvYpDKYWfp/7uM9Pu26DinbMn+H0p72rdUL8P8RzhSo1Q==}
+  motion-dom@12.8.0:
+    resolution: {integrity: sha512-YsfUE1F8Ycv9th1V0YJ6LOx9U2EMe/8P3RXK1o6NZhRbdFiWvzBLvxqp2X6Fn3rbJbwWkSEfnpe14ZU9Oz1d1Q==}
 
   motion-utils@12.7.5:
     resolution: {integrity: sha512-JIgrmEq7Vw1x0AUrjvkRp7oMMQkGqSUMT50O/Ag6RRCQWG3gRRTkOI+BirBAJT6m+GIPoiyxkJ1u98GgF/a6TQ==}
@@ -4476,9 +4476,9 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  framer-motion@12.7.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  framer-motion@12.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      motion-dom: 12.7.5
+      motion-dom: 12.8.0
       motion-utils: 12.7.5
       tslib: 2.8.1
     optionalDependencies:
@@ -5588,7 +5588,7 @@ snapshots:
   mkdirp@1.0.4:
     optional: true
 
-  motion-dom@12.7.5:
+  motion-dom@12.8.0:
     dependencies:
       motion-utils: 12.7.5
 

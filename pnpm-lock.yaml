@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@discordjs/builders':
         specifier: ^1.9.0
-        version: 1.11.0
+        version: 1.11.1
       '@hookform/resolvers':
         specifier: ^5.0.0
         version: 5.0.1(react-hook-form@7.56.1(react@19.1.0))
@@ -163,12 +163,12 @@ packages:
   '@corex/deepmerge@4.0.43':
     resolution: {integrity: sha512-N8uEMrMPL0cu/bdboEWpQYb/0i2K5Qn8eCsxzOmxSggJbbQte7ljMRoXm917AbntqTGOzdTu+vP3KOOzoC70HQ==}
 
-  '@discordjs/builders@1.11.0':
-    resolution: {integrity: sha512-JL+mkXDoaOi1xPE9iUmloiWDBEneA+/U0oM4kKqnQJAr3Iz3Vk4Rd9SnfYKPJjRjGUDvV5RFpOBJJaYI6ii6fA==}
+  '@discordjs/builders@1.11.1':
+    resolution: {integrity: sha512-2zDAVuoeAkdv0YQzYKO8vZfaDfB+1KZ60ymBKtD7QDpsh6lzAnQSUBLqeRkhlons6BT9+yRctOh9fPy94w6kDA==}
     engines: {node: '>=16.11.0'}
 
-  '@discordjs/formatters@0.6.0':
-    resolution: {integrity: sha512-YIruKw4UILt/ivO4uISmrGq2GdMY6EkoTtD0oS0GvkJFRZbTSdPhzYiUILbJ/QslsvC9H9nTgGgnarnIl4jMfw==}
+  '@discordjs/formatters@0.6.1':
+    resolution: {integrity: sha512-5cnX+tASiPCqCWtFcFslxBVUaCetB0thvM/JyavhbXInP1HJIEU+Qv/zMrnuwSsX3yWH2lVXNJZeDK3EiP4HHg==}
     engines: {node: '>=16.11.0'}
 
   '@discordjs/util@1.1.1':
@@ -1127,9 +1127,6 @@ packages:
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
-
-  discord-api-types@0.37.120:
-    resolution: {integrity: sha512-7xpNK0EiWjjDFp2nAhHXezE4OUWm7s1zhc/UXXN6hnFFU8dfoPHgV0Hx0RPiCa3ILRpdeh152icc68DGCyXYIw==}
 
   discord-api-types@0.38.1:
     resolution: {integrity: sha512-vsjsqjAuxsPhiwbPjTBeGQaDPlizFmSkU0mTzFGMgRxqCDIRBR7iTY74HacpzrDV0QtERHRKQEk1tq7drZUtHg==}
@@ -3071,9 +3068,9 @@ snapshots:
 
   '@corex/deepmerge@4.0.43': {}
 
-  '@discordjs/builders@1.11.0':
+  '@discordjs/builders@1.11.1':
     dependencies:
-      '@discordjs/formatters': 0.6.0
+      '@discordjs/formatters': 0.6.1
       '@discordjs/util': 1.1.1
       '@sapphire/shapeshift': 4.0.0
       discord-api-types: 0.38.1
@@ -3081,9 +3078,9 @@ snapshots:
       ts-mixer: 6.0.4
       tslib: 2.8.1
 
-  '@discordjs/formatters@0.6.0':
+  '@discordjs/formatters@0.6.1':
     dependencies:
-      discord-api-types: 0.37.120
+      discord-api-types: 0.38.1
 
   '@discordjs/util@1.1.1': {}
 
@@ -4066,8 +4063,6 @@ snapshots:
   dir-glob@3.0.1:
     dependencies:
       path-type: 4.0.0
-
-  discord-api-types@0.37.120: {}
 
   discord-api-types@0.38.1: {}
 

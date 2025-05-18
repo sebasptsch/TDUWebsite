@@ -70,7 +70,7 @@ importers:
         version: 5.0.0(@types/react@19.1.4)(react@19.1.0)
       next-seo:
         specifier: ^6.6.0
-        version: 6.6.0(next@15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 6.7.1(next@15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       object-hash:
         specifier: ^3.0.0
         version: 3.0.0
@@ -2207,8 +2207,8 @@ packages:
     peerDependencies:
       react: '>=16'
 
-  next-seo@6.6.0:
-    resolution: {integrity: sha512-0VSted/W6XNtgAtH3D+BZrMLLudqfm0D5DYNJRXHcDgan/1ZF1tDFIsWrmvQlYngALyphPfZ3ZdOqlKpKdvG6w==}
+  next-seo@6.7.1:
+    resolution: {integrity: sha512-eEpTwyO4XYplOfawipRLx4Fcm02OvFDN8by6Yo/zYAYafNZYYbndgbGIZHu//gdYU9o0/78jAm3FHIoNAVpJNQ==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
@@ -5724,7 +5724,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  next-seo@6.6.0(next@15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  next-seo@6.7.1(next@15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       next: 15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.0)
       react: 19.1.0

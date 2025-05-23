@@ -108,7 +108,7 @@ export default function Home(
 }
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
+  const { base64, img } = await getPlaiceholder("/images/team2025.png");
 
   const helpers = createServerSideHelpers({
     router: appRouter,

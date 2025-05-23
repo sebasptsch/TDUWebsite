@@ -49,11 +49,13 @@ export default function Home(
         <div className="column is-6">
           <p className="title">About Us</p>
           <p className="content">
-            FIRST Team 3132 is Australia’s first FRC team based in Sydney, New
-            South Wales. We’re a team all about diversity, inclusion,
-            inspiration, impact and innovation. Our motto, ‘Innovate. Improve.
-            Inspire the World.’ guides us as we strive towards our mission of
-            ‘STEM for Everyone, Everywhere’.
+          FIRST Team 3132 is Australia’s first FRC team based in 
+          Macquarie University, Sydney, New South Wales. We’re a 
+          team all about diversity, inclusion, inspiration, 
+          impact and innovation. Our motto, ‘Innovate. Improve. 
+          Inspire the World.’ guides us as we strive towards our 
+          mission of ‘STEM for Everyone, Everywhere’.
+
           </p>
         </div>
         <div className="column">
@@ -106,7 +108,7 @@ export default function Home(
 }
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
+  const { base64, img } = await getPlaiceholder("/images/team2025.png");
 
   const helpers = createServerSideHelpers({
     router: appRouter,
@@ -114,7 +116,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     transformer: SuperJSON,
   });
 
-  await helpers.tba.events.prefetch();
+  await helpers.tba.upcomingEvents.prefetch();
 
   return {
     props: {

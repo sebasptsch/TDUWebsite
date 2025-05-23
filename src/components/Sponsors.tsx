@@ -19,19 +19,24 @@ export default function SponsorsComponent({ showTitle = true }: SponsorsComponen
       logo: "/images/sponsor_logos/sponsors_svg/Google.svg",
     },
     {
-      name: "IET",
-      link: "https://www.theiet.org/",
-      logo: "/images/sponsor_logos/sponsors_svg/IET.svg",
-    },
-    {
-      name: "MGI",
-      link: "https://en.mgi-tech.com/",
-      logo: "/images/sponsor_logos/sponsors_svg/MGI.svg",
+      name: "Ford",
+      link: "https://www.ford.com.au//",
+      logo: "/images/sponsor_logos/sponsors_svg/Ford.svg",
     },
     {
       name: "Rockwell Automation",
       link: "https://www.rockwellautomation.com/",
       logo: "/images/sponsor_logos/sponsors_svg/Rockwell.svg",
+    },
+    {
+      name: "Dow",
+      link: "https://www.dow.com",
+      logo: "/images/sponsor_logos/sponsors_svg/Dow.svg",
+    },
+    {
+      name: "Disney",
+      link: "https://www.disney.com.au/",
+      logo: "/images/sponsor_logos/sponsors_svg/Disney.svg",
     },
     // {
     //   name: "Amazon",
@@ -55,14 +60,19 @@ export default function SponsorsComponent({ showTitle = true }: SponsorsComponen
     //   logo: "/images/sponsor_logos/sponsors_svg/Boeing.svg",
     // },
     // {
-    //   name: "Ford",
-    //   link: "https://www.ford.com.au/",
-    //   logo: "/images/sponsor_logos/sponsors_svg/Ford.svg",
+    //   name: "IET",
+    //   link: "https://www.theiet.org/",
+    //   logo: "/images/sponsor_logos/sponsors_svg/IET.svg",
     // },
     // {
     //   name: "Lego Education",
     //   link: "https://education.lego.com/en-au",
     //   logo: "/images/sponsor_logos/sponsors_svg/LegoEdu.svg",
+    // },
+    // {
+    //   name: "MGI",
+    //   link: "https://en.mgi-tech.com/",
+    //   logo: "/images/sponsor_logos/sponsors_svg/MGI.svg",
     // },
   ];
   return (

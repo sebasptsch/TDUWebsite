@@ -15,13 +15,17 @@ export default function Footer() {
             <h1 className="subtitle">Social Media</h1>
             <SocialButtons />
             <hr className="divider" />
+            </div>
+
+            <div className="column">
             <Link href="/contact" className="button is-primary">
               Contact Us!
             </Link>
             <Link href="/sponsor" className="button is-link">
               Support us!
-            </Link>
+            </Link>  
           </div>
+          
           <div className="column is-two-fifths">
             <h1 className="subtitle">Acknowledgement of Country</h1>
             <p>

@@ -14,7 +14,31 @@ interface BlueAward extends Award {
 }
 
 const tbaRouter = router({
-  events: procedure.input(z.void()).query(async () => {
+  pastEvents: procedure.input(z.void()).query(async () => {
+    const tbaKey = env.TBA_KEY;
+    if (!tbaKey)
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "TBA_KEY not set",
+      });
+
+    OpenAPI.HEADERS = {
+      "X-TBA-Auth-Key": tbaKey,
+    };
+
+    const tbaTeamEvents = await TeamService.getTeamEventsSimple("frc3132");
+
+    // Event dates are in Event end date in yyyy-mm-dd format. Parse this using luxon
+    const events = tbaTeamEvents.filter((event) => {
+      const eventDate = event.end_date;
+      const eventDateTime = new Date(eventDate);
+      const now = new Date();
+      return eventDateTime < now;
+    });
+
+    return events;
+  }),
+  upcomingEvents: procedure.input(z.void()).query(async () => {
     const tbaKey = env.TBA_KEY;
     if (!tbaKey)
       throw new TRPCError({

@@ -15,7 +15,7 @@ export default function Team(props: InferGetStaticPropsType<typeof getStaticProp
   );
 }
 export const getStaticProps = async () => {
-  const { base64, img } = await getPlaiceholder("/images/team2019.jpg");
+  const { base64, img } = await getPlaiceholder("/images/team2025.png");
 
   const helpers = createServerSideHelpers({
     router: appRouter,
@@ -24,6 +24,7 @@ export const getStaticProps = async () => {
   });
 
   await helpers.tba.awards.prefetch();
+  await helpers.tba.pastEvents.prefetch();
 
   return {
     props: {

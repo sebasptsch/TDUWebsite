@@ -38,7 +38,7 @@ export default function OutreachRoot({ posts }: Props) {
       <section className="hero">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <h1 className="title">Outreach</h1>
+            <h1 className="title">Outreach Initiatives</h1>
             <h2 className="subtitle">
               A list of all of the awesome things we have done to help the
               community around the world.

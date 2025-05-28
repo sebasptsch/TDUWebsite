@@ -29,10 +29,10 @@ export default function Navigation() {
       url: "/robots",
       label: "Robots",
     },
-    {
-      url: "/industry",
-      label: "Industry Outreach",
-    },
+    // {
+    //   url: "/industry",
+    //   label: "Industry Outreach",
+    // },
   ];
 
   return (

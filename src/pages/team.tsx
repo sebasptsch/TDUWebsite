@@ -15,7 +15,7 @@ export default function Team(props: InferGetStaticPropsType<typeof getStaticProp
   );
 }
 export const getStaticProps = async () => {
-  const { base64, img } = await getPlaiceholder("/images/team2025.png");
+  const { base64, img } = await getPlaiceholder("/images/team2026.png");
 
   const helpers = createServerSideHelpers({
     router: appRouter,
